@@ -1,0 +1,488 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15082,        479]
+NotebookOptionsPosition[     11903,        366]
+NotebookOutlinePosition[     12335,        383]
+CellTagsIndexPosition[     12292,        380]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.1", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Tutorial", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/tutorial/Introduction to SCAPack", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->218895918],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->795871300],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->199739161],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->40625308],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->357121918],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->35949532],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->929432370],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Introduction to SCAPack", "Title",
+ CellID->509267359],
+
+Cell[TextData[{
+ "Simple Circuit Analysis Package (SCAPack) is a collection of functions to \
+be able to handle the analysis of electronic circuits symbolically. The goal \
+behind SCAPack is to be able to nimbly solve circuits symbolically with the \
+power of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ". SCAPack is not a numerical simulator such as SPICE, but rather is meant \
+for designers to gain intuition on the operation of their circuit."
+}], "Text",
+ CellChangeTimes->{{3.562033425175971*^9, 3.562033451706653*^9}, {
+  3.5620336201643*^9, 3.562033630395796*^9}, {3.562033685116943*^9, 
+  3.562033714315049*^9}, {3.562033804817107*^9, 3.5620338306602707`*^9}, {
+  3.5620340026198673`*^9, 3.562034050613449*^9}, {3.562034236729006*^9, 
+  3.5620343015106573`*^9}, {3.562034373188545*^9, 3.562034382890979*^9}},
+ CellID->1534169418],
+
+Cell[CellGroupData[{
+
+Cell["SCAPack Fundamentals", "Section",
+ CellChangeTimes->{{3.562034402257463*^9, 3.562034413631654*^9}},
+ CellID->157341856],
+
+Cell[TextData[{
+ "SCAPack represents all circuit elements in the complex Laplace variable ",
+ StyleBox["s", "TI"],
+ ". While this may suggest that it is only suitable for linear time-invariant \
+systems, or for frequency domain analyses only, this is not strictly the \
+case. ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " built-ins such as ",
+ Cell[BoxData[
+  ButtonBox["InverseLaplaceTransform",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/InverseLaplaceTransform"]], "InlineFormula",
+  FormatType->"StandardForm"],
+ " may be used by a user to convert the frequency domain results into the \
+time domain. Linearity may be relaxed by the astute user, after circuit \
+analysis, by the replacement of simple small-signal parameters by a bias \
+dependent equivalent."
+}], "Text",
+ CellChangeTimes->{{3.5620344170653*^9, 3.56203451406497*^9}, {
+  3.5620345518590097`*^9, 3.5620347117942467`*^9}, {3.562034745849484*^9, 
+  3.562034782532034*^9}, {3.56203493160573*^9, 3.5620349316108*^9}},
+ CellID->892204335],
+
+Cell[TextData[{
+ "Using SCAPack begins with the netlist. SCAPack's netlist format was \
+designed to be kept as simple as possible with great similarity to numerical \
+simulation tools such as SPICE or SPECTRE. The netlist format is structured \
+as a list of element and control lists all of which is detailed in the ",
+ ButtonBox["Netlists",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/tutorial/Netlists"],
+ " tutorial."
+}], "Text",
+ CellChangeTimes->{{3.5620344170653*^9, 3.56203451406497*^9}, {
+  3.5620345518590097`*^9, 3.5620347117942467`*^9}, {3.562034745849484*^9, 
+  3.562034782532034*^9}, {3.56203493160573*^9, 3.562035006744823*^9}, {
+  3.562035121297453*^9, 3.5620351480431213`*^9}, {3.56203520632824*^9, 
+  3.562035230221382*^9}, {3.5620352835393763`*^9, 3.562035299342896*^9}, {
+  3.562038023805896*^9, 3.56203802395802*^9}},
+ CellID->1712928567]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Analyses", "Section",
+ CellChangeTimes->{{3.562038158089778*^9, 3.562038159800908*^9}, {
+  3.562124278641294*^9, 3.562124279198579*^9}, {3.5621247631125803`*^9, 
+  3.562124763499056*^9}, {3.56212494007325*^9, 3.562124942216222*^9}, {
+  3.5621800190370903`*^9, 3.562180019501423*^9}},
+ CellID->24653887],
+
+Cell[TextData[{
+ "SCAPack's automated analyses are meant to provide a solution to a class of \
+problems that circuit designers often wrestle with. SCAPack provides a \
+versatile function, ",
+ Cell[BoxData[
+  ButtonBox["GetTransferFunction",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/GetTransferFunction"]], "InlineFormula",
+  FormatType->"StandardForm"],
+ ", which provides the ability to determine the relationship between two \
+arbitrary circuit variables. Users can use this function to determine various \
+circuit performance metrics such as gain and bandwidth. Other methods allow \
+for determining the noise performance (",
+ Cell[BoxData[
+  ButtonBox["GetNoisePSD",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/GetNoisePSD"]], "InlineFormula",
+  FormatType->"StandardForm"],
+ "), various circuit impedances (",
+ Cell[BoxData[
+  ButtonBox["GetInputImpedance",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/GetInputImpedance"]], "InlineFormula",
+  FormatType->"StandardForm"],
+ ") or even approximate transfer functions (",
+ Cell[BoxData[
+  ButtonBox["GetZVTimeConstants",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/GetZVTimeConstants"]], "InlineFormula",
+  FormatType->"StandardForm"],
+ "). "
+}], "Text",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBmIQLfRKooin65WjW+aZchC9sXNXHYiO+K7UCKI7Zr9d
+C6JLFp9aB6L/ZPscBdFLTjCdA9GTuuLugOjkpLKHIFptR/NrEN2jG/cdRPuz
+WbLxAmkZd38+EJ3U1i4GorMcf4Hp/vrVsiD6w2EmJRAtwZquBaI/l4brgmge
+/dNGIJrl3xcwvYrXzhZE961uBtMszP9ugOgIb/GbYNrmU4UZkNawmlkForW6
+NftBdFnMdDBtb7VoGogOCkqYDqLn2iQsAdEMJ14vA9FRz/k2gujDT8K2gOgd
+03J3gOhvb9V2g2gA/1SOLQ==
+  "],
+ CellID->2041018585]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Network Parameters", "Section",
+ CellChangeTimes->{{3.5629081953049192`*^9, 3.562908197868287*^9}},
+ CellID->1169158671],
+
+Cell[TextData[{
+ "SCAPack can automatically extract Z-, Y-, H-, G-, S-, T- and ABCD \
+parameters from a netlist. Functions such as ",
+ Cell[BoxData[
+  ButtonBox["ComputeZNetwork",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/ComputeZNetwork"]], "InlineFormula"],
+ " perform the necessary terminations and automatically calculate the entire \
+parameter matrix for all the ports. Auxilliary functions such as ",
+ Cell[BoxData[
+  ButtonBox["CheckPassive",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/CheckPassive"]], "InlineFormula",
+  FormatType->"StandardForm"],
+ " and ",
+ Cell[BoxData[
+  ButtonBox["CheckLossless",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/CheckLossless"]], "InlineFormula",
+  FormatType->"StandardForm"],
+ " allow for users to query properties of a network."
+}], "Text",
+ CellChangeTimes->{{3.562908198556429*^9, 3.562908213438754*^9}, {
+  3.562908326403111*^9, 3.56290836144585*^9}, {3.5629084352738543`*^9, 
+  3.562908473518347*^9}, {3.562908512577034*^9, 3.562908515490568*^9}, {
+  3.562908598510593*^9, 3.56290865882347*^9}, {3.562908732535479*^9, 
+  3.562908791460042*^9}, {3.5629088602036953`*^9, 3.562908866733741*^9}, {
+  3.5629090041790648`*^9, 3.562909010152882*^9}, {3.5629092194595003`*^9, 
+  3.562909231021761*^9}},
+ CellID->574413447]
+}, Open  ]],
+
+Cell["Approximations", "Section",
+ CellChangeTimes->{{3.5621837849010067`*^9, 3.5621837865906*^9}},
+ CellID->77798872],
+
+Cell["Statistical Methods", "Section",
+ CellChangeTimes->{{3.562124285914996*^9, 3.562124289487978*^9}, {
+  3.562127482297805*^9, 3.5621274856859207`*^9}, {3.5621799934421864`*^9, 
+  3.5621799949735737`*^9}},
+ CellID->1643064564],
+
+Cell[CellGroupData[{
+
+Cell["More About", "TutorialMoreAboutSection",
+ CellID->23220180],
+
+Cell[TextData[ButtonBox["Simple Circuit Analysis Package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/guide/Simple Circuit Analysis Package"]], \
+"TutorialMoreAbout",
+ CellChangeTimes->{{3.562034103515349*^9, 3.562034131801909*^9}},
+ CellID->1567025153],
+
+Cell[TextData[ButtonBox["Elements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Elements"]], "TutorialMoreAbout",
+ CellChangeTimes->{{3.5620341524442663`*^9, 3.562034161964411*^9}},
+ CellID->574221982],
+
+Cell[TextData[ButtonBox["Control Statements",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/tutorial/Control Statements"]], "TutorialMoreAbout",
+ CellChangeTimes->{{3.562034113233823*^9, 3.562034116063908*^9}, {
+  3.5620341660486507`*^9, 3.562034172171877*^9}},
+ CellID->227470406]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Tutorials", "RelatedTutorialsSection",
+ CellID->415694126],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "RelatedTutorials",
+ CellChangeTimes->{{3.5620340759757147`*^9, 3.5620340767086487`*^9}, {
+  3.562034180013917*^9, 3.562034180173892*^9}},
+ CellID->806871991],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Solving Circuits"]], "RelatedTutorials",\
+
+ CellChangeTimes->{{3.562034077976818*^9, 3.562034079711916*^9}, {
+  3.5620341830175657`*^9, 3.562034187679205*^9}},
+ CellID->107177409],
+
+Cell[TextData[ButtonBox["Noise Analysis",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Noise Analysis"]], "RelatedTutorials",
+ CellChangeTimes->{{3.5620340835127497`*^9, 3.5620340873835363`*^9}, {
+  3.562034191722885*^9, 3.5620341961302137`*^9}},
+ CellID->1739416877],
+
+Cell[TextData[ButtonBox["Network Parameters",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/NetworkParameters"]], "RelatedTutorials",\
+
+ CellChangeTimes->{{3.562909419500847*^9, 3.562909426543214*^9}},
+ CellID->1227810464],
+
+Cell[TextData[ButtonBox["Statistical Analysis",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/tutorial/Statistical Analysis"]], "RelatedTutorials",
+ CellChangeTimes->{{3.562127733719859*^9, 3.562127749780342*^9}},
+ CellID->80197099],
+
+Cell[TextData[ButtonBox["Approximating Transfer Functions",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/tutorial/Approximating Transfer Functions"]], \
+"RelatedTutorials",
+ CellChangeTimes->{{3.562034088099184*^9, 3.562034091948853*^9}, {
+  3.56203419913724*^9, 3.562034206669827*^9}},
+ CellID->684565128],
+
+Cell[TextData[ButtonBox["Sample Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Sample Netlists"]], "RelatedTutorials",
+ CellChangeTimes->{{3.562034093574497*^9, 3.5620340961980047`*^9}, {
+  3.562034210038134*^9, 3.562034214621738*^9}},
+ CellID->1416209317]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{Automatic, 421}, {Automatic, 58}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 325, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 81, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1062, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1145, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1225, 53, 85, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1347, 59, 56, 1, 17, "KeywordsSection",
+ CellID->1427428552],
+Cell[1406, 62, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1488, 68, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1544, 71, 63, 2, 70, "Details",
+ CellID->218895918],
+Cell[1610, 75, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1682, 79, 66, 2, 70, "Details",
+ CellID->795871300],
+Cell[1751, 83, 71, 2, 70, "Details",
+ CellID->199739161],
+Cell[1825, 87, 60, 2, 70, "Details",
+ CellID->40625308],
+Cell[1888, 91, 61, 2, 70, "Details",
+ CellID->357121918],
+Cell[1952, 95, 62, 2, 70, "Details",
+ CellID->35949532],
+Cell[2017, 99, 78, 2, 70, "Details",
+ CellID->929432370],
+Cell[2098, 103, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2202, 110, 60, 1, 104, "Title",
+ CellID->509267359],
+Cell[2265, 113, 848, 15, 66, "Text",
+ CellID->1534169418],
+Cell[CellGroupData[{
+Cell[3138, 132, 125, 2, 41, "Section",
+ CellID->157341856],
+Cell[3266, 136, 1018, 22, 98, "Text",
+ CellID->892204335],
+Cell[4287, 160, 865, 16, 51, "Text",
+ CellID->1712928567]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5189, 181, 308, 5, 41, "Section",
+ CellID->24653887],
+Cell[5500, 188, 1655, 40, 99, "Text",
+ CellID->2041018585]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7192, 233, 126, 2, 41, "Section",
+ CellID->1169158671],
+Cell[7321, 237, 1307, 29, 69, "Text",
+ CellID->574413447]
+}, Open  ]],
+Cell[8643, 269, 118, 2, 41, "Section",
+ CellID->77798872],
+Cell[8764, 273, 229, 4, 41, "Section",
+ CellID->1643064564],
+Cell[CellGroupData[{
+Cell[9018, 281, 65, 1, 65, "TutorialMoreAboutSection",
+ CellID->23220180],
+Cell[9086, 284, 262, 6, 20, "TutorialMoreAbout",
+ CellID->1567025153],
+Cell[9351, 292, 215, 4, 20, "TutorialMoreAbout",
+ CellID->574221982],
+Cell[9569, 298, 287, 6, 20, "TutorialMoreAbout",
+ CellID->227470406]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9893, 309, 72, 1, 71, "RelatedTutorialsSection",
+ CellID->415694126],
+Cell[9968, 312, 265, 5, 20, "RelatedTutorials",
+ CellID->806871991],
+Cell[10236, 319, 281, 6, 20, "RelatedTutorials",
+ CellID->107177409],
+Cell[10520, 327, 280, 5, 20, "RelatedTutorials",
+ CellID->1739416877],
+Cell[10803, 334, 234, 5, 20, "RelatedTutorials",
+ CellID->1227810464],
+Cell[11040, 341, 238, 5, 20, "RelatedTutorials",
+ CellID->80197099],
+Cell[11281, 348, 313, 7, 20, "RelatedTutorials",
+ CellID->684565128],
+Cell[11597, 357, 278, 5, 20, "RelatedTutorials",
+ CellID->1416209317]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

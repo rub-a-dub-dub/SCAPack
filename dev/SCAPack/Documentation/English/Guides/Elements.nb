@@ -1,0 +1,460 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12069,        451]
+NotebookOptionsPosition[      8508,        328]
+NotebookOutlinePosition[      8937,        345]
+CellTagsIndexPosition[      8894,        342]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.1", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Guide", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/guide/Elements", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->795394057],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->802101],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->509823116],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->199884516],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->463951815],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->8237523],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->813936640],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Elements", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+SCAPack implements several stimulus, probe and device elements. \
+\>", "GuideAbstract",
+ CellChangeTimes->{{3.561575260741356*^9, 3.56157529101616*^9}},
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "GuideFunctionsSection",
+ CellID->1866139230],
+
+Cell[CellGroupData[{
+
+Cell["Stimulus", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.561575465428136*^9, 3.5615754663264637`*^9}},
+ CellID->126394523],
+
+Cell[TextData[{
+ ButtonBox["Voltage Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Voltage Source"],
+ " . ",
+ ButtonBox["Current Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Current Source"],
+ " . ",
+ ButtonBox["Noisy Voltage Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Noisy Voltage Source"],
+ " . ",
+ ButtonBox["Noisy Current ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Noisy Current Source"],
+ ButtonBox["Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/NoisyCurrentSource"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.5615773942411947`*^9, 3.5615774368985167`*^9}, {
+  3.561586501103343*^9, 3.561586501166409*^9}, {3.561586639152814*^9, 
+  3.561586657303441*^9}},
+ CellID->1786771420]
+}, Open  ]],
+
+Cell["\t", "GuideDelimiter",
+ CellID->311258892],
+
+Cell[CellGroupData[{
+
+Cell["Dependent Sources", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.561575918307946*^9, 3.561575920879015*^9}},
+ CellID->1392324126],
+
+Cell[TextData[{
+ ButtonBox["Current Controlled Voltage Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Current Controlled Voltage Source"],
+ " . ",
+ ButtonBox["Voltage Controlled Voltage Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Voltage Controlled Voltage Source"],
+ " . ",
+ ButtonBox["Current Controlled Current Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Current Controlled Current Source"],
+ " . ",
+ ButtonBox["Voltage Controlled Current Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Voltage Controlled Current Source"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.5615761516814947`*^9, 3.561576186916917*^9}, {
+  3.561576793278006*^9, 3.561576811048565*^9}, {3.561586672783907*^9, 
+  3.5615867076200457`*^9}},
+ CellID->410884514]
+}, Open  ]],
+
+Cell["\t", "GuideDelimiter",
+ CellID->1576101693],
+
+Cell[CellGroupData[{
+
+Cell["Probes", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.5615762580926847`*^9, 3.5615762587039843`*^9}},
+ CellID->330368506],
+
+Cell[TextData[{
+ ButtonBox["Voltage Probe",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Voltage Probe"],
+ " . ",
+ ButtonBox["Current Probe",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Current Probe"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.561577611069043*^9, 3.561577632929841*^9}, {
+  3.561586713614258*^9, 3.561586719482489*^9}},
+ CellID->715418518]
+}, Open  ]],
+
+Cell["\t", "GuideDelimiter",
+ CellID->900271891],
+
+Cell[CellGroupData[{
+
+Cell["Passive Elements", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.561576421757025*^9, 3.561576431666535*^9}, {
+  3.561657091651403*^9, 3.561657092860121*^9}},
+ CellID->1847378922],
+
+Cell[TextData[{
+ ButtonBox["Resistor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Resistor"],
+ " . ",
+ ButtonBox["Capacitor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Capacitor"],
+ " . ",
+ ButtonBox["Inductor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Inductor"],
+ " . ",
+ ButtonBox["Noisy Resistor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Noisy Resistor"],
+ " . ",
+ ButtonBox["Transformer",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Transformer"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.561576452021411*^9, 3.5615764648989697`*^9}, {
+  3.561576590507839*^9, 3.561576593447164*^9}, {3.5615768143069773`*^9, 
+  3.561576829098164*^9}, {3.561578438820665*^9, 3.561578446357853*^9}, {
+  3.561586723922923*^9, 3.561586737048088*^9}, {3.561591156115203*^9, 
+  3.5615911591384497`*^9}, {3.561653479078583*^9, 3.5616534939301243`*^9}},
+ CellID->563041939]
+}, Open  ]],
+
+Cell["\t", "GuideDelimiter",
+ CellID->1066485224],
+
+Cell[CellGroupData[{
+
+Cell["Active Elements", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.5615783939988127`*^9, 3.561578396909182*^9}},
+ CellID->1518641906],
+
+Cell[TextData[{
+ ButtonBox["MOS Transistor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/MOS Transistor"],
+ " . ",
+ ButtonBox["MOS Transistor with Extrinsic Resistances",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/MOS Transistor With Extrinsic Resistances"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.561578403864544*^9, 3.561578458963228*^9}, {
+  3.561586745114262*^9, 3.561586759449135*^9}},
+ CellID->971369547]
+}, Open  ]],
+
+Cell["\t", "GuideDelimiter",
+ CellID->1232920091],
+
+Cell[CellGroupData[{
+
+Cell["Modelling Elements", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.561576573418933*^9, 3.5615765754970407`*^9}},
+ CellID->618259534],
+
+Cell[TextData[{
+ ButtonBox["Nullor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Nullor"],
+ " . ",
+ ButtonBox["Gyrator",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Gyrator"],
+ " . ",
+ ButtonBox["Subcircuit",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Subcircuit"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.5615765833899927`*^9, 3.561576587277237*^9}, {
+   3.56157671889699*^9, 3.5615767252528057`*^9}, {3.561576832517713*^9, 
+   3.561576838945963*^9}, 3.561586764399914*^9},
+ CellID->1562103752]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "GuideTutorialsSection",
+ CellID->415694126],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "GuideTutorial",
+ CellChangeTimes->{{3.561575307894165*^9, 3.56157530919978*^9}, {
+  3.5615753578066063`*^9, 3.561575357984688*^9}},
+ CellID->806871991]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "GuideMoreAboutSection",
+ CellID->23220180],
+
+Cell[TextData[ButtonBox["Control Statements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/ControlStatements"]], "GuideMoreAbout",
+ CellChangeTimes->{{3.5615753820176086`*^9, 3.5615753912965927`*^9}},
+ CellID->1567025153]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{Automatic, 164}, {Automatic, 50}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 325, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 78, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1059, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1142, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1222, 53, 67, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1326, 59, 56, 1, 17, "KeywordsSection",
+ CellID->1427428552],
+Cell[1385, 62, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1467, 68, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1523, 71, 63, 2, 70, "Details",
+ CellID->795394057],
+Cell[1589, 75, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1661, 79, 63, 2, 70, "Details",
+ CellID->802101],
+Cell[1727, 83, 71, 2, 70, "Details",
+ CellID->509823116],
+Cell[1801, 87, 61, 2, 70, "Details",
+ CellID->199884516],
+Cell[1865, 91, 61, 2, 70, "Details",
+ CellID->463951815],
+Cell[1929, 95, 61, 2, 70, "Details",
+ CellID->8237523],
+Cell[1993, 99, 78, 2, 70, "Details",
+ CellID->813936640],
+Cell[2074, 103, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2178, 110, 50, 1, 76, "GuideTitle",
+ CellID->942062912],
+Cell[2231, 113, 183, 4, 25, "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2451, 122, 54, 1, 69, "GuideFunctionsSection",
+ CellID->1866139230],
+Cell[CellGroupData[{
+Cell[2530, 127, 132, 2, 33, "GuideFunctionsSubsection",
+ CellID->126394523],
+Cell[2665, 131, 785, 23, 32, "InlineGuideFunctionListing",
+ CellID->1786771420]
+}, Open  ]],
+Cell[3465, 157, 48, 1, 26, "GuideDelimiter",
+ CellID->311258892],
+Cell[CellGroupData[{
+Cell[3538, 162, 140, 2, 33, "GuideFunctionsSubsection",
+ CellID->1392324126],
+Cell[3681, 166, 820, 20, 32, "InlineGuideFunctionListing",
+ CellID->410884514]
+}, Open  ]],
+Cell[4516, 189, 49, 1, 26, "GuideDelimiter",
+ CellID->1576101693],
+Cell[CellGroupData[{
+Cell[4590, 194, 132, 2, 33, "GuideFunctionsSubsection",
+ CellID->330368506],
+Cell[4725, 198, 391, 11, 19, "InlineGuideFunctionListing",
+ CellID->715418518]
+}, Open  ]],
+Cell[5131, 212, 48, 1, 26, "GuideDelimiter",
+ CellID->900271891],
+Cell[CellGroupData[{
+Cell[5204, 217, 188, 3, 33, "GuideFunctionsSubsection",
+ CellID->1847378922],
+Cell[5395, 222, 932, 26, 19, "InlineGuideFunctionListing",
+ CellID->563041939]
+}, Open  ]],
+Cell[6342, 251, 49, 1, 26, "GuideDelimiter",
+ CellID->1066485224],
+Cell[CellGroupData[{
+Cell[6416, 256, 140, 2, 33, "GuideFunctionsSubsection",
+ CellID->1518641906],
+Cell[6559, 260, 449, 11, 19, "InlineGuideFunctionListing",
+ CellID->971369547]
+}, Open  ]],
+Cell[7023, 274, 49, 1, 26, "GuideDelimiter",
+ CellID->1232920091],
+Cell[CellGroupData[{
+Cell[7097, 279, 142, 2, 33, "GuideFunctionsSubsection",
+ CellID->618259534],
+Cell[7242, 283, 544, 16, 19, "InlineGuideFunctionListing",
+ CellID->1562103752]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7835, 305, 62, 1, 71, "GuideTutorialsSection",
+ CellID->415694126],
+Cell[7900, 308, 259, 5, 20, "GuideTutorial",
+ CellID->806871991]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8196, 318, 62, 1, 71, "GuideMoreAboutSection",
+ CellID->23220180],
+Cell[8261, 321, 231, 4, 20, "GuideMoreAbout",
+ CellID->1567025153]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

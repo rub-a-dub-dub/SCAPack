@@ -1,0 +1,6 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>shuntR = {
+   {&quot;res&quot;, {v1, 0}, &quot;r1&quot;, {Rvalue -&gt; R}},
+   {&quot;vprobe&quot;, {v1, 0}, &quot;vp1&quot;, {}}
+   };
+ComputeABCDNetwork[shuntR, {{v1, 0}, {v1, 0}}];
+ReciprocalQ[%]</pre><div class='IFU'><a name='1484280412'></a>http://wolfram.com/xid/0yg8ho857tg9tobe4s04jn-ytzkdq</div>

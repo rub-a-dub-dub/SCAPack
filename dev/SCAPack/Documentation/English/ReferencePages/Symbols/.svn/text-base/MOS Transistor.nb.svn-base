@@ -1,0 +1,425 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     11408,        416]
+NotebookOptionsPosition[      8520,        310]
+NotebookOutlinePosition[      8977,        328]
+CellTagsIndexPosition[      8934,        325]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.1", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/ref/MOS Transistor", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["MOS Transistor", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{"\"\<mos\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"drain", ",", "gate", ",", "source", ",", "body"}], "}"}], ",", 
+    "\"\<name\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Gm", "\[Rule]", "transconductance"}], ",", 
+      RowBox[{"Gds", "\[Rule]", "conductance"}], ",", 
+      RowBox[{"Gmb", "\[Rule]", 
+       RowBox[{"body", " ", "transconductance"}]}], ",", 
+      RowBox[{"Cgs", "\[Rule]", 
+       RowBox[{"gate", " ", "source", " ", "capacitance"}]}], ",", 
+      RowBox[{"Cgd", "\[Rule]", 
+       RowBox[{"gate", " ", "drain", " ", "capacitance"}]}], ",", 
+      RowBox[{"Cds", "\[Rule]", 
+       RowBox[{"drain", " ", "source", " ", "capacitance"}]}], ",", 
+      RowBox[{"Cdb", "\[Rule]", 
+       RowBox[{"drain", " ", "body", " ", "capacitance"}]}], ",", 
+      RowBox[{"Csb", "\[Rule]", 
+       RowBox[{"source", " ", "body", " ", "capacitance"}]}], ",", 
+      RowBox[{"Cgb", "\[Rule]", 
+       RowBox[{"gate", " ", "body", " ", "capacitance"}]}], ",", 
+      RowBox[{"IsNoisy", "\[Rule]", 
+       StyleBox["noiseflag", "TI"]}]}], "}"}]}], "}"}]], "InlineFormula"],
+ " \[LineSeparator]implements a four-terminal MOS transistor small-signal \
+model."
+}], "Usage",
+ CellChangeTimes->{{3.56168541583673*^9, 3.561685475555335*^9}, {
+  3.561685556964007*^9, 3.561685597539885*^9}, {3.561685656215173*^9, 
+  3.5616857490214033`*^9}, {3.562878377659647*^9, 3.562878385088237*^9}},
+ CellID->982511436],
+
+Cell["\<\
+Any of the MOS parameters may be omitted and left at their default symbolic \
+value.\
+\>", "Notes",
+ CellChangeTimes->{{3.561685752739533*^9, 3.561685824523068*^9}},
+ CellID->1067943069],
+
+Cell[TextData[{
+ StyleBox["noiseflag", "TI"],
+ " may be either True or False and will activate the following noise sources \
+if True."
+}], "Notes",
+ CellChangeTimes->{{3.562878412669283*^9, 3.562878432510372*^9}, {
+  3.562878784792781*^9, 3.562878785653103*^9}},
+ CellID->1396954502],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "ModInfo"], "Sid", Cell[
+    "drain-referred noise current", "TableText"]},
+   {Cell["      ", "ModInfo"], "Svg", Cell[
+    "gate-referred noise voltage", "TableText"]}
+  }]], "2ColumnTableMod",
+ CellChangeTimes->{{3.5628785383273706`*^9, 3.5628786601178837`*^9}, {
+  3.562878902758646*^9, 3.562878907717588*^9}},
+ CellID->1235903014],
+
+Cell["\<\
+All noise sources are expressed as the square-root of a power spectral \
+density.\
+\>", "Notes",
+ CellChangeTimes->{{3.562878434184816*^9, 3.5628784594306793`*^9}, {
+  3.562878729762191*^9, 3.562878746026382*^9}},
+ CellID->175602463],
+
+Cell[TextData[{
+ "The noise sources are identified by their name followed by \"$",
+ StyleBox["name", "TI"],
+ "\"."
+}], "Notes",
+ CellChangeTimes->{{3.5628784658896503`*^9, 3.5628785086863832`*^9}},
+ CellID->708064663]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "Tutorials",
+ CellChangeTimes->{{3.561685859151639*^9, 3.561685859695059*^9}, {
+  3.561685959741634*^9, 3.561685959909247*^9}},
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell[TextData[ButtonBox["MOS Transistor with Extrinsic Resistances",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/ref/MOS Transistor with Extrinsic Resistances"]], "SeeAlso",\
+
+ CellChangeTimes->{{3.561685862292021*^9, 3.5616858669135733`*^9}, {
+  3.561685939821794*^9, 3.561685954402619*^9}},
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<MOS\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Vo", ",", "Vi", ",", "0", ",", "0"}], "}"}], ",", 
+      "\"\<Q1\>\"", ",", 
+      RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Volt\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Vi", ",", "0"}], "}"}], ",", "\"\<Vin\>\"", ",", 
+      RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Vprobe\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Vo", ",", "0"}], "}"}], ",", "\"\<Vout\>\"", ",", 
+      RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", "}"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GetTransferFunction", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"Vo", ",", "Vi"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.559577974340546*^9, 3.559577988852889*^9}, {
+  3.55957806863602*^9, 3.5595780848280764`*^9}, {3.559578281685574*^9, 
+  3.55957829118128*^9}, {3.559578419813614*^9, 3.5595784252723074`*^9}, {
+  3.5595887319500895`*^9, 3.5595887523086743`*^9}, {3.559588958470854*^9, 
+  3.559588967886549*^9}, {3.560014277946991*^9, 3.560014280245783*^9}, {
+  3.560014316740917*^9, 3.5600143179380693`*^9}, {3.560014367036804*^9, 
+  3.5600143683724737`*^9}, {3.561685892561178*^9, 3.5616859154990253`*^9}},
+ CellLabel->"In[2]:=",
+ CellID->1943587394],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"-", "Gm"}], "+", 
+    RowBox[{"Cgd", " ", "s"}]}], 
+   RowBox[{"Gds", "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Cdb", "+", "Cgd"}], ")"}], " ", "s"}]}]], "}"}]], "Output",
+ CellChangeTimes->{3.561844809710387*^9},
+ CellLabel->"Out[3]=",
+ CellID->939852401]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{Automatic, 356}, {Automatic, 126}},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 325, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1060, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1143, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1223, 53, 71, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1331, 59, 55, 1, 17, "KeywordsSection",
+ CellID->477174294],
+Cell[1389, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1471, 68, 65, 1, 17, "TemplatesSection",
+ CellID->1872225408],
+Cell[1539, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1636, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1721, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1805, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1924, 90, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1980, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2046, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2118, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2185, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2257, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2321, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2385, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2451, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2532, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2636, 132, 57, 1, 62, "ObjectName",
+ CellID->1224892054],
+Cell[2696, 135, 1505, 34, 132, "Usage",
+ CellID->982511436],
+Cell[4204, 171, 196, 5, 23, "Notes",
+ CellID->1067943069],
+Cell[4403, 178, 283, 7, 24, "Notes",
+ CellID->1396954502],
+Cell[4689, 187, 376, 8, 37, "2ColumnTableMod",
+ CellID->1235903014],
+Cell[5068, 197, 243, 6, 24, "Notes",
+ CellID->175602463],
+Cell[5314, 205, 217, 6, 24, "Notes",
+ CellID->708064663]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5568, 216, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[5628, 219, 254, 5, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5919, 229, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[5977, 232, 320, 7, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6334, 244, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[6715, 259, 1438, 33, 99, "Input",
+ CellID->1943587394],
+Cell[8156, 294, 336, 12, 44, "Output",
+ CellID->939852401]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

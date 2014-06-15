@@ -1,0 +1,1 @@
+<pre name='i_3_in' id='i_3_in' class='IFT'>NetworkData[{{1, R}, {R, 0}}, &quot;Z&quot;] // Normal</pre><div class='IFU'><a name='2124375333'></a>http://wolfram.com/xid/0dorgybtefspepkb9tx66-9e20r7</div>

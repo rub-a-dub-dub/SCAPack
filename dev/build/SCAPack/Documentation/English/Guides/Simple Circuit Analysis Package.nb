@@ -1,0 +1,608 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     19856,        599]
+NotebookOptionsPosition[     15519,        470]
+NotebookOutlinePosition[     17128,        511]
+CellTagsIndexPosition[     17085,        508]
+WindowTitle->Simple Circuit Analysis Package - Wolfram Mathematica
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["S C A PACK GUIDE", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Functions \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Capacitor\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/ref/Capacitor"], "\<\"ComputeABCDParameter\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeABCDParameter"], \
+"\<\"ComputeGParameter\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeGParameter"], "\<\"ComputeHParameter\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeHParameter"], "\<\"ComputeSParameter\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeSParameter"], "\<\"ComputeTParameter\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeTParameter"], "\<\"ComputeYParameter\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeYParameter"], "\<\"ComputeZParameter\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeZParameter"], "\<\"ConvertNetwork\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ConvertNetwork"], "\<\"DisableSources\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/DisableSources"], "\<\"GetInputImpedance\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/GetInputImpedance"], "\<\"GetNoisePSD\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/GetNoisePSD"], "\<\"GetSolveVariables\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/GetSolveVariables"], "\<\"GetTotalNoisePSD\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/GetTotalNoisePSD"], "\<\"GetTransferFunction\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/GetTransferFunction"], \
+"\<\"GetZVTimeConstants\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/ref/GetZVTimeConstants"], "\<\"LosslessQ\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/LosslessQ"], "\<\"NetlistCircuit\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/NetlistCircuit"], "\<\"NetworkData\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/NetworkData"], "\<\"Nodeset\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/Nodeset"], "\<\"ReciprocalQ\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ReciprocalQ"], "\<\"Resistor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/Resistor"], "\<\"SolveFullSystem\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/SolveFullSystem"], "\<\"SymmetricQ\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/ref/SymmetricQ"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Elements\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/guide/Elements"], "\<\"Control Structures\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/guide/ControlStructures"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Introduction to SCAPack\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Introduction To SCAPack"], "\<\"Netlists\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Netlists"], "\<\"Solving Circuits\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Solving Circuits"], "\<\"Noise Analysis\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Noise Analysis"], "\<\"Network \
+Parameters\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/NetworkParameters"], "\<\"Statistical \
+Analysis\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Statistical Analysis"], "\<\"Approximating \
+Transfer Functions\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Approximating Transfer Functions"], \
+"\<\"Sample Netlists\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Sample Netlists"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->
+         False], {"\<\"SCAPack/guide/Simple Circuit Analysis Package\"\>":>
+       None, "\<\"Copy Mathematica url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["SCAPack/guide/Simple Circuit Analysis Package"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/mathematica/SCAPack/guide/\
+Simple Circuit Analysis Package.html"], StandardForm]], "Input", 
+              TextClipboardType -> "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+            "http://reference.wolfram.com/mathematica/", 
+             "SCAPack/guide/Simple Circuit Analysis Package", ".html"]], 
+           None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Simple Circuit Analysis Package", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+SCAPack is a symbolic circuit analysis tool whose primary goal is to analyse \
+simple circuits\
+\>", "GuideAbstract",
+ CellID->2001916300],
+
+Cell[CellGroupData[{
+
+Cell["Equation Formation and Solving", "GuideFunctionsSubsection",
+ CellID->1773535267],
+
+Cell[TextData[{
+ ButtonBox["NetlistCircuit",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/NetlistCircuit"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["GetSolveVariables",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/GetSolveVariables"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["SolveFullSystem",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/SolveFullSystem"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["DisableSources",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/DisableSources"]
+}], "InlineGuideFunctionListing",
+ CellID->1816318649]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Basic Analyses", "GuideFunctionsSubsection",
+ CellID->734212109],
+
+Cell[TextData[{
+ ButtonBox["GetTransferFunction",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/GetTransferFunction"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["GetInputImpedance",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/GetInputImpedance"]
+}], "InlineGuideFunctionListing",
+ CellID->461880301]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Network Parameter Analyses", "GuideFunctionsSubsection",
+ CellID->343029712],
+
+Cell[TextData[{
+ ButtonBox["ComputeYParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeYParameter"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["ComputeZParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeZParameter"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["ComputeHParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeHParameter"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["ComputeGParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeGParameter"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["ComputeABCDParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeABCDParameter"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["ComputeSParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeSParameter"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["ComputeTParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeTParameter"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["NetworkData",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/NetworkData"]
+}], "InlineGuideFunctionListing",
+ CellID->1454261036]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Network Parameter Conversions", "GuideFunctionsSubsection",
+ CellID->65305067],
+
+Cell[TextData[{
+ ButtonBox["ConvertNetwork",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ConvertNetwork"],
+ " "
+}], "InlineGuideFunctionListing",
+ CellID->218117452]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Noise Analyses", "GuideFunctionsSubsection",
+ CellID->1344065282],
+
+Cell[TextData[{
+ Cell[TextData[ButtonBox["GetNoisePSD",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/GetNoisePSD"]], "InlineFunctionSans"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ Cell[TextData[ButtonBox["GetTotalNoisePSD",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/GetTotalNoisePSD"]], "InlineFunctionSans"]
+}], "InlineGuideFunctionListing",
+ CellID->980902226]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Pole-Zero Analyses", "GuideFunctionsSubsection",
+ CellID->324711781],
+
+Cell[TextData[Cell[TextData[ButtonBox["GetZVTimeConstants",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/ref/GetZVTimeConstants"]], "InlineFunctionSans"]], \
+"InlineGuideFunctionListing",
+ CellID->674956240]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Network Properties", "GuideFunctionsSubsection",
+ CellID->1422628062],
+
+Cell[TextData[{
+ ButtonBox["LosslessQ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/LosslessQ"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["SymmetricQ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/SymmetricQ"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["ReciprocalQ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ReciprocalQ"]
+}], "InlineGuideFunctionListing",
+ CellID->26912336]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Elements", "GuideFunctionsSubsection",
+ CellID->590718735],
+
+Cell[TextData[{
+ ButtonBox["Voltage Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Voltage Source"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Current Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Current Source"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Resistor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Resistor"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Capacitor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Capacitor"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["...",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/guide/Elements"]
+}], "InlineGuideFunctionListing",
+ CellID->392879064]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Control Structures", "GuideFunctionsSubsection",
+ CellID->1753697770],
+
+Cell[TextData[{
+ ButtonBox["Nodeset",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Nodeset"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["...",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/guide/Control Structures"]
+}], "InlineGuideFunctionListing",
+ CellID->185365315]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["TUTORIALS", "GuideTutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->415694126],
+
+Cell[TextData[ButtonBox["Introduction to SCAPack",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/tutorial/Introduction To SCAPack"]], "GuideTutorial",
+ CellID->887838579],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "GuideTutorial",
+ CellID->806871991],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Solving Circuits"]], "GuideTutorial",
+ CellID->1885805579],
+
+Cell[TextData[ButtonBox["Noise Analysis",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Noise Analysis"]], "GuideTutorial",
+ CellID->414759692],
+
+Cell[TextData[ButtonBox["Network Parameters",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/NetworkParameters"]], "GuideTutorial",
+ CellID->125046804],
+
+Cell[TextData[ButtonBox["Statistical Analysis",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Statistical Analysis"]], "GuideTutorial",\
+
+ CellID->1127376970],
+
+Cell[TextData[ButtonBox["Approximating Transfer Functions",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/tutorial/Approximating Transfer Functions"]], \
+"GuideTutorial",
+ CellID->134225282],
+
+Cell[TextData[ButtonBox["Sample Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Sample Netlists"]], "GuideTutorial",
+ CellID->123641349]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["MORE ABOUT", "GuideMoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->23220180],
+
+Cell[TextData[ButtonBox["Elements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/Elements"]], "GuideMoreAbout",
+ CellID->1567025153],
+
+Cell[TextData[ButtonBox["Control Structures",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/ControlStructures"]], "GuideMoreAbout",
+ CellID->252299663]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Simple Circuit Analysis Package - Wolfram Mathematica",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:SCAPack/guide/SCAPack", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}], 
+        Cell[">", "DockedLinkTrailSeparator"]}]}}, ColumnAlignments -> Left], 
+  "Metadata" -> {
+   "built" -> "{2012, 12, 9, 18, 19, 11.510767}", 
+    "history" -> {"0.1", "", "", ""}, "context" -> "SCAPack`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "S C A Pack Guide", "language" -> "en", "paclet" -> "SCAPack", "status" -> 
+    "None", "summary" -> 
+    "SCAPack is a symbolic circuit analysis tool whose primary goal is to \
+analyse simple circuits", "synonyms" -> {}, "title" -> 
+    "Simple Circuit Analysis Package", "titlemodifier" -> "", "windowtitle" -> 
+    "Simple Circuit Analysis Package", "type" -> "Guide", "uri" -> 
+    "SCAPack/guide/Simple Circuit Analysis Package"}, "SearchTextTranslated" -> 
+  ""},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[624, 21, 6404, 133, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[7053, 158, 73, 1, 70, "GuideTitle",
+ CellID->942062912],
+Cell[7129, 161, 148, 4, 70, "GuideAbstract",
+ CellID->2001916300],
+Cell[CellGroupData[{
+Cell[7302, 169, 87, 1, 70, "GuideFunctionsSubsection",
+ CellID->1773535267],
+Cell[7392, 172, 749, 23, 70, "InlineGuideFunctionListing",
+ CellID->1816318649]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8178, 200, 70, 1, 70, "GuideFunctionsSubsection",
+ CellID->734212109],
+Cell[8251, 203, 376, 11, 70, "InlineGuideFunctionListing",
+ CellID->461880301]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8664, 219, 82, 1, 70, "GuideFunctionsSubsection",
+ CellID->343029712],
+Cell[8749, 222, 1543, 47, 70, "InlineGuideFunctionListing",
+ CellID->1454261036]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10329, 274, 84, 1, 70, "GuideFunctionsSubsection",
+ CellID->65305067],
+Cell[10416, 277, 176, 6, 70, "InlineGuideFunctionListing",
+ CellID->218117452]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10629, 288, 71, 1, 70, "GuideFunctionsSubsection",
+ CellID->1344065282],
+Cell[10703, 291, 434, 11, 70, "InlineGuideFunctionListing",
+ CellID->980902226]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11174, 307, 74, 1, 70, "GuideFunctionsSubsection",
+ CellID->324711781],
+Cell[11251, 310, 214, 5, 70, "InlineGuideFunctionListing",
+ CellID->674956240]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11502, 320, 75, 1, 70, "GuideFunctionsSubsection",
+ CellID->1422628062],
+Cell[11580, 323, 525, 17, 70, "InlineGuideFunctionListing",
+ CellID->26912336]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12142, 345, 64, 1, 70, "GuideFunctionsSubsection",
+ CellID->590718735],
+Cell[12209, 348, 893, 29, 70, "InlineGuideFunctionListing",
+ CellID->392879064]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13139, 382, 75, 1, 70, "GuideFunctionsSubsection",
+ CellID->1753697770],
+Cell[13217, 385, 341, 11, 70, "InlineGuideFunctionListing",
+ CellID->185365315]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13607, 402, 91, 2, 70, "GuideTutorialsSection",
+ CellID->415694126],
+Cell[13701, 406, 176, 4, 70, "GuideTutorial",
+ CellID->887838579],
+Cell[13880, 412, 143, 3, 70, "GuideTutorial",
+ CellID->806871991],
+Cell[14026, 417, 160, 3, 70, "GuideTutorial",
+ CellID->1885805579],
+Cell[14189, 422, 155, 3, 70, "GuideTutorial",
+ CellID->414759692],
+Cell[14347, 427, 162, 3, 70, "GuideTutorial",
+ CellID->125046804],
+Cell[14512, 432, 170, 4, 70, "GuideTutorial",
+ CellID->1127376970],
+Cell[14685, 438, 196, 5, 70, "GuideTutorial",
+ CellID->134225282],
+Cell[14884, 445, 157, 3, 70, "GuideTutorial",
+ CellID->123641349]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15078, 453, 91, 2, 70, "GuideMoreAboutSection",
+ CellID->23220180],
+Cell[15172, 457, 142, 3, 70, "GuideMoreAbout",
+ CellID->1567025153],
+Cell[15317, 462, 160, 3, 70, "GuideMoreAbout",
+ CellID->252299663]
+}, Open  ]],
+Cell[15492, 468, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

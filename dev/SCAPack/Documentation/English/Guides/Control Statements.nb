@@ -1,0 +1,265 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      6238,        256]
+NotebookOptionsPosition[      3898,        171]
+NotebookOutlinePosition[      4328,        188]
+CellTagsIndexPosition[      4285,        185]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.1", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Guide", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/guide/Control Statements", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->795394057],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->802101],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->509823116],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->199884516],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->463951815],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->8237523],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->813936640],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Control Statements", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+SCAPack doesn't have very many netlist based control statements; most \
+operations are managed by the user during the solving process.\
+\>", "GuideAbstract",
+ CellChangeTimes->{{3.561577703541334*^9, 3.561577730209688*^9}, {
+  3.56157777757835*^9, 3.561577787066402*^9}},
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "GuideFunctionsSection",
+ CellID->1866139230],
+
+Cell[CellGroupData[{
+
+Cell["Node Voltages", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.561577877748*^9, 3.561577884480793*^9}},
+ CellID->278092473],
+
+Cell[TextData[ButtonBox["Nodeset",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/Nodeset"]], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.561577892404711*^9, 3.561577899912016*^9}},
+ CellID->975777839]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "GuideTutorialsSection",
+ CellID->415694126],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/SolvingCircuits"]], "GuideTutorial",
+ CellChangeTimes->{{3.5615777913991537`*^9, 3.56157782101223*^9}},
+ CellID->806871991],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "GuideTutorial",
+ CellChangeTimes->{{3.5615777986704807`*^9, 3.561577825046034*^9}},
+ CellID->1885805579]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "GuideMoreAboutSection",
+ CellID->23220180],
+
+Cell[TextData[ButtonBox["Elements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/Elements"]], "GuideMoreAbout",
+ CellChangeTimes->{{3.561577829281399*^9, 3.56157783899505*^9}},
+ CellID->1567025153]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{136, Automatic}, {Automatic, 105}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 325, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 78, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1059, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1142, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1222, 53, 77, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1336, 59, 56, 1, 17, "KeywordsSection",
+ CellID->1427428552],
+Cell[1395, 62, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1477, 68, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1533, 71, 63, 2, 70, "Details",
+ CellID->795394057],
+Cell[1599, 75, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1671, 79, 63, 2, 70, "Details",
+ CellID->802101],
+Cell[1737, 83, 71, 2, 70, "Details",
+ CellID->509823116],
+Cell[1811, 87, 61, 2, 70, "Details",
+ CellID->199884516],
+Cell[1875, 91, 61, 2, 70, "Details",
+ CellID->463951815],
+Cell[1939, 95, 61, 2, 70, "Details",
+ CellID->8237523],
+Cell[2003, 99, 78, 2, 70, "Details",
+ CellID->813936640],
+Cell[2084, 103, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2188, 110, 60, 1, 76, "GuideTitle",
+ CellID->942062912],
+Cell[2251, 113, 302, 6, 40, "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2590, 124, 54, 1, 69, "GuideFunctionsSection",
+ CellID->1866139230],
+Cell[CellGroupData[{
+Cell[2669, 129, 132, 2, 34, "GuideFunctionsSubsection",
+ CellID->278092473],
+Cell[2804, 133, 215, 4, 19, "InlineGuideFunctionListing",
+ CellID->975777839]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3068, 143, 62, 1, 71, "GuideTutorialsSection",
+ CellID->415694126],
+Cell[3133, 146, 225, 4, 21, "GuideTutorial",
+ CellID->806871991],
+Cell[3361, 152, 212, 4, 20, "GuideTutorial",
+ CellID->1885805579]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3610, 161, 62, 1, 71, "GuideMoreAboutSection",
+ CellID->23220180],
+Cell[3675, 164, 207, 4, 20, "GuideMoreAbout",
+ CellID->1567025153]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

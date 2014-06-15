@@ -1,0 +1,593 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     16441,        584]
+NotebookOptionsPosition[     12106,        437]
+NotebookOutlinePosition[     12535,        454]
+CellTagsIndexPosition[     12492,        451]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.1", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Guide", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/guide/Simple Circuit Analysis Package", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->795394057],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->802101],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->509823116],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->199884516],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->463951815],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->8237523],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->813936640],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Simple Circuit Analysis Package", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+SCAPack is a symbolic circuit analysis tool whose primary goal is to analyse \
+simple circuits\
+\>", "GuideAbstract",
+ CellChangeTimes->{{3.561578291863676*^9, 3.561578292920573*^9}, {
+  3.561578341547351*^9, 3.561578368403337*^9}},
+ CellID->2001916300]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "GuideFunctionsSection",
+ CellID->1866139230],
+
+Cell[CellGroupData[{
+
+Cell["Equation Formation and Solving", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.561579509239625*^9, 3.5615795141035624`*^9}},
+ CellID->1773535267],
+
+Cell[TextData[{
+ ButtonBox["NetlistCircuit",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/NetlistCircuit"],
+ " . ",
+ ButtonBox["GetSolveVariables",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/GetSolveVariables"],
+ " . ",
+ ButtonBox["SolveFullSystem",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/SolveFullSystem"],
+ " . ",
+ ButtonBox["DisableSources",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/DisableSources"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.5615798071391697`*^9, 3.561579840612184*^9}, {
+  3.56227000939338*^9, 3.562270058593525*^9}},
+ CellID->1816318649]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Basic Analyses", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.561579536610566*^9, 3.561579548597443*^9}, {
+  3.562916981933322*^9, 3.5629169823918543`*^9}},
+ CellID->734212109],
+
+Cell[TextData[{
+ ButtonBox["GetTransferFunction",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/GetTransferFunction"],
+ " . ",
+ ButtonBox["GetInputImpedance",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/GetInputImpedance"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.561579710454762*^9, 3.561579764304528*^9}, {
+  3.562917082254876*^9, 3.5629170953130817`*^9}},
+ CellID->461880301]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Network Parameter Analyses", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.562915705219262*^9, 3.562915708562668*^9}, {
+  3.562916971296397*^9, 3.562916972876259*^9}},
+ CellID->343029712],
+
+Cell[TextData[{
+ ButtonBox["ComputeYParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeYParameter"],
+ " . ",
+ ButtonBox["ComputeZParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeZParameter"],
+ " . ",
+ ButtonBox["ComputeHParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeHParameter"],
+ " . ",
+ ButtonBox["ComputeGParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeGParameter"],
+ " . ",
+ ButtonBox["ComputeABCDParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeABCDParameter"],
+ " . ",
+ ButtonBox["ComputeSParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeSParameter"],
+ " . ",
+ ButtonBox["ComputeTParameter",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ComputeTParameter"],
+ " . ",
+ ButtonBox["NetworkData",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/NetworkData"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.562915718154621*^9, 3.562915839219059*^9}, {
+  3.563258815880146*^9, 3.563258850359035*^9}},
+ CellID->1454261036]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Network Parameter Conversions", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.563258710202038*^9, 3.563258713817965*^9}},
+ CellID->65305067],
+
+Cell[TextData[{
+ ButtonBox["ConvertNetwork",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ConvertNetwork"],
+ " "
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.563258739282221*^9, 3.563258779525432*^9}},
+ CellID->218117452]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Noise Analyses", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.5629169910007687`*^9, 3.56291699304185*^9}},
+ CellID->1344065282],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["GetNoisePSD",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/GetNoisePSD"]], "InlineFormula"],
+ " . ",
+ Cell[BoxData[
+  ButtonBox["GetTotalNoisePSD",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/GetTotalNoisePSD"]], "InlineFormula"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.562917057324916*^9, 3.562917071706605*^9}},
+ CellID->980902226]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Pole-Zero Analyses", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.562917022116249*^9, 3.5629170248918457`*^9}},
+ CellID->324711781],
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox["GetZVTimeConstants",
+  BaseStyle->"Link",
+  ButtonData->
+   "paclet:SCAPack/ref/GetZVTimeConstants"]], "InlineFormula"]], \
+"InlineGuideFunctionListing",
+ CellChangeTimes->{{3.562917032944235*^9, 3.56291704450873*^9}},
+ CellID->674956240]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Network Properties", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.5629165252563143`*^9, 3.562916528624016*^9}},
+ CellID->1422628062],
+
+Cell[TextData[{
+ ButtonBox["LosslessQ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/LosslessQ"],
+ " . ",
+ ButtonBox["SymmetricQ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/SymmetricQ"],
+ " . ",
+ ButtonBox["ReciprocalQ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/ReciprocalQ"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.562916537521052*^9, 3.5629165870323257`*^9}, {
+  3.562916729871245*^9, 3.562916750667079*^9}, {3.562916800754965*^9, 
+  3.562916808371229*^9}, {3.5633339967261553`*^9, 3.5633339986515303`*^9}},
+ CellID->26912336]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Elements", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.561581227066989*^9, 3.561581227830202*^9}},
+ CellID->590718735],
+
+Cell[TextData[{
+ ButtonBox["Voltage Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Voltage Source"],
+ " . ",
+ ButtonBox["Current Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Current Source"],
+ " . ",
+ ButtonBox["Resistor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Resistor"],
+ " . ",
+ ButtonBox["Capacitor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Capacitor"],
+ " . ",
+ ButtonBox["...",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/guide/Elements"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.561581286488626*^9, 3.561581293630662*^9}, {
+   3.561581334577265*^9, 3.561581371508894*^9}, {3.56158142709048*^9, 
+   3.561581454909656*^9}, {3.561586786901876*^9, 3.5615868036404257`*^9}, 
+   3.561686517899748*^9},
+ CellID->392879064]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Control Structures", "GuideFunctionsSubsection",
+ CellChangeTimes->{{3.56158145982593*^9, 3.5615814620415077`*^9}},
+ CellID->1753697770],
+
+Cell[TextData[{
+ ButtonBox["Nodeset",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Nodeset"],
+ " . ",
+ ButtonBox["...",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/guide/Control Structures"]
+}], "InlineGuideFunctionListing",
+ CellChangeTimes->{{3.5615814713686438`*^9, 3.5615815150603*^9}},
+ CellID->185365315]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "GuideTutorialsSection",
+ CellID->415694126],
+
+Cell[TextData[ButtonBox["Introduction to SCAPack",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/tutorial/Introduction To SCAPack"]], "GuideTutorial",
+ CellChangeTimes->{{3.5619598207830687`*^9, 3.561959823365522*^9}, {
+  3.5619598575582333`*^9, 3.561959857713573*^9}, {3.561959889662808*^9, 
+  3.561959889696774*^9}},
+ CellID->887838579],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "GuideTutorial",
+ CellChangeTimes->{{3.5615782367354794`*^9, 3.561578237434407*^9}, {
+  3.5615782846972103`*^9, 3.561578284861739*^9}},
+ CellID->806871991],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Solving Circuits"]], "GuideTutorial",
+ CellChangeTimes->{{3.561578240662196*^9, 3.561578243036315*^9}, {
+  3.561578282064835*^9, 3.561578282228962*^9}, {3.5616864655514402`*^9, 
+  3.56168646560962*^9}},
+ CellID->1885805579],
+
+Cell[TextData[ButtonBox["Noise Analysis",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Noise Analysis"]], "GuideTutorial",
+ CellChangeTimes->{{3.5615782450709467`*^9, 3.561578246780278*^9}, {
+  3.5615782790147142`*^9, 3.5615782791781816`*^9}, {3.561686461235214*^9, 
+  3.561686461386232*^9}},
+ CellID->414759692],
+
+Cell[TextData[ButtonBox["Network Parameters",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/NetworkParameters"]], "GuideTutorial",
+ CellChangeTimes->{{3.56291580587528*^9, 3.562915812884542*^9}},
+ CellID->125046804],
+
+Cell[TextData[ButtonBox["Statistical Analysis",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Statistical Analysis"]], "GuideTutorial",\
+
+ CellChangeTimes->{{3.5621276285852423`*^9, 3.562127640496427*^9}},
+ CellID->1127376970],
+
+Cell[TextData[ButtonBox["Approximating Transfer Functions",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/tutorial/Approximating Transfer Functions"]], \
+"GuideTutorial",
+ CellChangeTimes->{{3.561578247618476*^9, 3.561578275747529*^9}, {
+  3.561686426342175*^9, 3.561686454805192*^9}},
+ CellID->134225282],
+
+Cell[TextData[ButtonBox["Sample Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Sample Netlists"]], "GuideTutorial",
+ CellChangeTimes->{{3.561686482625814*^9, 3.5616864997746477`*^9}},
+ CellID->123641349]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "GuideMoreAboutSection",
+ CellID->23220180],
+
+Cell[TextData[ButtonBox["Elements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/Elements"]], "GuideMoreAbout",
+ CellChangeTimes->{{3.561578255022903*^9, 3.561578271144861*^9}},
+ CellID->1567025153],
+
+Cell[TextData[ButtonBox["Control Structures",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/ControlStructures"]], "GuideMoreAbout",
+ CellChangeTimes->{{3.5615782577065897`*^9, 3.561578266927931*^9}},
+ CellID->252299663]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{Automatic, 188}, {72, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "GuidePageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 325, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 78, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1059, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1142, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1222, 53, 90, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1349, 59, 56, 1, 17, "KeywordsSection",
+ CellID->1427428552],
+Cell[1408, 62, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1490, 68, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1546, 71, 63, 2, 70, "Details",
+ CellID->795394057],
+Cell[1612, 75, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1684, 79, 63, 2, 70, "Details",
+ CellID->802101],
+Cell[1750, 83, 71, 2, 70, "Details",
+ CellID->509823116],
+Cell[1824, 87, 61, 2, 70, "Details",
+ CellID->199884516],
+Cell[1888, 91, 61, 2, 70, "Details",
+ CellID->463951815],
+Cell[1952, 95, 61, 2, 70, "Details",
+ CellID->8237523],
+Cell[2016, 99, 78, 2, 70, "Details",
+ CellID->813936640],
+Cell[2097, 103, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2201, 110, 73, 1, 76, "GuideTitle",
+ CellID->942062912],
+Cell[2277, 113, 263, 6, 25, "GuideAbstract",
+ CellID->2001916300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2577, 124, 54, 1, 69, "GuideFunctionsSection",
+ CellID->1866139230],
+Cell[CellGroupData[{
+Cell[2656, 129, 155, 2, 33, "GuideFunctionsSubsection",
+ CellID->1773535267],
+Cell[2814, 133, 625, 19, 19, "InlineGuideFunctionListing",
+ CellID->1816318649]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3476, 157, 187, 3, 33, "GuideFunctionsSubsection",
+ CellID->734212109],
+Cell[3666, 162, 413, 11, 19, "InlineGuideFunctionListing",
+ CellID->461880301]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4116, 178, 197, 3, 33, "GuideFunctionsSubsection",
+ CellID->343029712],
+Cell[4316, 183, 1098, 35, 45, "InlineGuideFunctionListing",
+ CellID->1454261036]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5451, 223, 150, 2, 33, "GuideFunctionsSubsection",
+ CellID->65305067],
+Cell[5604, 227, 242, 7, 19, "InlineGuideFunctionListing",
+ CellID->218117452]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5883, 239, 138, 2, 33, "GuideFunctionsSubsection",
+ CellID->1344065282],
+Cell[6024, 243, 418, 12, 19, "InlineGuideFunctionListing",
+ CellID->980902226]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6479, 260, 142, 2, 33, "GuideFunctionsSubsection",
+ CellID->324711781],
+Cell[6624, 264, 278, 7, 19, "InlineGuideFunctionListing",
+ CellID->674956240]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6939, 276, 143, 2, 33, "GuideFunctionsSubsection",
+ CellID->1422628062],
+Cell[7085, 280, 581, 16, 19, "InlineGuideFunctionListing",
+ CellID->26912336]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7703, 301, 130, 2, 33, "GuideFunctionsSubsection",
+ CellID->590718735],
+Cell[7836, 305, 812, 25, 19, "InlineGuideFunctionListing",
+ CellID->392879064]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8685, 335, 142, 2, 33, "GuideFunctionsSubsection",
+ CellID->1753697770],
+Cell[8830, 339, 327, 10, 19, "InlineGuideFunctionListing",
+ CellID->185365315]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9206, 355, 62, 1, 71, "GuideTutorialsSection",
+ CellID->415694126],
+Cell[9271, 358, 344, 7, 20, "GuideTutorial",
+ CellID->887838579],
+Cell[9618, 367, 262, 5, 20, "GuideTutorial",
+ CellID->806871991],
+Cell[9883, 374, 325, 6, 20, "GuideTutorial",
+ CellID->1885805579],
+Cell[10211, 382, 325, 6, 20, "GuideTutorial",
+ CellID->414759692],
+Cell[10539, 390, 227, 4, 20, "GuideTutorial",
+ CellID->125046804],
+Cell[10769, 396, 238, 5, 20, "GuideTutorial",
+ CellID->1127376970],
+Cell[11010, 403, 311, 7, 20, "GuideTutorial",
+ CellID->134225282],
+Cell[11324, 412, 225, 4, 20, "GuideTutorial",
+ CellID->123641349]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11586, 421, 62, 1, 71, "GuideMoreAboutSection",
+ CellID->23220180],
+Cell[11651, 424, 208, 4, 20, "GuideMoreAbout",
+ CellID->1567025153],
+Cell[11862, 430, 228, 4, 20, "GuideMoreAbout",
+ CellID->252299663]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,1 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{&quot;res&quot;, {in, out}, &quot;r1&quot;, {Gvalue -&gt; 1/R}}</pre><div class='IFU'><a name='1464443119'></a>http://wolfram.com/xid/0gb0t40z9n21pl5y6qom82-yh6dtt</div>

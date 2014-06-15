@@ -1,0 +1,387 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      9677,        378]
+NotebookOptionsPosition[      7034,        280]
+NotebookOutlinePosition[      7491,        298]
+CellTagsIndexPosition[      7448,        295]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.1", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/ref/Gyrator", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Gyrator", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{"\"\<gyrator\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      StyleBox["inpos", "TI"], ",", 
+      StyleBox["inneg", "TI"], ",", 
+      StyleBox["outpos", "TI"], ",", 
+      StyleBox["outneg", "TI"]}], "}"}], ",", "\"\<\!\(\*
+StyleBox[\"name\", \"TI\"]\)\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"A", "\[Rule]", 
+      StyleBox["gain", "TI"]}], "}"}]}], "}"}]], "InlineFormula"],
+ " \[LineSeparator]implements a gyrator between the input terminals, ",
+ StyleBox["inpos", "TI"],
+ " and ",
+ StyleBox["inneg", "TI"],
+ ", and the output terminals, ",
+ StyleBox["outpos", "TI"],
+ " and ",
+ StyleBox["outneg", "TI"],
+ "."
+}], "Usage",
+ CellChangeTimes->{{3.5616790467142887`*^9, 3.561679112777506*^9}},
+ CellID->982511436],
+
+Cell["\<\
+The gain parameter is optional.\
+\>", "Notes",
+ CellChangeTimes->{{3.561679127296317*^9, 3.5616791347939787`*^9}},
+ CellID->1067943069]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "Tutorials",
+ CellChangeTimes->{{3.5616790397797127`*^9, 3.561679044158698*^9}},
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell[TextData[ButtonBox["Nullor",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/Nullor"]], "SeeAlso",
+ CellChangeTimes->{{3.5616790272061462`*^9, 3.56167903155904*^9}},
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<volt\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vin", ",", "0"}], "}"}], ",", "\"\<v1\>\"", ",", 
+      RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<gyrator\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vin", ",", "0", ",", "v1", ",", "0"}], "}"}], ",", 
+      "\"\<g1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"A", "\[Rule]", "n1"}], "}"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<gyrator\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"v1", ",", "0", ",", "vout", ",", "0"}], "}"}], ",", 
+      "\"\<g2\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"A", "\[Rule]", "n2"}], "}"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<res\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<r1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Gvalue", "\[Rule]", 
+        RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+   "}"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SolveFullSystem", "[", "%", "]"}]}], "Input",
+ CellChangeTimes->{{3.560982485289393*^9, 3.560982489733273*^9}, {
+   3.5609825254444447`*^9, 3.560982727384706*^9}, {3.560982766438489*^9, 
+   3.560982796978359*^9}, {3.560982883748267*^9, 3.5609828839247303`*^9}, {
+   3.561003322062521*^9, 3.5610033865364513`*^9}, {3.561004335223014*^9, 
+   3.56100435694705*^9}, {3.561005023127303*^9, 3.561005055640843*^9}, {
+   3.561679017850068*^9, 3.561679020029673*^9}, 3.562212239276581*^9},
+ CellLabel->"In[1]:=",
+ CellID->1286189781],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"I$v1", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["n2", "2"], " ", "vin"}], 
+       RowBox[{
+        SuperscriptBox["n1", "2"], " ", "R"}]]}]}], ",", 
+    RowBox[{"v1", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["n2", "2"], " ", "vin"}], 
+      RowBox[{"n1", " ", "R"}]]}], ",", 
+    RowBox[{"vout", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"n2", " ", "vin"}], "n1"]}]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.562212253982664*^9, 3.5622122623142223`*^9}},
+ CellLabel->"Out[2]=",
+ CellID->786560762]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{153, Automatic}, {123, Automatic}},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 325, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1060, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1143, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1223, 53, 64, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1324, 59, 55, 1, 17, "KeywordsSection",
+ CellID->477174294],
+Cell[1382, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1464, 68, 65, 1, 17, "TemplatesSection",
+ CellID->1872225408],
+Cell[1532, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1629, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1714, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1798, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1917, 90, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1973, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2039, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2111, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2178, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2250, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2314, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2378, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2444, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2525, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2629, 132, 50, 1, 62, "ObjectName",
+ CellID->1224892054],
+Cell[2682, 135, 802, 26, 86, "Usage",
+ CellID->982511436],
+Cell[3487, 163, 145, 4, 23, "Notes",
+ CellID->1067943069]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3669, 172, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[3729, 175, 207, 4, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3973, 184, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[4031, 187, 195, 4, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4263, 196, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[4644, 211, 1686, 41, 114, "Input",
+ CellID->1286189781],
+Cell[6333, 254, 673, 22, 45, "Output",
+ CellID->786560762]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,7 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{
+  {&quot;volt&quot;, {vin, 0}, &quot;v1&quot;, {}},
+  {&quot;resnoisy&quot;, {vin, vout}, &quot;r1&quot;, {Gvalue -&gt; 1/R}},
+  {&quot;resnoisy&quot;, {vout, 0}, &quot;r2&quot;, {Gvalue -&gt; 1/Rleak}},
+  {&quot;cap&quot;, {vout, 0}, &quot;c1&quot;, {Cvalue -&gt; C}}
+  };
+GetTotalNoisePSD[%, {vout, 0}]</pre><div class='IFU'><a name='2108334573'></a>http://wolfram.com/xid/004wzy7px3ctj8976il59ft0d8v-85i7nj</div>

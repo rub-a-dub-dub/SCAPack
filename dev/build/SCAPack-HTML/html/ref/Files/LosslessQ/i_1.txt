@@ -1,0 +1,6 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>shuntR = {
+   {&quot;res&quot;, {v1, 0}, &quot;r1&quot;, {Rvalue -&gt; R}},
+   {&quot;vprobe&quot;, {v1, 0}, &quot;vp1&quot;, {}}
+   };
+ComputeYNetwork[shuntR, {{v1, 0}, {v1, 0}}];
+LosslessQ[%]</pre><div class='IFU'><a name='724173034'></a>http://wolfram.com/xid/0cy123x5t0e18f2e9waih0z-l9ftrw</div>

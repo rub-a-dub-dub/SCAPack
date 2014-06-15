@@ -1,0 +1,1354 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     50890,       1345]
+NotebookOptionsPosition[     49000,       1278]
+NotebookOutlinePosition[     49355,       1294]
+CellTagsIndexPosition[     49312,       1291]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Simple Circuits", "Section",
+ CellChangeTimes->{{3.560213233211053*^9, 3.560213238357019*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"resistor", " ", "divider"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"testNetlist7", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<volt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vi", ",", "0"}], "}"}], ",", "\"\<V1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vi", ",", "Vx"}], "}"}], ",", "\"\<R1\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R1"]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vx", ",", "0"}], "}"}], ",", "\"\<R2\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R2"]}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+      "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"SolveFullSystem", "[", "testNetlist7", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"GetTransferFunction", "[", 
+    RowBox[{"testNetlist7", ",", 
+     RowBox[{"{", 
+      RowBox[{"Vx", ",", "Vi"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.5602132391808643`*^9, 3.560213403896139*^9}, {
+  3.561268785190021*^9, 3.561268786844619*^9}, {3.56169370199647*^9, 
+  3.561693704934182*^9}, {3.561694259084751*^9, 3.561694260568774*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"I$V1", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox["Vi", 
+       RowBox[{"R1", "+", "R2"}]]}]}], ",", 
+    RowBox[{"Vx", "\[Rule]", 
+     FractionBox[
+      RowBox[{"R2", " ", "Vi"}], 
+      RowBox[{"R1", "+", "R2"}]]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.560213348230876*^9, 3.560213364527636*^9}, 
+   3.560450830634808*^9, 3.560452504878942*^9, 3.561268787259053*^9, 
+   3.561691003811805*^9, 3.561693705365383*^9, {3.561694237425322*^9, 
+   3.561694261091371*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  FractionBox["R2", 
+   RowBox[{"R1", "+", "R2"}]], "}"}]], "Output",
+ CellChangeTimes->{{3.560213348230876*^9, 3.560213364527636*^9}, 
+   3.560450830634808*^9, 3.560452504878942*^9, 3.561268787259053*^9, 
+   3.561691003811805*^9, 3.561693705365383*^9, {3.561694237425322*^9, 
+   3.561694261094232*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"current", " ", "through", " ", "a", " ", "resistor"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"testNetlist8", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<Cur\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vi", ",", "0"}], "}"}], ",", "\"\<I1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vi", ",", "0"}], "}"}], ",", "\"\<R1\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R1"]}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+      "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"GetTransferFunction", "[", 
+    RowBox[{"testNetlist8", ",", 
+     RowBox[{"{", 
+      RowBox[{"Vi", ",", "I$I1"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.560213370843746*^9, 3.560213371380481*^9}, {
+   3.5602134278509274`*^9, 3.560213535204064*^9}, {3.56021356792517*^9, 
+   3.56021357231964*^9}, 3.56021369176155*^9, 3.56021373771807*^9, {
+   3.5602137813094788`*^9, 3.560213838166803*^9}, {3.561268779696731*^9, 
+   3.5612687809432993`*^9}, {3.5616943323818617`*^9, 3.561694332786244*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "svars"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Equations may not give solutions for all \\\"solve\\\" \
+variables. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
+\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/svars\\\", \
+ButtonNote -> \\\"Solve::svars\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5612687813581142`*^9, 3.561343637902624*^9, 
+  3.5616943332155313`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", "R1", "}"}]], "Output",
+ CellChangeTimes->{{3.560213509411827*^9, 3.560213535511633*^9}, 
+   3.560213572711479*^9, {3.56021362166247*^9, 3.560213633594853*^9}, {
+   3.560213693316946*^9, 3.5602137384275084`*^9}, {3.5602137870944023`*^9, 
+   3.560213844142786*^9}, 3.560450830749833*^9, 3.560452504944643*^9, {
+   3.561268774923893*^9, 3.561268781360311*^9}, 3.561343637906047*^9, 
+   3.561694333218543*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "a", " ", "more", " ", "complex", " ", "current", " ", "driver", " ", 
+    "network"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"testNetlist9", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<Cur\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vi", ",", "0"}], "}"}], ",", "\"\<I1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vi", ",", "Vx"}], "}"}], ",", "\"\<R1\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R1"]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vx", ",", "0"}], "}"}], ",", "\"\<R2\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R2"]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vx", ",", "Vy"}], "}"}], ",", "\"\<R3\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R1"]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vy", ",", "0"}], "}"}], ",", "\"\<R4\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R2"]}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+      "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"GetTransferFunction", "[", 
+    RowBox[{"testNetlist9", ",", 
+     RowBox[{"{", 
+      RowBox[{"Vy", ",", "I$I1"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.560213851518545*^9, 3.5602139886369877`*^9}, {
+  3.561268790086236*^9, 3.561268793688302*^9}, {3.561694338043664*^9, 
+  3.561694342254884*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "svars"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Equations may not give solutions for all \\\"solve\\\" \
+variables. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
+\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/svars\\\", \
+ButtonNote -> \\\"Solve::svars\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.561268794110587*^9, 3.5616943433572206`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  FractionBox[
+   SuperscriptBox["R2", "2"], 
+   RowBox[{"R1", "+", 
+    RowBox[{"2", " ", "R2"}]}]], "}"}]], "Output",
+ CellChangeTimes->{3.560213989543046*^9, 3.560450830801996*^9, 
+  3.560452504979494*^9, 3.561268794112722*^9, 3.561694343360763*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"same", " ", "network", " ", "as", " ", "before"}], ",", " ", 
+    RowBox[{"but", " ", "with", " ", "a", " ", "current", " ", "probe"}]}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"testNetlist10", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<Cur\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vi", ",", "0"}], "}"}], ",", "\"\<I1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vi", ",", "Vx"}], "}"}], ",", "\"\<R1\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R1"]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vx", ",", "0"}], "}"}], ",", "\"\<R2\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R2"]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vx", ",", "Vy"}], "}"}], ",", "\"\<R3\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R1"]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vy", ",", "Vz"}], "}"}], ",", "\"\<R4\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"G", "\[Rule]", 
+           FractionBox["1", "R2"]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Iprobe\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vz", ",", "0"}], "}"}], ",", "\"\<Ip1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"SolveFullSystem", "[", "testNetlist10", "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"GetSolveVariables", "[", "%%", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.560214783122959*^9, 3.560214882851321*^9}, {
+  3.560215062135872*^9, 3.5602151226300364`*^9}, {3.560222448282874*^9, 
+  3.560222482372737*^9}, {3.56022268662843*^9, 3.5602227015934887`*^9}, {
+  3.5602230201785593`*^9, 3.560223042002076*^9}, {3.5602245531541986`*^9, 
+  3.560224565309823*^9}, {3.560224964359335*^9, 3.56022497300287*^9}, {
+  3.561694346917869*^9, 3.561694350633584*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "svars"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Equations may not give solutions for all \\\"solve\\\" \
+variables. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\
+\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/svars\\\", \
+ButtonNote -> \\\"Solve::svars\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.561268796740602*^9, {3.56126894131511*^9, 3.561268949494082*^9}, {
+   3.561304456846066*^9, 3.5613044966733637`*^9}, 3.561694352042012*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"I$Ip1", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox["Vx", 
+       RowBox[{
+        RowBox[{"-", "R1"}], "-", "R2"}]]}]}], ",", 
+    RowBox[{"I$I1", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "R1"}], "-", 
+          RowBox[{"2", " ", "R2"}]}], ")"}], " ", "Vx"}], 
+       RowBox[{"R2", " ", 
+        RowBox[{"(", 
+         RowBox[{"R1", "+", "R2"}], ")"}]}]]}]}], ",", 
+    RowBox[{"Vi", "\[Rule]", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "2"}], "-", 
+         FractionBox["R1", "R2"], "+", 
+         FractionBox["R2", 
+          RowBox[{"R1", "+", "R2"}]]}], ")"}]}], " ", "Vx"}]}], ",", 
+    RowBox[{"Vy", "\[Rule]", 
+     FractionBox[
+      RowBox[{"R2", " ", "Vx"}], 
+      RowBox[{"R1", "+", "R2"}]]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.560214851173025*^9, 3.560214883289743*^9}, 
+   3.560215064507988*^9, {3.560215101278727*^9, 3.560215123000226*^9}, {
+   3.560222452171855*^9, 3.56022248277135*^9}, {3.5602226872711763`*^9, 
+   3.5602227022712793`*^9}, {3.560222798187847*^9, 3.5602228201382513`*^9}, {
+   3.560223012070187*^9, 3.560223042386963*^9}, 3.560224567051136*^9, {
+   3.560224969628243*^9, 3.560224983185513*^9}, {3.560225244927073*^9, 
+   3.560225268850313*^9}, 3.560450830836206*^9, 3.560452505017583*^9, 
+   3.5612687967454033`*^9, {3.561268941317874*^9, 3.561268949496813*^9}, {
+   3.561304456848754*^9, 3.561304496678721*^9}, 3.561694352047585*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"I$Ip1", ",", "I$I1", ",", "Vi", ",", "Vx", ",", "Vy"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.560214851173025*^9, 3.560214883289743*^9}, 
+   3.560215064507988*^9, {3.560215101278727*^9, 3.560215123000226*^9}, {
+   3.560222452171855*^9, 3.56022248277135*^9}, {3.5602226872711763`*^9, 
+   3.5602227022712793`*^9}, {3.560222798187847*^9, 3.5602228201382513`*^9}, {
+   3.560223012070187*^9, 3.560223042386963*^9}, 3.560224567051136*^9, {
+   3.560224969628243*^9, 3.560224983185513*^9}, {3.560225244927073*^9, 
+   3.560225268850313*^9}, 3.560450830836206*^9, 3.560452505017583*^9, 
+   3.5612687967454033`*^9, {3.561268941317874*^9, 3.561268949496813*^9}, {
+   3.561304456848754*^9, 3.561304496678721*^9}, 3.561694352050323*^9}]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["MOS Transistors", "Section",
+ CellChangeTimes->{{3.560213216495679*^9, 3.5602132190749693`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Diff", " ", "pair", " ", "with", " ", "tail", " ", "source", " ", 
+     "modelled", " ", "as", " ", "resistor"}], ",", " ", 
+    RowBox[{"no", " ", "Cgx"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"testNetlist4", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<MOS\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vop", ",", "Vin", ",", "Vs", ",", "0"}], "}"}], ",", 
+         "\"\<Q1\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Cgs", "\[Rule]", "0"}], ",", 
+           RowBox[{"Cgd", "\[Rule]", "0"}]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<MOS\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Von", ",", "Vip", ",", "Vs", ",", "0"}], "}"}], ",", 
+         "\"\<Q2\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Cgs", "\[Rule]", "0"}], ",", 
+           RowBox[{"Cgd", "\[Rule]", "0"}]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vs", ",", "0"}], "}"}], ",", "\"\<Gt\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Volt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vip", ",", "Vin"}], "}"}], ",", "\"\<V1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Vprobe\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vop", ",", "Von"}], "}"}], ",", "\"\<Vp1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"testNetlist4Eqns", "=", 
+    RowBox[{"NetlistCircuit", "[", "testNetlist4", "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"testNetlist4Vars", "=", 
+    RowBox[{"GetSolveVariables", "[", "testNetlist4", "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Solve", "[", 
+    RowBox[{"testNetlist4Eqns", ",", "testNetlist4Vars"}], "]"}]}]}]], "Input",\
+
+ CellChangeTimes->{{3.5595903288368683`*^9, 3.5595904938383207`*^9}, {
+  3.559590540350727*^9, 3.559590560519288*^9}, {3.559591151902884*^9, 
+  3.5595911843270016`*^9}, {3.559591244079089*^9, 3.5595912998871756`*^9}, {
+  3.560014422732877*^9, 3.5600144289886713`*^9}, {3.561264022279745*^9, 
+  3.5612640408541117`*^9}, {3.561264150761881*^9, 3.5612641510680923`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Gm", " ", "Vin"}], "+", 
+     RowBox[{"Gds", " ", "Vop"}], "+", 
+     RowBox[{"Cdb", " ", "s", " ", "Vop"}], "-", 
+     RowBox[{"Gds", " ", "Vs"}], "-", 
+     RowBox[{"Gm", " ", "Vs"}], "-", 
+     RowBox[{"Gmb", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "I$V1"}], "+", 
+     RowBox[{"Cgb", " ", "s", " ", "Vin"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "Gm"}], " ", "Vin"}], "-", 
+     RowBox[{"Gm", " ", "Vip"}], "-", 
+     RowBox[{"Gds", " ", "Von"}], "-", 
+     RowBox[{"Gds", " ", "Vop"}], "+", 
+     RowBox[{"G", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Gds", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Gm", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Gmb", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Csb", " ", "s", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Gm", " ", "Vip"}], "+", 
+     RowBox[{"Gds", " ", "Von"}], "+", 
+     RowBox[{"Cdb", " ", "s", " ", "Von"}], "-", 
+     RowBox[{"Gds", " ", "Vs"}], "-", 
+     RowBox[{"Gm", " ", "Vs"}], "-", 
+     RowBox[{"Gmb", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{"I$V1", "+", 
+     RowBox[{"Cgb", " ", "s", " ", "Vip"}]}], "\[Equal]", "0"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.5595904386928177`*^9, 3.559590494135358*^9}, {
+   3.5595905537004223`*^9, 3.5595905611163635`*^9}, 3.559590747773066*^9, {
+   3.55959084041533*^9, 3.5595908570319405`*^9}, 3.559590892722472*^9, 
+   3.5595909517994742`*^9, {3.559590985743785*^9, 3.5595910083591566`*^9}, {
+   3.5595910886993585`*^9, 3.5595911129284353`*^9}, {3.5595911437138443`*^9, 
+   3.5595911853251286`*^9}, {3.5595912374932528`*^9, 3.559591261751833*^9}, 
+   3.5600144296397533`*^9, 3.560450830967537*^9, 3.560452505196941*^9, 
+   3.561263993483683*^9, 3.56126404119948*^9, {3.561264147332672*^9, 
+   3.561264154535125*^9}, 3.561264308198872*^9, 3.561694366423915*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"I$V1", ",", "Vop", ",", "Von", ",", "Vip", ",", "Vs"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.5595904386928177`*^9, 3.559590494135358*^9}, {
+   3.5595905537004223`*^9, 3.5595905611163635`*^9}, 3.559590747773066*^9, {
+   3.55959084041533*^9, 3.5595908570319405`*^9}, 3.559590892722472*^9, 
+   3.5595909517994742`*^9, {3.559590985743785*^9, 3.5595910083591566`*^9}, {
+   3.5595910886993585`*^9, 3.5595911129284353`*^9}, {3.5595911437138443`*^9, 
+   3.5595911853251286`*^9}, {3.5595912374932528`*^9, 3.559591261751833*^9}, 
+   3.5600144296397533`*^9, 3.560450830967537*^9, 3.560452505196941*^9, 
+   3.561263993483683*^9, 3.56126404119948*^9, {3.561264147332672*^9, 
+   3.561264154535125*^9}, 3.561264308198872*^9, 3.561694366427328*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"I$V1", "\[Rule]", 
+     RowBox[{"Cgb", " ", "s", " ", "Vin"}]}], ",", 
+    RowBox[{"Vop", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"Gm", " ", "Vin"}], 
+       RowBox[{"Gds", "+", 
+        RowBox[{"Cdb", " ", "s"}]}]]}]}], ",", 
+    RowBox[{"Von", "\[Rule]", 
+     FractionBox[
+      RowBox[{"Gm", " ", "Vin"}], 
+      RowBox[{"Gds", "+", 
+       RowBox[{"Cdb", " ", "s"}]}]]}], ",", 
+    RowBox[{"Vip", "\[Rule]", 
+     RowBox[{"-", "Vin"}]}], ",", 
+    RowBox[{"Vs", "\[Rule]", "0"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.5595904386928177`*^9, 3.559590494135358*^9}, {
+   3.5595905537004223`*^9, 3.5595905611163635`*^9}, 3.559590747773066*^9, {
+   3.55959084041533*^9, 3.5595908570319405`*^9}, 3.559590892722472*^9, 
+   3.5595909517994742`*^9, {3.559590985743785*^9, 3.5595910083591566`*^9}, {
+   3.5595910886993585`*^9, 3.5595911129284353`*^9}, {3.5595911437138443`*^9, 
+   3.5595911853251286`*^9}, {3.5595912374932528`*^9, 3.559591261751833*^9}, 
+   3.5600144296397533`*^9, 3.560450830967537*^9, 3.560452505196941*^9, 
+   3.561263993483683*^9, 3.56126404119948*^9, {3.561264147332672*^9, 
+   3.561264154535125*^9}, 3.561264308198872*^9, 3.5616943664297247`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Same", " ", "as", " ", "the", " ", "previous", " ", "example", " ", "but",
+     " ", "without", " ", "any", " ", "restrictions", " ", "on", " ", "the", 
+    " ", 
+    RowBox[{"capacitances", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"testNetlist5", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<MOS\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vop", ",", "Vin", ",", "Vs", ",", "0"}], "}"}], ",", 
+         "\"\<Q1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<MOS\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Von", ",", "Vip", ",", "Vs", ",", "0"}], "}"}], ",", 
+         "\"\<Q2\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Res\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vs", ",", "0"}], "}"}], ",", "\"\<Gt\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Volt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vip", ",", "0"}], "}"}], ",", "\"\<V1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Volt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vin", ",", "0"}], "}"}], ",", "\"\<V2\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Vprobe\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vop", ",", "Von"}], "}"}], ",", "\"\<Vp1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"testNetlist5Eqns", "=", 
+    RowBox[{"NetlistCircuit", "[", "testNetlist5", "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"testNetlist5Vars", "=", 
+    RowBox[{"GetSolveVariables", "[", "testNetlist5", "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{"testNetlist5Eqns", ",", "testNetlist5Vars"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"Vop", "-", "Von"}], 
+      RowBox[{"Vip", "-", "Vin"}]], "/.", 
+     RowBox[{"%", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.5595931103920803`*^9, 3.559593142799696*^9}, {
+  3.5595931731045437`*^9, 3.559593184752023*^9}, {3.559593693857171*^9, 
+  3.559593750688388*^9}, {3.5600144487506804`*^9, 3.560014454989973*^9}, {
+  3.561264191448365*^9, 3.5612641926166277`*^9}, {3.561264345391837*^9, 
+  3.561264349487733*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Gm", " ", "Vin"}], "-", 
+     RowBox[{"Cgd", " ", "s", " ", "Vin"}], "+", 
+     RowBox[{"Gds", " ", "Vop"}], "+", 
+     RowBox[{"Cdb", " ", "s", " ", "Vop"}], "+", 
+     RowBox[{"Cgd", " ", "s", " ", "Vop"}], "-", 
+     RowBox[{"Gds", " ", "Vs"}], "-", 
+     RowBox[{"Gm", " ", "Vs"}], "-", 
+     RowBox[{"Gmb", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{"I$V2", "+", 
+     RowBox[{"Cgb", " ", "s", " ", "Vin"}], "+", 
+     RowBox[{"Cgd", " ", "s", " ", "Vin"}], "+", 
+     RowBox[{"Cgs", " ", "s", " ", "Vin"}], "-", 
+     RowBox[{"Cgd", " ", "s", " ", "Vop"}], "-", 
+     RowBox[{"Cgs", " ", "s", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "Gm"}], " ", "Vin"}], "-", 
+     RowBox[{"Cgs", " ", "s", " ", "Vin"}], "-", 
+     RowBox[{"Gm", " ", "Vip"}], "-", 
+     RowBox[{"Cgs", " ", "s", " ", "Vip"}], "-", 
+     RowBox[{"Gds", " ", "Von"}], "-", 
+     RowBox[{"Gds", " ", "Vop"}], "+", 
+     RowBox[{"G", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Gds", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Gm", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Gmb", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Cgs", " ", "s", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Csb", " ", "s", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Gm", " ", "Vip"}], "-", 
+     RowBox[{"Cgd", " ", "s", " ", "Vip"}], "+", 
+     RowBox[{"Gds", " ", "Von"}], "+", 
+     RowBox[{"Cdb", " ", "s", " ", "Von"}], "+", 
+     RowBox[{"Cgd", " ", "s", " ", "Von"}], "-", 
+     RowBox[{"Gds", " ", "Vs"}], "-", 
+     RowBox[{"Gm", " ", "Vs"}], "-", 
+     RowBox[{"Gmb", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{"I$V1", "+", 
+     RowBox[{"Cgb", " ", "s", " ", "Vip"}], "+", 
+     RowBox[{"Cgd", " ", "s", " ", "Vip"}], "+", 
+     RowBox[{"Cgs", " ", "s", " ", "Vip"}], "-", 
+     RowBox[{"Cgd", " ", "s", " ", "Von"}], "-", 
+     RowBox[{"Cgs", " ", "s", " ", "Vs"}]}], "\[Equal]", "0"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.5595931443428917`*^9, {3.559593175661369*^9, 3.5595931853936043`*^9}, {
+   3.5595937048925724`*^9, 3.559593713187126*^9}, 3.5600144572057543`*^9, 
+   3.560450831001554*^9, 3.5604525052308273`*^9, 3.561264193750449*^9, 
+   3.561268764155669*^9, 3.561694375225008*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"I$V1", ",", "I$V2", ",", "Vop", ",", "Von", ",", "Vs"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.5595931443428917`*^9, {3.559593175661369*^9, 3.5595931853936043`*^9}, {
+   3.5595937048925724`*^9, 3.559593713187126*^9}, 3.5600144572057543`*^9, 
+   3.560450831001554*^9, 3.5604525052308273`*^9, 3.561264193750449*^9, 
+   3.561268764155669*^9, 3.5616943752288723`*^9}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Gm", "-", 
+   RowBox[{"Cgd", " ", "s"}]}], 
+  RowBox[{"Gds", "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"Cdb", "+", "Cgd"}], ")"}], " ", "s"}]}]]], "Output",
+ CellChangeTimes->{
+  3.5595931443428917`*^9, {3.559593175661369*^9, 3.5595931853936043`*^9}, {
+   3.5595937048925724`*^9, 3.559593713187126*^9}, 3.5600144572057543`*^9, 
+   3.560450831001554*^9, 3.5604525052308273`*^9, 3.561264193750449*^9, 
+   3.561268764155669*^9, 3.561694375411425*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Same", " ", "as", " ", "the", " ", "previous", " ", "example", " ", "but",
+     " ", "with", " ", "a", " ", "full", " ", "MOS", " ", "model", " ", "for",
+     " ", "the", " ", "tail", " ", "source"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"testNetlist6", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<MOS\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vop", ",", "Vin", ",", "Vs", ",", "0"}], "}"}], ",", 
+         "\"\<Q1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<MOS\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Von", ",", "Vip", ",", "Vs", ",", "0"}], "}"}], ",", 
+         "\"\<Q2\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<MOS\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vs", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+         "\"\<Qt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Cds", "\[Rule]", "Cdst"}], ",", 
+           RowBox[{"Cgd", "\[Rule]", "Cgdt"}], ",", 
+           RowBox[{"Cgs", "\[Rule]", "Cgst"}], ",", 
+           RowBox[{"Gds", "\[Rule]", "Gdst"}], ",", 
+           RowBox[{"Gm", "\[Rule]", "Gmt"}]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Volt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vip", ",", "0"}], "}"}], ",", "\"\<V1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Volt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vin", ",", "0"}], "}"}], ",", "\"\<V2\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Vprobe\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vop", ",", "Von"}], "}"}], ",", "\"\<Vp1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}],
+    "\[IndentingNewLine]", 
+   RowBox[{"testNetlist6Eqns", "=", 
+    RowBox[{"NetlistCircuit", "[", "testNetlist6", "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"testNetlist6Vars", "=", 
+    RowBox[{"GetSolveVariables", "[", "testNetlist6", "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{"testNetlist6Eqns", ",", "testNetlist6Vars"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"Vop", "-", "Von"}], 
+      RowBox[{"Vip", "-", "Vin"}]], "/.", 
+     RowBox[{"%", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.559593865103917*^9, 3.5595939648735857`*^9}, {
+  3.5600144652627773`*^9, 3.560014478598971*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Gm", " ", "Vin"}], "-", 
+     RowBox[{"Cgd", " ", "s", " ", "Vin"}], "+", 
+     RowBox[{"Gds", " ", "Vop"}], "+", 
+     RowBox[{"Cdb", " ", "s", " ", "Vop"}], "+", 
+     RowBox[{"Cgd", " ", "s", " ", "Vop"}], "-", 
+     RowBox[{"Gds", " ", "Vs"}], "-", 
+     RowBox[{"Gm", " ", "Vs"}], "-", 
+     RowBox[{"Gmb", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{"I$V2", "+", 
+     RowBox[{"Cgb", " ", "s", " ", "Vin"}], "+", 
+     RowBox[{"Cgd", " ", "s", " ", "Vin"}], "+", 
+     RowBox[{"Cgs", " ", "s", " ", "Vin"}], "-", 
+     RowBox[{"Cgd", " ", "s", " ", "Vop"}], "-", 
+     RowBox[{"Cgs", " ", "s", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "Gm"}], " ", "Vin"}], "-", 
+     RowBox[{"Cgs", " ", "s", " ", "Vin"}], "-", 
+     RowBox[{"Gm", " ", "Vip"}], "-", 
+     RowBox[{"Cgs", " ", "s", " ", "Vip"}], "-", 
+     RowBox[{"Gds", " ", "Von"}], "-", 
+     RowBox[{"Gds", " ", "Vop"}], "+", 
+     RowBox[{"2", " ", "Gds", " ", "Vs"}], "+", 
+     RowBox[{"Gdst", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Gm", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Gmb", " ", "Vs"}], "+", 
+     RowBox[{"Cdb", " ", "s", " ", "Vs"}], "+", 
+     RowBox[{"Cgdt", " ", "s", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Cgs", " ", "s", " ", "Vs"}], "+", 
+     RowBox[{"2", " ", "Csb", " ", "s", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Gm", " ", "Vip"}], "-", 
+     RowBox[{"Cgd", " ", "s", " ", "Vip"}], "+", 
+     RowBox[{"Gds", " ", "Von"}], "+", 
+     RowBox[{"Cdb", " ", "s", " ", "Von"}], "+", 
+     RowBox[{"Cgd", " ", "s", " ", "Von"}], "-", 
+     RowBox[{"Gds", " ", "Vs"}], "-", 
+     RowBox[{"Gm", " ", "Vs"}], "-", 
+     RowBox[{"Gmb", " ", "Vs"}]}], "\[Equal]", "0"}], ",", 
+   RowBox[{
+    RowBox[{"I$V1", "+", 
+     RowBox[{"Cgb", " ", "s", " ", "Vip"}], "+", 
+     RowBox[{"Cgd", " ", "s", " ", "Vip"}], "+", 
+     RowBox[{"Cgs", " ", "s", " ", "Vip"}], "-", 
+     RowBox[{"Cgd", " ", "s", " ", "Von"}], "-", 
+     RowBox[{"Cgs", " ", "s", " ", "Vs"}]}], "\[Equal]", "0"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.5595938941681075`*^9, 3.5595939335991144`*^9}, 
+   3.5600144807157393`*^9, 3.5604508311178083`*^9, 3.56045250529681*^9, 
+   3.561264385216403*^9, 3.5616943797240267`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"I$V1", ",", "I$V2", ",", "Vop", ",", "Von", ",", "Vs"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.5595938941681075`*^9, 3.5595939335991144`*^9}, 
+   3.5600144807157393`*^9, 3.5604508311178083`*^9, 3.56045250529681*^9, 
+   3.561264385216403*^9, 3.561694379727674*^9}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Gm", "-", 
+   RowBox[{"Cgd", " ", "s"}]}], 
+  RowBox[{"Gds", "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"Cdb", "+", "Cgd"}], ")"}], " ", "s"}]}]]], "Output",
+ CellChangeTimes->{{3.5595938941681075`*^9, 3.5595939335991144`*^9}, 
+   3.5600144807157393`*^9, 3.5604508311178083`*^9, 3.56045250529681*^9, 
+   3.561264385216403*^9, 3.561694379967157*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "This", " ", "is", " ", "the", " ", "above", " ", "example", " ", "but", 
+    " ", "with", " ", "the", " ", "more", " ", "involved", " ", "extrinsic", 
+    " ", "resistance", " ", "model", " ", "for", " ", "the", " ", "input", 
+    " ", "pair"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"testNetlist7", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<MOSR\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vop", ",", "Vin", ",", "Vs", ",", "0"}], "}"}], ",", 
+         "\"\<Q1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<MOSR\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Von", ",", "Vip", ",", "Vs", ",", "0"}], "}"}], ",", 
+         "\"\<Q2\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<MOS\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vs", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+         "\"\<Qt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Cds", "\[Rule]", "Cdst"}], ",", 
+           RowBox[{"Cgd", "\[Rule]", "Cgdt"}], ",", 
+           RowBox[{"Cgs", "\[Rule]", "Cgst"}], ",", 
+           RowBox[{"Gds", "\[Rule]", "Gdst"}], ",", 
+           RowBox[{"Gm", "\[Rule]", "Gmt"}]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Volt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vip", ",", "0"}], "}"}], ",", "\"\<V1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Volt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vin", ",", "0"}], "}"}], ",", "\"\<V2\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Vprobe\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vop", ",", "Von"}], "}"}], ",", "\"\<Vp1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}],
+    "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"testNetlist7Eqns", "=", 
+     RowBox[{"NetlistCircuit", "[", "testNetlist7", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"testNetlist7Vars", "=", 
+     RowBox[{"GetSolveVariables", "[", "testNetlist7", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{"testNetlist7Eqns", ",", "testNetlist7Vars"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"%", "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Rg", "\[Rule]", "0"}], ",", 
+       RowBox[{"Rs", "\[Rule]", "0"}], ",", 
+       RowBox[{"Rd", "\[Rule]", "0"}], ",", 
+       RowBox[{"Rb", "\[Rule]", "0"}]}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"Vop", "-", "Von"}], 
+      RowBox[{"Vip", "-", "Vin"}]], "/.", 
+     RowBox[{"%", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.560014492226201*^9, 3.5600145760743484`*^9}, {
+  3.561266695512877*^9, 3.5612666979113617`*^9}, {3.5612678238880053`*^9, 
+  3.561267838525248*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Gm", "-", 
+   RowBox[{"Cgd", " ", "s"}]}], 
+  RowBox[{"Gds", "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"Cdb", "+", "Cgd"}], ")"}], " ", "s"}]}]]], "Output",
+ CellChangeTimes->{{3.5600145348061085`*^9, 3.5600145767814384`*^9}, 
+   3.560450831788307*^9, 3.560452505450967*^9, 3.561264395050102*^9, 
+   3.561266700765011*^9, {3.561267818986579*^9, 3.561267855903762*^9}, 
+   3.5616943965545073`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "This", " ", "is", " ", "the", " ", "above", " ", "example", " ", "but", 
+    " ", "with", " ", "the", " ", "more", " ", "involved", " ", "extrinsic", 
+    " ", "resistance", " ", "model", " ", "for", " ", "all", " ", "the", " ", 
+    "transistors"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"testNetlist7", "=", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"\"\<MOSR\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vop", ",", "Vin", ",", "Vs", ",", "0"}], "}"}], ",", 
+         "\"\<Q1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<MOSR\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Von", ",", "Vip", ",", "Vs", ",", "0"}], "}"}], ",", 
+         "\"\<Q2\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<MOSR\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vs", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+         "\"\<Qt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Cds", "\[Rule]", "Cdst"}], ",", 
+           RowBox[{"Cgd", "\[Rule]", "Cgdt"}], ",", 
+           RowBox[{"Cgs", "\[Rule]", "Cgst"}], ",", 
+           RowBox[{"Gds", "\[Rule]", "Gdst"}], ",", 
+           RowBox[{"Gm", "\[Rule]", "Gmt"}], ",", 
+           RowBox[{"Rg", "\[Rule]", "Rgt"}], ",", 
+           RowBox[{"Rs", "\[Rule]", "Rst"}], ",", 
+           RowBox[{"Rd", "\[Rule]", "Rdt"}]}], "}"}]}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Volt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vip", ",", "0"}], "}"}], ",", "\"\<V1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Volt\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vin", ",", "0"}], "}"}], ",", "\"\<V2\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Vprobe\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"Vop", ",", "Von"}], "}"}], ",", "\"\<Vp1\>\"", ",", 
+         RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}],
+    "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"testNetlist7Eqns", "=", 
+     RowBox[{"NetlistCircuit", "[", "testNetlist7", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"testNetlist7Vars", "=", 
+     RowBox[{"GetSolveVariables", "[", "testNetlist7", "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{"testNetlist7Eqns", ",", "testNetlist7Vars"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"%", "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Rg", "\[Rule]", "0"}], ",", 
+      RowBox[{"Rs", "\[Rule]", "0"}], ",", 
+      RowBox[{"Rb", "\[Rule]", "0"}], ",", 
+      RowBox[{"Rd", "\[Rule]", "0"}]}], "}"}]}], "\[IndentingNewLine]", 
+   RowBox[{"Simplify", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"Vop", "-", "Von"}], 
+      RowBox[{"Vip", "-", "Vin"}]], "/.", 
+     RowBox[{"%", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.560014598015135*^9, 3.560014640612044*^9}, {
+  3.5612679942123613`*^9, 3.561268003876853*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   PanelBox[GridBox[{
+      {
+       StyleBox[
+        StyleBox[
+         DynamicBox[ToBoxes[
+           FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+           StandardForm],
+          ImageSizeCache->{278., {2., 8.}}],
+         StripOnInput->False,
+         DynamicUpdating->True], "Panel",
+        StripOnInput->False,
+        Background->None]},
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"I$V1", "\[Rule]", 
+             RowBox[{
+              RowBox[{"\[LeftSkeleton]", "7", "\[RightSkeleton]"}], "+", 
+              RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], "+", 
+              FractionBox[
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"Cgd", " ", "s"}], "-", 
+                  FractionBox[
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"Gds", "+", 
+                    RowBox[{"Cdb", " ", "s"}], "+", 
+                    RowBox[{"Cgd", " ", "s"}]}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "Cgs"}], " ", "s"}], "-", 
+                    FractionBox[
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    RowBox[{"\[LeftSkeleton]", "3", "\[RightSkeleton]"}]]}], 
+                    ")"}]}], 
+                   RowBox[{
+                    RowBox[{"-", "Gds"}], "-", "Gm", "-", "Gmb"}]]}], ")"}], 
+                " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"-", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "Gds"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "Gds"}], "-", "Gm", "-", "Gmb"}], ")"}]}], 
+                    "-", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    ")"}], " ", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}]}], 
+                    ")"}]}], " ", 
+                   RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
+                  "+", 
+                  RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}]}], 
+                 ")"}]}], 
+               RowBox[{
+                RowBox[{"Gds", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "Gds"}], "-", "Gm", "-", "Gmb"}], ")"}], " ", 
+                 
+                 RowBox[{"(", 
+                  RowBox[{"Gds", "+", 
+                   RowBox[{"Cdb", " ", "s"}], "+", 
+                   RowBox[{"Cgd", " ", "s"}]}], ")"}]}], "-", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"Gds", "+", 
+                   RowBox[{"Cdb", " ", "s"}], "+", 
+                   RowBox[{"Cgd", " ", "s"}]}], ")"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"-", "Gds"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "Gds"}], "-", "Gm", "-", "Gmb"}], ")"}]}], 
+                   "-", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                    ")"}]}]}], ")"}]}]}]]}]}], ",", 
+            RowBox[{"\[LeftSkeleton]", "3", "\[RightSkeleton]"}], ",", 
+            RowBox[{"Vs", "\[Rule]", 
+             RowBox[{
+              RowBox[{"-", 
+               FractionBox[
+                RowBox[{
+                 RowBox[{"Gm", " ", "Vin"}], "-", 
+                 RowBox[{"Cgd", " ", "s", " ", "Vin"}]}], 
+                RowBox[{
+                 RowBox[{"-", "Gds"}], "-", "Gm", "-", "Gmb"}]]}], "+", 
+              FractionBox[
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"Gds", "+", 
+                  RowBox[{"Cdb", " ", "s"}], "+", 
+                  RowBox[{"Cgd", " ", "s"}]}], ")"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                 ")"}]}], 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"-", "Gds"}], "-", "Gm", "-", "Gmb"}], ")"}], " ", 
+                RowBox[{"(", 
+                 RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], 
+                 ")"}]}]]}]}]}], "}"}], "}"}],
+         Short[#, 5]& ],
+        Background->GrayLevel[1],
+        BaseStyle->{Deployed -> False},
+        Frame->True,
+        FrameStyle->GrayLevel[0, 0.2],
+        StripOnInput->False]},
+      {
+       RowBox[{
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+             StandardForm],
+            ImageSizeCache->{49., {1., 8.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 81, 23341709136391675320, 5/2],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+             StandardForm],
+            ImageSizeCache->{52., {1., 8.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 81, 23341709136391675320, 5 2],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+             StandardForm],
+            ImageSizeCache->{82., {2., 8.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 81, 23341709136391675320, Infinity],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+             StandardForm],
+            ImageSizeCache->{74., {1., 8.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>FrontEndExecute[{
+            FrontEnd`SetOptions[
+            FrontEnd`$FrontEnd, 
+             FrontEnd`PreferencesSettings -> {"Page" -> "Evaluation"}], 
+            FrontEnd`FrontEndToken["PreferencesDialog"]}],
+         Evaluator->None,
+         Method->"Preemptive"]}]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[1.2]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    DefaultBaseStyle->{},
+    FrameMargins->5],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Out[81]]], "Output",
+ CellChangeTimes->{{3.560014617162566*^9, 3.560014641102606*^9}, 
+   3.560450832110544*^9, 3.560452505573757*^9, 3.561264398420576*^9, 
+   3.561268020887395*^9, 3.56169441675203*^9}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Gm", "-", 
+   RowBox[{"Cgd", " ", "s"}]}], 
+  RowBox[{"Gds", "+", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"Cdb", "+", "Cgd"}], ")"}], " ", "s"}]}]]], "Output",
+ CellChangeTimes->{{3.560014617162566*^9, 3.560014641102606*^9}, 
+   3.560450832110544*^9, 3.560452505573757*^9, 3.561264398420576*^9, 
+   3.561268020887395*^9, 3.5616944703360043`*^9}]
+}, Open  ]]
+}, Closed]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 82}, {45, Automatic}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 100, 1, 67, "Section"],
+Cell[CellGroupData[{
+Cell[704, 27, 1537, 38, 197, "Input"],
+Cell[2244, 67, 556, 15, 46, "Output"],
+Cell[2803, 84, 332, 7, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3172, 96, 1333, 31, 146, "Input"],
+Cell[4508, 129, 493, 10, 23, "Message"],
+Cell[5004, 141, 434, 7, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5475, 153, 2064, 54, 254, "Input"],
+Cell[7542, 209, 466, 9, 23, "Message"],
+Cell[8011, 220, 281, 7, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8329, 232, 2591, 63, 284, "Input"],
+Cell[10923, 297, 564, 11, 23, "Message"],
+Cell[11490, 310, 1600, 41, 48, "Output"],
+Cell[13093, 353, 767, 12, 27, "Output"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[13909, 371, 102, 1, 37, "Section"],
+Cell[CellGroupData[{
+Cell[14036, 376, 2561, 62, 178, "Input"],
+Cell[16600, 440, 2007, 47, 58, "Output"],
+Cell[18610, 489, 778, 12, 27, "Output"],
+Cell[19391, 503, 1270, 28, 46, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20698, 536, 2761, 67, 229, "Input"],
+Cell[23462, 605, 2372, 57, 103, "Output"],
+Cell[25837, 664, 410, 8, 27, "Output"],
+Cell[26250, 674, 493, 12, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26780, 691, 2885, 72, 244, "Input"],
+Cell[29668, 765, 2376, 57, 103, "Output"],
+Cell[32047, 824, 308, 6, 27, "Output"],
+Cell[32358, 832, 393, 10, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32788, 847, 3312, 84, 274, "Input"],
+Cell[36103, 933, 442, 11, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36582, 949, 3388, 84, 274, "Input"],
+Cell[39973, 1035, 8608, 227, 206, "Output"],
+Cell[48584, 1264, 388, 10, 49, "Output"]
+}, Open  ]]
+}, Closed]]
+}
+]
+*)
+
+(* End of internal cache information *)

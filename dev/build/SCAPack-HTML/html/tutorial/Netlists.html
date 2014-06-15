@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+<title>Netlists</title>
+<meta name='keywords' content='' />
+<meta name='description' content='The netlist format in SCAPack is loosely based on a SPICE type netlist. Unlike typical SPICE netlists, there are a few noteable differences. SCAPack&apos;s netlist format is SPICE-like but not entirely compatible. Each line in the netlist is a list beginning with the case-insensitive model or command identifier, followed by an optional set of arguments. Element lines have four elements. The first is the model name, followed by a list of node connections, an element identifier and a list of rules for element parameters.' />
+<link rel='stylesheet' type='text/css' href='../css/functions.css' />
+<script src='../javascript/menu.js' type='text/javascript'></script>
+<script src='../javascript/common.js' type='text/javascript'></script>
+<script src='../javascript/prototype-1.4.0.js' type='text/javascript'></script>
+<script src='../javascript/search.js' type='text/javascript'></script>
+<script src='../javascript/jquery.js' type='text/javascript'></script>
+<script src='../javascript/jquery-query.js' type='text/javascript'></script>
+<script src='../javascript/jquery.dimensions.min.js' type='text/javascript'></script>
+<script src='../javascript/jquery.mousewheel.min.js' type='text/javascript'></script>
+<script src='../javascript/jScrollPane.js' type='text/javascript'></script>
+<script src='../javascript/FunctionBrowser.js' type='text/javascript'></script>
+<script src='../javascript/VirtualBook.js' type='text/javascript'></script>
+<script src='../javascript/Navigator.js' type='text/javascript'></script>
+<script language='JavaScript' type='text/javascript'>baselang='Netlists';</script>
+</head>
+<body style='margin:35px 0px 0px 0px; background:#ffffff'>
+<!-- saved from url=(0014)about:internet -->
+
+
+
+
+<div class="MainRoot" width = "727">
+
+    <div class="FltShdwBar">
+    <div class="Flt"><img src="../images/images/body_shdwspcr.gif" width="8" height="15" alt=""/></div>
+    <div id="TutorialContentTable">
+ <div class="infoHeader">
+  <a name="1"></a>
+  <table class="infoHeaderTable">
+   <tr><td align="left" style="width:90% important!;width:77%;"><span class="contextName"><i>S C A Pack</i> Tutorial</span></td><td align="right" nowrap="true" style="padding:4px;"><span class=""><span name="parent_Tutorials" id="parent_Tutorials"><div class="TutorialsMenu"
+           id="Layer_Tutorials"
+           onmouseover="javascript:showMenu('Layer_Tutorials')"
+           onmouseout="javascript:hideMenu('Layer_Tutorials')">
+        <div class="TutorialsRaw">
+         <a href="/mathematica/SCAPack/tutorial/SolvingCircuits.html">Solving Circuits</a>
+        </div>
+       </div></span><a onmouseover="javascript:showMenu('Layer_Tutorials');return(true);" onmouseout="javascript:hideMenu('Layer_Tutorials');return(true);" id="head_Tutorials" href="#TutorialsSection" class="anchorLink"><span class="AnchorBarText">Tutorials &#187;</span></a><span class='vertBar'>|</span><span name="parent_MoreAbout" id="parent_MoreAbout"><div class="MoreAboutMenu"
+           id="Layer_MoreAbout"
+           onmouseover="javascript:showMenu('Layer_MoreAbout')"
+           onmouseout="javascript:hideMenu('Layer_MoreAbout')">
+        <div class="MoreAboutRaw">
+         <a href="/mathematica/SCAPack/guide/DeviceModels.html">Elements</a>
+         <a href="/mathematica/SCAPack/guide/ControlStatements.html">Control Statements</a>
+         <a href="/mathematica/SCAPack/guide/Simple Circuit Analysis Package.html">Simple Circuit Analysis Package</a>
+        </div>
+       </div></span><a onmouseover="javascript:showMenu('Layer_MoreAbout');return(true);" onmouseout="javascript:hideMenu('Layer_MoreAbout');return(true);" id="head_MoreAbout" href="#MoreAboutSection" class="anchorLink"><span class="AnchorBarText">More About &#187;</span></a></span></td></tr>
+  </table>
+ </div>
+ <h1 class="Title"><a name="509267359"></a>Netlists</h1>
+ <div class="Text"><a name="1534169418"></a>The netlist format in SCAPack is loosely based on a SPICE type netlist. Unlike typical SPICE netlists, there are a few noteable differences.</div>
+ <h2 class="Section"><a name="1162538291"></a>Netlist Format</h2>
+ <div class="Text"><a name="974836431"></a>SCAPack's netlist format is SPICE-like but not entirely compatible. Each line in the netlist is a list beginning with the case-insensitive model or command identifier, followed by an optional set of arguments. </div>
+ <h3 class="Subsection"><a name="923152854"></a>Element Lines</h3>
+ <div class="Text"><a name="2008151250"></a>Element lines have four elements. The first is the model name, followed by a list of node connections, an element identifier and a list of rules for element parameters.</div>
+ <div class="MCap"><a name="1145062498"></a>A simple resistor</div>
+ <table class="InCell">
+  <tr><td class="lab" /><td class="Input"><div>
+     <a name="1464443119"></a>
+     <a href="javascript:input('i_1')" onmouseover="javascript:return(true);"><img src="Files/Netlists/I_2.gif" height="12" width="271" alt="Click for copyable input" /></a>
+    </div><div name="i_1_out" id="i_1_out" class="IFL"><a name="1464443119"></a></div></td></tr>
+ </table>
+ <div class="Text"><a name="1577841255"></a>The fourth parameter is entirely optional for all elements except for current-controller dependent sources.</div>
+ <div class="MCap"><a name="1649899629"></a>A resistor with the default conductance</div>
+ <table class="InCell">
+  <tr><td class="lab" /><td class="Input"><div>
+     <a name="1554214539"></a>
+     <a href="javascript:input('i_3')" onmouseover="javascript:return(true);"><img src="Files/Netlists/I_4.gif" height="12" width="186" alt="Click for copyable input" /></a>
+    </div><div name="i_3_out" id="i_3_out" class="IFL"><a name="1554214539"></a></div></td></tr>
+ </table>
+ <div class="Text"><a name="1632110737"></a>The number of element parameters as well as node connections depend on the particular element being used. For more details on the various elements available and their associated parameters, refer to the <a href="../guide/DeviceModels.html">Device Models</a> guide. </div>
+ <h3 class="Subsection"><a name="1076533628"></a>Control Lines</h3>
+ <div class="Text"><a name="750959821"></a>Control lines differ from element lines in that they alter the final form of the equations representing the circuit but do not add any additional equations that need to be solved. </div>
+ <div class="MCap"><a name="620318128"></a>The only control line currently supported is a nodeset</div>
+ <table class="InCell">
+  <tr><td class="lab" /><td class="Input"><div>
+     <a name="1801154758"></a>
+     <a href="javascript:input('i_5')" onmouseover="javascript:return(true);"><img src="Files/Netlists/I_6.gif" height="12" width="141" alt="Click for copyable input" /></a>
+    </div><div name="i_5_out" id="i_5_out" class="IFL"><a name="1801154758"></a></div></td></tr>
+ </table>
+ <div class="Text"><a name="2084905678"></a>For more details on available control lines, refer to the <a href="../guide/ControlStatements.html">Control Statements</a> guide.</div>
+ <h2 class="Section"><a name="65562262"></a>Node Voltages</h2>
+ <div class="Text"><a name="245826523"></a>Unlike in other circuit simulators, nodes are always symbolic in SCAPack. That is to say, that all node connections listed need to be valid <i>Mathematica</i> symbols. The only exception is the datum (ground) node, which is annotated as 0. SCAPack has methods for handling situations with explicit voltages for nodes which is addressed in <a href="../tutorial/UsingSCAPack.html">Using SCAPack</a>.</div>
+ <div class="MCap"><a name="1995318880"></a>Here's a simple netlist of an R-2R ladder network</div>
+ <table class="InCell">
+  <tr><td class="lab" /><td class="Input"><div>
+     <a name="219784608"></a>
+     <a href="javascript:input('i_7')" onmouseover="javascript:return(true);"><img src="Files/Netlists/I_8.gif" height="65" width="310" alt="Click for copyable input" /></a>
+    </div><div name="i_7_out" id="i_7_out" class="IFL"><a name="219784608"></a></div></td></tr>
+ </table>
+ <div class="Text"><a name="438586685"></a>SCAPack requires that all nodes have at least two connections. In cases such as the above, one needs to include either a stimulus, such as the voltage source above, or a probe.</div>
+ <h2 class="Section"><a name="621833770"></a>Branch Currents</h2>
+ <div class="Text"><a name="1504746088"></a>SCAPack does not save branch or element currents for the entire netlist. The only currents that are solved for are the currents through voltage sources, either independent or dependent as well as current probes. In order to save currents through an arbitrary element, one needs to use a current probe. While the user specifies the name for a node explicitly, the same is not possible for currents. The symbolic name for currents is determined by prefixing <span class="IF">I$</span> to the element name.</div>
+ <div class="MCap"><a name="1500073944"></a>Save the current through C1</div>
+ <table class="InCell">
+  <tr><td class="lab" /><td class="Input"><div>
+     <a name="284761028"></a>
+     <a href="javascript:input('i_9')" onmouseover="javascript:return(true);"><img src="Files/Netlists/I_10.gif" height="117" width="297" alt="Click for copyable input" /></a>
+    </div><div name="i_9_out" id="i_9_out" class="IFL"><a name="284761028"></a></div></td></tr>
+ </table>
+ <div class="TMAS_Ex"
+     id="TMAS">
+  <a name="TutorialMoreAboutSection"><div class="TMASH">
+    <a name="23220180"></a>
+    <a href="javascript:toggle('TMAS')"><img src="../images/mathematicaImages/openSectionGroup.gif" id="TMAS_" border="0" width="8" height="8" alt="" /> <span class="TMASSpan">MORE ABOUT</span></a>
+   </div></a>
+  <div class="TMAS"
+      name="TMASG"
+      id="TMASG">
+   <ul class="IndentedNote"><li><a name="1567025153"></a><a href="../guide/DeviceModels.html">Elements</a></li></ul>
+   <ul class="IndentedNote"><li><a name="519062047"></a><a href="../guide/ControlStatements.html">Control Statements</a></li></ul>
+   <ul class="IndentedNote"><li><a name="444253241"></a><a href="../guide/Simple Circuit Analysis Package.html">Simple Circuit Analysis Package</a></li></ul>
+  </div>
+ </div>
+ <div class="RTS_Ex"
+     id="RTS">
+  <a name="RelatedTutorialsSection"><div class="RTSH">
+    <a name="415694126"></a>
+    <a href="javascript:toggle('RTS')"><img src="../images/mathematicaImages/openSectionGroup.gif" id="RTS_" border="0" width="8" height="8" alt="" /> <span class="RTSSpan">RELATED TUTORIALS</span></a>
+   </div></a>
+  <div class="RTS"
+      name="RTSG"
+      id="RTSG">
+   <ul class="IndentedNote"><li><a name="806871991"></a><a href="../tutorial/SolvingCircuits.html">Solving Circuits</a></li></ul>
+  </div>
+ </div>
+</div>
+  </div>
+
+ <img class="corner" src="../images/images/body_shadow_corner.gif" width="25" height="9" alt=" "/>
+ 
+<div class="BtmShdw"><img  class="cornerbottomright" src="../images/images/body_shadow_bottomright.gif" width="23" height="9" alt=""/></div>
+
+</div>
+
+
+    
+<div class="dashboard" />
+

@@ -1,0 +1,7 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{
+  {&quot;cur&quot;, {vi, 0}, &quot;i1&quot;, {}},
+  {&quot;res&quot;, {vi, 0}, &quot;r1&quot;, {Gvalue -&gt; 1/R}},
+  {&quot;res&quot;, {vi, vx}, &quot;r2&quot;, {Rvalue -&gt; (2 R)}},
+  {&quot;res&quot;, {vx, 0}, &quot;r3&quot;, {Gvalue -&gt; 1/R}}
+  };
+GetTransferFunction[%, {I$i1, vx}]</pre><div class='IFU'><a name='1189812772'></a>http://wolfram.com/xid/0bhvrkzkwj4exhua7k-tyn3o2</div>

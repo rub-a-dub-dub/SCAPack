@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+<title>Solving Circuits</title>
+<meta name='keywords' content='' />
+<meta name='description' content='SCAPack has a number of functions to automate the solving of simple circuits. Users may choose the level of automation desired: from fully automated transfer function determination to user driven equation solving. First load the package: If so desired, users may manually solve a circuit by using SCAPack to convert a netlist into a system of equations. Routines to automatically determine the various variables or even to automatically execute Solve are available to aide the user.' />
+<link rel='stylesheet' type='text/css' href='../css/functions.css' />
+<script src='../javascript/menu.js' type='text/javascript'></script>
+<script src='../javascript/common.js' type='text/javascript'></script>
+<script src='../javascript/prototype-1.4.0.js' type='text/javascript'></script>
+<script src='../javascript/search.js' type='text/javascript'></script>
+<script src='../javascript/jquery.js' type='text/javascript'></script>
+<script src='../javascript/jquery-query.js' type='text/javascript'></script>
+<script src='../javascript/jquery.dimensions.min.js' type='text/javascript'></script>
+<script src='../javascript/jquery.mousewheel.min.js' type='text/javascript'></script>
+<script src='../javascript/jScrollPane.js' type='text/javascript'></script>
+<script src='../javascript/FunctionBrowser.js' type='text/javascript'></script>
+<script src='../javascript/VirtualBook.js' type='text/javascript'></script>
+<script src='../javascript/Navigator.js' type='text/javascript'></script>
+<script language='JavaScript' type='text/javascript'>baselang='Solving Circuits';</script>
+</head>
+<body style='margin:35px 0px 0px 0px; background:#ffffff'>
+<!-- saved from url=(0014)about:internet -->
+
+
+
+
+<div class="MainRoot" width = "727">
+
+    <div class="FltShdwBar">
+    <div class="Flt"><img src="../images/images/body_shdwspcr.gif" width="8" height="15" alt=""/></div>
+    <div id="TutorialContentTable">
+ <div class="infoHeader">
+  <a name="1"></a>
+  <table class="infoHeaderTable">
+   <tr><td align="left" style="width:90% important!;width:77%;"><span class="contextName"><i>S C A Pack</i> Tutorial</span></td><td align="right" nowrap="true" style="padding:4px;"><span class=""><span name="parent_Functions" id="parent_Functions"><div class="FunctionsMenu"
+           id="Layer_Functions"
+           onmouseover="javascript:showMenu('Layer_Functions')"
+           onmouseout="javascript:hideMenu('Layer_Functions')">
+        <div class="FunctionsRaw">
+         <a href="/mathematica/SCAPack/ref/GetInputImpedance.html">GetInputImpedance</a>
+         <a href="/mathematica/SCAPack/ref/GetNoisePSD.html">GetNoisePSD</a>
+         <a href="/mathematica/SCAPack/ref/GetSolveVariables.html">GetSolveVariables</a>
+         <a href="/mathematica/SCAPack/ref/GetTotalNoisePSD.html">GetTotalNoisePSD</a>
+         <a href="/mathematica/SCAPack/ref/GetTransferFunction.html">GetTransferFunction</a>
+         <a href="/mathematica/SCAPack/ref/GetZVTimeConstants.html">GetZVTimeConstants</a>
+         <a href="/mathematica/SCAPack/ref/NetlistCircuit.html">NetlistCircuit</a>
+         <a href="/mathematica/SCAPack/ref/SolveFullSystem.html">SolveFullSystem</a>
+        </div>
+       </div></span><a onmouseover="javascript:showMenu('Layer_Functions');return(true);" onmouseout="javascript:hideMenu('Layer_Functions');return(true);" id="head_Functions" href="#FunctionsSection" class="anchorLink"><span class="AnchorBarText">Functions &#187;</span></a><span class='vertBar'>|</span><span name="parent_Tutorials" id="parent_Tutorials"><div class="TutorialsMenu"
+           id="Layer_Tutorials"
+           onmouseover="javascript:showMenu('Layer_Tutorials')"
+           onmouseout="javascript:hideMenu('Layer_Tutorials')">
+        <div class="TutorialsRaw">
+         <a href="/mathematica/SCAPack/tutorial/Netlists.html">Netlists</a>
+        </div>
+       </div></span><a onmouseover="javascript:showMenu('Layer_Tutorials');return(true);" onmouseout="javascript:hideMenu('Layer_Tutorials');return(true);" id="head_Tutorials" href="#TutorialsSection" class="anchorLink"><span class="AnchorBarText">Tutorials &#187;</span></a><span class='vertBar'>|</span><span name="parent_MoreAbout" id="parent_MoreAbout"><div class="MoreAboutMenu"
+           id="Layer_MoreAbout"
+           onmouseover="javascript:showMenu('Layer_MoreAbout')"
+           onmouseout="javascript:hideMenu('Layer_MoreAbout')">
+        <div class="MoreAboutRaw">
+         <a href="/mathematica/SCAPack/guide/NoiseAnalysis.html">Noise Analysis</a>
+         <a href="/mathematica/SCAPack/tutorial/Statistical Analysis.html">Statistical Analysis</a>
+         <a href="/mathematica/SCAPack/guide/ApproximateTransferFunctions.html">Approximating Transfer Functions</a>
+         <a href="/mathematica/SCAPack/guide/Simple Circuit Analysis Package.html">Simple Circuit Analysis Package</a>
+        </div>
+       </div></span><a onmouseover="javascript:showMenu('Layer_MoreAbout');return(true);" onmouseout="javascript:hideMenu('Layer_MoreAbout');return(true);" id="head_MoreAbout" href="#MoreAboutSection" class="anchorLink"><span class="AnchorBarText">More About &#187;</span></a></span></td></tr>
+  </table>
+ </div>
+ <h1 class="Title"><a name="509267359"></a>Solving Circuits</h1>
+ <div class="Text"><a name="523608500"></a>SCAPack has a number of functions to automate the solving of simple circuits. Users may choose the level of automation desired: from fully automated transfer function determination to user driven equation solving.</div>
+ <div class="MCap"><a name="2024993459"></a>First load the package:</div>
+ <table class="InCell">
+  <tr><td class="lab"><a name="inoutlink" href="javascript:input('i_1')" onmouseover="javascript:return(true);">In[1]:=</a></td><td class="Input"><div>
+     <a name="744227757"></a>
+     <a href="javascript:input('i_1')" onmouseover="javascript:return(true);"><img src="Files/Solving Circuits/I_2.gif" height="12" width="76" alt="Click for copyable input" /></a>
+    </div><div name="i_1_out" id="i_1_out" class="IFL"><a name="744227757"></a></div></td></tr>
+ </table>
+ <h2 class="Section"><a name="797249815"></a>Manually Solving Circuits</h2>
+ <div class="Text"><a name="1227167072"></a>If so desired, users may manually solve a circuit by using SCAPack to convert a netlist into a system of equations. Routines to automatically determine the various variables or even to automatically execute <a href="http://reference.wolfram.com/mathematica/ref/Solve.html">Solve</a> are available to aide the user.</div>
+ <div class="MathTable"
+     id="DefinitionBox">
+  <a name="2096742444"></a>
+  <table class="Table"
+      width="100%"
+      cellpadding="5"
+      style="border-collapse: collapse;">
+   <col width="40%" />
+   <col width="60%" />
+   <tr class="lineAbove" style=""><td class="IconColumn"><a href="../ref/NetlistCircuit.html">NetlistCircuit</a>[<span class="TI">netlist</span>]</td><td><span class="TT" id="TableText">converts the <span class="TI">netlist</span> into a system of equations</span></td></tr>
+   <tr class="" style=""><td class="IconColumn"><a href="../ref/GetSolveVariables.html">GetSolveVariables</a>[<span class="TI">netlist</span>]</td><td><span class="TT" id="TableText">returns a list of all variables in the <span class="TI">netlist</span></span></td></tr>
+   <tr class="" style=""><td class="IconColumn"><a href="../ref/SolveFullSystem.html">SolveFullSystem</a>[<span class="TI">netlist</span>]</td><td><span class="TT" id="TableText">automatically solves the <span class="TI">netlist</span> for all of the identified variables</span></td></tr>
+  </table>
+ </div>
+ <p class="Caption"><a name="1891092685"></a>Manual circuit solving operations.</p>
+ <div class="MCap"><a name="836781195"></a>This is the netlist for a R-2R ladder</div>
+ <table class="InCell">
+  <tr><td class="lab"><a name="inoutlink" href="javascript:input('i_3')" onmouseover="javascript:return(true);">In[1]:=</a></td><td class="Input"><div>
+     <a name="2058623809"></a>
+     <a href="javascript:input('i_3')" onmouseover="javascript:return(true);"><img src="Files/Solving Circuits/I_4.gif" height="91" width="319" alt="Click for copyable input" /></a>
+    </div><div name="i_3_out" id="i_3_out" class="IFL"><a name="2058623809"></a></div></td></tr>
+ </table>
+ <div class="MCap"><a name="715124154"></a>Using NetlistCircuit one can convert the R-2R ladder into a system of equations</div>
+ <a name="564033316" />
+ <a name="616482129" />
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab"><a name="inoutlink" href="javascript:input('i_5')" onmouseover="javascript:return(true);">In[2]:=</a></td><td class="Input"><div>
+      <a name="564033316"></a>
+      <a href="javascript:input('i_5')" onmouseover="javascript:return(true);"><img src="Files/Solving Circuits/I_6.gif" height="12" width="296" alt="Click for copyable input" /></a>
+     </div><div name="i_5_out" id="i_5_out" class="IFL"><a name="564033316"></a></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[2]=</td><td class="Output"><img src="Files/Solving Circuits/O_1.gif" height="31" width="498" alt="" /></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="1773167666"></a>GetSolveVariables can be used to determine the solver variables</div>
+ <a name="998393043" />
+ <a name="1754028975" />
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab"><a name="inoutlink" href="javascript:input('i_7')" onmouseover="javascript:return(true);">In[3]:=</a></td><td class="Input"><div>
+      <a name="998393043"></a>
+      <a href="javascript:input('i_7')" onmouseover="javascript:return(true);"><img src="Files/Solving Circuits/I_8.gif" height="12" width="317" alt="Click for copyable input" /></a>
+     </div><div name="i_7_out" id="i_7_out" class="IFL"><a name="998393043"></a></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[3]=</td><td class="Output"><img src="Files/Solving Circuits/O_2.gif" height="12" width="108" alt="" /></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="1702139690"></a><i>Mathematica</i>'s built-in operators may now be used to solve the system</div>
+ <a name="1232108143" />
+ <a name="1456960456" />
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab"><a name="inoutlink" href="javascript:input('i_9')" onmouseover="javascript:return(true);">In[4]:=</a></td><td class="Input"><div>
+      <a name="1232108143"></a>
+      <a href="javascript:input('i_9')" onmouseover="javascript:return(true);"><img src="Files/Solving Circuits/I_10.gif" height="12" width="205" alt="Click for copyable input" /></a>
+     </div><div name="i_9_out" id="i_9_out" class="IFL"><a name="1232108143"></a></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[4]=</td><td class="Output"><img src="Files/Solving Circuits/O_3.gif" height="31" width="290" alt="" /></td></tr>
+  </table>
+ </div>
+ <div class="MCap"><a name="2004235027"></a>SCAPack methods may be used instead to achieve the same ends</div>
+ <a name="1897095594" />
+ <a name="347665421" />
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab"><a name="inoutlink" href="javascript:input('i_11')" onmouseover="javascript:return(true);">In[5]:=</a></td><td class="Input"><div>
+      <a name="1897095594"></a>
+      <a href="javascript:input('i_11')" onmouseover="javascript:return(true);"><img src="Files/Solving Circuits/I_12.gif" height="12" width="216" alt="Click for copyable input" /></a>
+     </div><div name="i_11_out" id="i_11_out" class="IFL"><a name="1897095594"></a></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[5]=</td><td class="Output"><img src="Files/Solving Circuits/O_4.gif" height="31" width="290" alt="" /></td></tr>
+  </table>
+ </div>
+ <h2 class="Section"><a name="795941349"></a>Automated Solvers</h2>
+ <div class="Text"><a name="710615480"></a>SCAPack provides several methods to automatically determine performance metrics for a given netlist. Automation is provided for matters as simple as determining the transfer function of a netlist, to more advanced methods such as zero-value time constant analysis.</div>
+ <div class="MathTable"
+     id="DefinitionBox">
+  <a name="1157811393"></a>
+  <table class="Table"
+      width="100%"
+      cellpadding="5"
+      style="border-collapse: collapse;">
+   <col width="40%" />
+   <col width="60%" />
+   <tr class="lineAbove" style=""><td class="IconColumn"><a href="../ref/GetTransferFunction.html">GetTransferFunction</a>[<span class="TI">netlist</span>,{<span class="TI">output</span>,<span class="TI">input</span>}]</td><td><span class="TT" id="TableText">returns the transfer function betweent the output and input variables</span></td></tr>
+   <tr class="" style=""><td class="IconColumn"><a href="../ref/GetInputImpedance.html">GetInputImpedance</a>[<span class="TI">netlist</span>,{<span class="TI">output</span>,<span class="TI">input</span>}]</td><td><span class="TT" id="TableText">computes the impedance seen between the terminals <span class="TI">output</span> and <span class="TI">input</span></span></td></tr>
+   <tr class="" style=""><td class="IconColumn"><a href="../ref/GetNoisePSD.html">GetNoisePSD</a>[<span class="TI">netlist</span>,{<span class="TI">output</span>,<span class="TI">ref</span>},<span class="TI">source</span>]</td><td><span class="TT" id="TableText">determines the single-sided noise power spectral density caused by the <span class="TI">source</span> seen at the nodes <span class="TI">output</span> and <span class="TI">ref</span></span></td></tr>
+   <tr class="" style=""><td class="IconColumn"><a href="../ref/GetTotalNoisePSD.html">GetTotalNoisePSD</a>[<span class="TI">netlist</span>,{<span class="TI">output</span>,<span class="TI">ref</span>}]</td><td><span class="TT" id="TableText">determines the single-sided noise power spectral density due to all noise sources seen at the nodes <span class="TI">output</span> and <span class="TI">ref</span></span></td></tr>
+   <tr class="" style=""><td class="IconColumn"><a href="../ref/GetZVTimeConstants.html">GetZVTimeConstants</a>[<span class="TI">netlist</span>]</td><td><span class="TT" id="TableText">uses the method of zero-value time constant analysis to determine the approximate pole locations in a netlist</span></td></tr>
+  </table>
+ </div>
+ <p class="Caption"><a name="986756684"></a>Automated circuit solver operations.</p>
+ <div class="Text"><a name="304776438"></a>A common operation for most circuit analysis is to determine the input-output transfer function between two separate circuit variables.</div>
+ <div class="MCap"><a name="1550865854"></a>This is the R-2R ladder's voltage transfer function</div>
+ <a name="1393384539" />
+ <a name="2057210907" />
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab"><a name="inoutlink" href="javascript:input('i_13')" onmouseover="javascript:return(true);">In[6]:=</a></td><td class="Input"><div>
+      <a name="1393384539"></a>
+      <a href="javascript:input('i_13')" onmouseover="javascript:return(true);"><img src="Files/Solving Circuits/I_14.gif" height="12" width="335" alt="Click for copyable input" /></a>
+     </div><div name="i_13_out" id="i_13_out" class="IFL"><a name="1393384539"></a></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[6]=</td><td class="Output"><img src="Files/Solving Circuits/O_5.gif" height="31" width="33" alt="" /></td></tr>
+  </table>
+ </div>
+ <div class="Text"><a name="1143906216"></a>While <a href="../ref/GetTransferFunction.html">GetTransferFunction</a> may be used interchangeably with the manual solution method shown above, the other analysis methods are able to automate more complex tasks, such as disabling independent sources to compute the input impedance or determining the circuit's approximate pole locations.</div>
+ <div class="MCap"><a name="1358164368"></a>The ladder's input impedance may be determined at arbitrary nodes</div>
+ <a name="1064849013" />
+ <a name="1056997249" />
+ <a name="968035959" />
+ <div class="IO">
+  <table class="InCell">
+   <tr><td class="lab"><a name="inoutlink" href="javascript:input('i_15')" onmouseover="javascript:return(true);">In[7]:=</a></td><td class="Input"><div>
+      <a name="1064849013"></a>
+      <a href="javascript:input('i_15')" onmouseover="javascript:return(true);"><img src="Files/Solving Circuits/I_16.gif" height="26" width="302" alt="Click for copyable input" /></a>
+     </div><div name="i_15_out" id="i_15_out" class="IFL"><a name="1064849013"></a></div></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[7]=</td><td class="Output"><img src="Files/Solving Circuits/O_6.gif" height="31" width="43" alt="" /></td></tr>
+  </table>
+  <table class="OCell">
+   <tr><td class="lab">Out[8]=</td><td class="Output"><img src="Files/Solving Circuits/O_7.gif" height="31" width="36" alt="" /></td></tr>
+  </table>
+ </div>
+ <div class="Text"><a name="1936131040"></a>In order to perform noise analysis, a noise source needs to exist in the network. The Noise Analysis guide discusses this analysis in more detail.</div>
+ <div class="TMAS_Ex"
+     id="TMAS">
+  <a name="TutorialMoreAboutSection"><div class="TMASH">
+    <a name="23220180"></a>
+    <a href="javascript:toggle('TMAS')"><img src="../images/mathematicaImages/openSectionGroup.gif" id="TMAS_" border="0" width="8" height="8" alt="" /> <span class="TMASSpan">MORE ABOUT</span></a>
+   </div></a>
+  <div class="TMAS"
+      name="TMASG"
+      id="TMASG">
+   <ul class="IndentedNote"><li><a name="1567025153"></a><a href="../guide/NoiseAnalysis.html">Noise Analysis</a></li></ul>
+   <ul class="IndentedNote"><li><a name="576517309"></a><a href="../tutorial/Statistical Analysis.html">Statistical Analysis</a></li></ul>
+   <ul class="IndentedNote"><li><a name="1882169936"></a><a href="../guide/ApproximateTransferFunctions.html">Approximating Transfer Functions</a></li></ul>
+   <ul class="IndentedNote"><li><a name="1911064515"></a><a href="../guide/Simple Circuit Analysis Package.html">Simple Circuit Analysis Package</a></li></ul>
+  </div>
+ </div>
+ <div class="RTS_Ex"
+     id="RTS">
+  <a name="RelatedTutorialsSection"><div class="RTSH">
+    <a name="415694126"></a>
+    <a href="javascript:toggle('RTS')"><img src="../images/mathematicaImages/openSectionGroup.gif" id="RTS_" border="0" width="8" height="8" alt="" /> <span class="RTSSpan">RELATED TUTORIALS</span></a>
+   </div></a>
+  <div class="RTS"
+      name="RTSG"
+      id="RTSG">
+   <ul class="IndentedNote"><li><a name="806871991"></a><a href="../tutorial/Netlists.html">Netlists</a></li></ul>
+  </div>
+ </div>
+</div>
+  </div>
+
+ <img class="corner" src="../images/images/body_shadow_corner.gif" width="25" height="9" alt=" "/>
+ 
+<div class="BtmShdw"><img  class="cornerbottomright" src="../images/images/body_shadow_bottomright.gif" width="23" height="9" alt=""/></div>
+
+</div>
+
+
+    
+<div class="dashboard" />
+

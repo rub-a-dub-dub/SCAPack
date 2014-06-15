@@ -1,0 +1,434 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     13236,        425]
+NotebookOptionsPosition[      9936,        323]
+NotebookOutlinePosition[     12048,        380]
+CellTagsIndexPosition[     11963,        375]
+WindowTitle->Gyrator - Wolfram Mathematica
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["S C A PACK SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Netlists\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Netlists"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Nullor\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/ref/Nullor"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Elements\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/guide/Elements"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"SCAPack/ref/Gyrator\"\>":>
+       None, "\<\"Copy Mathematica url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["SCAPack/ref/Gyrator"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/mathematica/SCAPack/ref/Gyrator.\
+html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+            "http://reference.wolfram.com/mathematica/", 
+             "SCAPack/ref/Gyrator", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Gyrator", "ObjectName",
+ CellID->1224892054],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"{", 
+       RowBox[{"\"\<gyrator\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          StyleBox["inpos", "TI"], ",", 
+          StyleBox["inneg", "TI"], ",", 
+          StyleBox["outpos", "TI"], ",", 
+          StyleBox["outneg", "TI"]}], "}"}], ",", "\"\<\!\(\*
+StyleBox[\"name\", \"TI\"]\)\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"A", "\[Rule]", 
+          StyleBox["gain", "TI"]}], "}"}]}], "}"}]], "InlineFormula"],
+     " \[LineSeparator]implements a gyrator between the input terminals, ",
+     StyleBox["inpos", "TI"],
+     " and ",
+     StyleBox["inneg", "TI"],
+     ", and the output terminals, ",
+     StyleBox["outpos", "TI"],
+     " and ",
+     StyleBox["outneg", "TI"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->621501008],
+
+Cell["The gain parameter is optional.", "Notes",
+ CellID->1067943069]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->206982448],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1977979043],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<volt\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vin", ",", "0"}], "}"}], ",", "\"\<v1\>\"", ",", 
+      RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<gyrator\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vin", ",", "0", ",", "v1", ",", "0"}], "}"}], ",", 
+      "\"\<g1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"A", "\[Rule]", "n1"}], "}"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<gyrator\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"v1", ",", "0", ",", "vout", ",", "0"}], "}"}], ",", 
+      "\"\<g2\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"A", "\[Rule]", "n2"}], "}"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<res\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<r1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Gvalue", "\[Rule]", 
+        RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+   "}"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SolveFullSystem", "[", "%", "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1286189781],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"I$v1", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["n2", "2"], " ", "vin"}], 
+       RowBox[{
+        SuperscriptBox["n1", "2"], " ", "R"}]]}]}], ",", 
+    RowBox[{"v1", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["n2", "2"], " ", "vin"}], 
+      RowBox[{"n1", " ", "R"}]]}], ",", 
+    RowBox[{"vout", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"n2", " ", "vin"}], "n1"]}]}]}], "}"}], "}"}]], "Output",
+ ImageSize->{335, 35},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->786560762]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[StyleBox[ButtonBox["Nullor",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/Nullor"],
+ FontFamily->"Verdana"]], "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->250839057],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ WholeCellGroupOpener->True],
+
+Cell[TextData[ButtonBox["Elements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/Elements"]], "MoreAbout",
+ CellID->846920141]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Gyrator - Wolfram Mathematica",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:SCAPack/guide/SCAPack", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}], 
+        Cell[">", "DockedLinkTrailSeparator"]}]}}, ColumnAlignments -> Left], 
+  "Metadata" -> {
+   "built" -> "{2012, 12, 9, 18, 20, 10.542425}", 
+    "history" -> {"0.1", "", "", ""}, "context" -> "SCAPack`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "S C A Pack Symbol", "language" -> "en", "paclet" -> "SCAPack", "status" -> 
+    "None", "summary" -> 
+    "{\"gyrator\", {inpos, inneg, outpos, outneg}, \" name\", {A -> gain}} \
+implements a gyrator between the input terminals, inpos and inneg, and the \
+output terminals, outpos and outneg.", "synonyms" -> {}, "title" -> "Gyrator",
+     "titlemodifier" -> "", "windowtitle" -> "Gyrator", "type" -> "Symbol", 
+    "uri" -> "SCAPack/ref/Gyrator"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, 2011)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5307, 158, 490, 14, 70, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->206982448]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 11820, 368}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[600, 21, 2901, 69, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3526, 94, 50, 1, 70, "ObjectName",
+ CellID->1224892054],
+Cell[3579, 97, 973, 30, 70, "Usage",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4589, 132, 609, 18, 70, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->621501008],
+Cell[5201, 152, 69, 1, 70, "Notes",
+ CellID->1067943069]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5307, 158, 490, 14, 70, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->206982448],
+Cell[CellGroupData[{
+Cell[5822, 176, 196, 6, 70, "ExampleSection",
+ CellID->1977979043],
+Cell[CellGroupData[{
+Cell[6043, 186, 1251, 35, 70, "Input",
+ CellID->1286189781],
+Cell[7297, 223, 693, 24, 70, "Output",
+ CellID->786560762]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8051, 254, 446, 13, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[8500, 269, 162, 4, 70, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8699, 278, 448, 13, 70, "TutorialsSection",
+ CellID->250839057],
+Cell[9150, 293, 139, 3, 70, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9326, 301, 429, 12, 70, "MoreAboutSection"],
+Cell[9758, 315, 136, 3, 70, "MoreAbout",
+ CellID->846920141]
+}, Open  ]],
+Cell[9909, 321, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

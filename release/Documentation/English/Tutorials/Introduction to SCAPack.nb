@@ -1,0 +1,440 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15385,        431]
+NotebookOptionsPosition[     10376,        300]
+NotebookOutlinePosition[     13732,        373]
+CellTagsIndexPosition[     13689,        370]
+WindowTitle->Introduction to SCAPack - Wolfram Mathematica
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["S C A PACK TUTORIAL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Related Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Netlists\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Netlists"], "\<\"Solving Circuits\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Solving Circuits"], "\<\"Noise Analysis\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Noise Analysis"], "\<\"Network \
+Parameters\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/NetworkParameters"], "\<\"Statistical \
+Analysis\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Statistical Analysis"], "\<\"Approximating \
+Transfer Functions\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Approximating Transfer Functions"], \
+"\<\"Sample Netlists\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Sample Netlists"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Simple Circuit Analysis Package\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/guide/Simple Circuit Analysis Package"], "\<\"Elements\
+\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Elements"], "\<\"Control Statements\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/tutorial/Control Statements"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->
+         False], {"\<\"SCAPack/tutorial/Introduction to SCAPack\"\>":>
+       None, "\<\"Copy Mathematica url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["SCAPack/tutorial/Introduction to SCAPack"]}, Visible -> 
+            False]]; SelectionMove[
+         DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/mathematica/SCAPack/tutorial/\
+Introduction to SCAPack.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+            "http://reference.wolfram.com/mathematica/", 
+             "SCAPack/tutorial/Introduction to SCAPack", ".html"]], None}]}]},
+       
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Introduction to SCAPack", "Title",
+ CellID->509267359],
+
+Cell[TextData[{
+ "Simple Circuit Analysis Package (SCAPack) is a collection of functions to \
+be able to handle the analysis of electronic circuits symbolically. The goal \
+behind SCAPack is to be able to nimbly solve circuits symbolically with the \
+power of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ". SCAPack is not a numerical simulator such as SPICE, but rather is meant \
+for designers to gain intuition on the operation of their circuit."
+}], "Text",
+ CellID->1534169418],
+
+Cell[CellGroupData[{
+
+Cell["SCAPack Fundamentals", "Section",
+ CellID->157341856],
+
+Cell[TextData[{
+ "SCAPack represents all circuit elements in the complex Laplace variable ",
+ StyleBox["s", "TI"],
+ ". While this may suggest that it is only suitable for linear time-invariant \
+systems, or for frequency domain analyses only, this is not strictly the \
+case. ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " built-ins such as ",
+ Cell[BoxData[
+  ButtonBox["InverseLaplaceTransform",
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/InverseLaplaceTransform"]], "InlineFormula"],
+ " may be used by a user to convert the frequency domain results into the \
+time domain. Linearity may be relaxed by the astute user, after circuit \
+analysis, by the replacement of simple small-signal parameters by a bias \
+dependent equivalent."
+}], "Text",
+ CellID->892204335],
+
+Cell[TextData[{
+ "Using SCAPack begins with the netlist. SCAPack's netlist format was \
+designed to be kept as simple as possible with great similarity to numerical \
+simulation tools such as SPICE or SPECTRE. The netlist format is structured \
+as a list of element and control lists all of which is detailed in the ",
+ ButtonBox["Netlists",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/tutorial/Netlists"],
+ " tutorial."
+}], "Text",
+ CellID->1712928567]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Analyses", "Section",
+ CellID->24653887],
+
+Cell[TextData[{
+ "SCAPack's automated analyses are meant to provide a solution to a class of \
+problems that circuit designers often wrestle with. SCAPack provides a \
+versatile function, ",
+ Cell[BoxData[
+  ButtonBox["GetTransferFunction",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/GetTransferFunction"]], "InlineFormula"],
+ ", which provides the ability to determine the relationship between two \
+arbitrary circuit variables. Users can use this function to determine various \
+circuit performance metrics such as gain and bandwidth. Other methods allow \
+for determining the noise performance (",
+ Cell[BoxData[
+  ButtonBox["GetNoisePSD",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/GetNoisePSD"]], "InlineFormula"],
+ "), various circuit impedances (",
+ Cell[BoxData[
+  ButtonBox["GetInputImpedance",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/GetInputImpedance"]], "InlineFormula"],
+ ") or even approximate transfer functions (",
+ Cell[BoxData[
+  ButtonBox["GetZVTimeConstants",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/GetZVTimeConstants"]], "InlineFormula"],
+ "). "
+}], "Text",
+ CellID->2041018585]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Network Parameters", "Section",
+ CellID->1169158671],
+
+Cell[TextData[{
+ "SCAPack can automatically extract Z-, Y-, H-, G-, S-, T- and ABCD \
+parameters from a netlist. Functions such as ",
+ Cell[BoxData[
+  ButtonBox["ComputeZNetwork",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/ComputeZNetwork"]], "InlineFormula"],
+ " perform the necessary terminations and automatically calculate the entire \
+parameter matrix for all the ports. Auxilliary functions such as ",
+ Cell[BoxData[
+  ButtonBox["CheckPassive",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/CheckPassive"]], "InlineFormula"],
+ " and ",
+ Cell[BoxData[
+  ButtonBox["CheckLossless",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/CheckLossless"]], "InlineFormula"],
+ " allow for users to query properties of a network."
+}], "Text",
+ CellID->574413447]
+}, Open  ]],
+
+Cell["Approximations", "Section",
+ CellID->77798872],
+
+Cell["Statistical Methods", "Section",
+ CellID->1643064564],
+
+Cell[CellGroupData[{
+
+Cell["MORE ABOUT", "TutorialMoreAboutSection",
+ CellID->23220180],
+
+Cell[TextData[ButtonBox["Simple Circuit Analysis Package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/guide/Simple Circuit Analysis Package"]], \
+"TutorialMoreAbout",
+ CellID->1567025153],
+
+Cell[TextData[ButtonBox["Elements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Elements"]], "TutorialMoreAbout",
+ CellID->574221982],
+
+Cell[TextData[ButtonBox["Control Statements",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/tutorial/Control Statements"]], "TutorialMoreAbout",
+ CellID->227470406]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["RELATED TUTORIALS", "RelatedTutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->415694126],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "RelatedTutorials",
+ CellID->806871991],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Solving Circuits"]], "RelatedTutorials",\
+
+ CellID->107177409],
+
+Cell[TextData[ButtonBox["Noise Analysis",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Noise Analysis"]], "RelatedTutorials",
+ CellID->1739416877],
+
+Cell[TextData[ButtonBox["Network Parameters",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/NetworkParameters"]], "RelatedTutorials",\
+
+ CellID->1227810464],
+
+Cell[TextData[ButtonBox["Statistical Analysis",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/tutorial/Statistical Analysis"]], "RelatedTutorials",
+ CellID->80197099],
+
+Cell[TextData[ButtonBox["Approximating Transfer Functions",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/tutorial/Approximating Transfer Functions"]], \
+"RelatedTutorials",
+ CellID->684565128],
+
+Cell[TextData[ButtonBox["Sample Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Sample Netlists"]], "RelatedTutorials",
+ CellID->1416209317]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Introduction to SCAPack - Wolfram Mathematica",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:SCAPack/guide/SCAPack", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}], 
+        Cell[">", "DockedLinkTrailSeparator"]}]}}, ColumnAlignments -> Left], 
+  "Metadata" -> {
+   "built" -> "{2012, 12, 9, 18, 21, 25.871120}", 
+    "history" -> {"0.1", "", "", ""}, "context" -> "SCAPack`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "S C A Pack Tutorial", "language" -> "en", "paclet" -> "SCAPack", 
+    "status" -> "None", "summary" -> 
+    "Simple Circuit Analysis Package (SCAPack) is a collection of functions \
+to be able to handle the analysis of electronic circuits symbolically. The \
+goal behind SCAPack is to be able to nimbly solve circuits symbolically with \
+the power of Mathematica. SCAPack is not a numerical simulator such as SPICE, \
+but rather is meant for designers to gain intuition on the operation of their \
+circuit. SCAPack represents all circuit elements in the complex Laplace \
+variable s. While this may suggest that it is only suitable for linear \
+time-invariant systems, or for frequency domain analyses only, this is not \
+strictly the case. Mathematica built-ins such as InverseLaplaceTransform may \
+be used by a user to convert the frequency domain results into the time \
+domain. Linearity may be relaxed by the astute user, after circuit analysis, \
+by the replacement of simple small-signal parameters by a bias dependent \
+equivalent. Using SCAPack begins with the netlist. SCAPack's netlist format \
+was designed to be kept as simple as possible with great similarity to \
+numerical simulation tools such as SPICE or SPECTRE. The netlist format is \
+structured as a list of element and control lists all of which is detailed in \
+the Netlists tutorial.", "synonyms" -> {}, "title" -> 
+    "Introduction to SCAPack", "titlemodifier" -> "", "windowtitle" -> 
+    "Introduction to SCAPack", "type" -> "Tutorial", "uri" -> 
+    "SCAPack/tutorial/Introduction to SCAPack"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> 
+  "8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, 2011)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[616, 21, 3594, 78, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4235, 103, 60, 1, 70, "Title",
+ CellID->509267359],
+Cell[4298, 106, 490, 10, 70, "Text",
+ CellID->1534169418],
+Cell[CellGroupData[{
+Cell[4813, 120, 59, 1, 70, "Section",
+ CellID->157341856],
+Cell[4875, 123, 780, 18, 70, "Text",
+ CellID->892204335],
+Cell[5658, 143, 460, 10, 70, "Text",
+ CellID->1712928567]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6155, 158, 46, 1, 70, "Section",
+ CellID->24653887],
+Cell[6204, 161, 1162, 28, 70, "Text",
+ CellID->2041018585]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7403, 194, 58, 1, 70, "Section",
+ CellID->1169158671],
+Cell[7464, 197, 789, 20, 70, "Text",
+ CellID->574413447]
+}, Open  ]],
+Cell[8268, 220, 52, 1, 70, "Section",
+ CellID->77798872],
+Cell[8323, 223, 59, 1, 70, "Section",
+ CellID->1643064564],
+Cell[CellGroupData[{
+Cell[8407, 228, 65, 1, 70, "TutorialMoreAboutSection",
+ CellID->23220180],
+Cell[8475, 231, 196, 5, 70, "TutorialMoreAbout",
+ CellID->1567025153],
+Cell[8674, 238, 147, 3, 70, "TutorialMoreAbout",
+ CellID->574221982],
+Cell[8824, 243, 170, 4, 70, "TutorialMoreAbout",
+ CellID->227470406]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9031, 252, 101, 2, 70, "RelatedTutorialsSection",
+ CellID->415694126],
+Cell[9135, 256, 146, 3, 70, "RelatedTutorials",
+ CellID->806871991],
+Cell[9284, 261, 164, 4, 70, "RelatedTutorials",
+ CellID->107177409],
+Cell[9451, 267, 159, 3, 70, "RelatedTutorials",
+ CellID->1739416877],
+Cell[9613, 272, 168, 4, 70, "RelatedTutorials",
+ CellID->1227810464],
+Cell[9784, 278, 172, 4, 70, "RelatedTutorials",
+ CellID->80197099],
+Cell[9959, 284, 199, 5, 70, "RelatedTutorials",
+ CellID->684565128],
+Cell[10161, 291, 161, 3, 70, "RelatedTutorials",
+ CellID->1416209317]
+}, Open  ]]
+}, Open  ]],
+Cell[10349, 298, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

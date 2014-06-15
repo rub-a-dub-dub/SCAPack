@@ -1,0 +1,1 @@
+<pre name='i_9_in' id='i_9_in' class='IFT'>Solve[ladderEqns, ladderVars]</pre><div class='IFU'><a name='1232108143'></a>http://wolfram.com/xid/0cy123x5t0e2g3d55s930es-unum0h</div>

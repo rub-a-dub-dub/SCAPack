@@ -1,0 +1,7 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{
+  {&quot;voltnoise&quot;, {vi, 0}, &quot;V1&quot;, {}},
+  {&quot;res&quot;, {vi, vx}, &quot;r1&quot;, {Gvalue -&gt; 1/R}},
+  {&quot;cap&quot;, {vx, vo}, &quot;c1&quot;, {Cvalue -&gt; C}},
+  {&quot;res&quot;, {vo, 0}, &quot;r2&quot;, {Gvalue -&gt; 1/R}}
+  };
+GetNoisePSD[%, {vo, 0}, &quot;V1&quot;]</pre><div class='IFU'><a name='1290607605'></a>http://wolfram.com/xid/0bgpsufwgc8n2i0f5qkbpk1q3mzy8i-vmohhj</div>

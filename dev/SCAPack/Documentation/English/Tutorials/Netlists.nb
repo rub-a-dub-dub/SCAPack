@@ -1,0 +1,621 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     18293,        612]
+NotebookOptionsPosition[     14384,        467]
+NotebookOutlinePosition[     14816,        484]
+CellTagsIndexPosition[     14773,        481]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.1", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Tutorial", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/tutorial/Netlists", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1427428552],
+
+Cell["XXXX", "Keywords",
+ CellID->1251852827]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->218895918],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->795871300],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->199739161],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->40625308],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->357121918],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->35949532],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->929432370],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Netlists", "Title",
+ CellID->509267359],
+
+Cell["\<\
+The netlist format in SCAPack is loosely based on a SPICE type netlist. \
+Unlike typical SPICE netlists, there are a few noteable differences.\
+\>", "Text",
+ CellChangeTimes->{{3.561517749048201*^9, 3.561517764447782*^9}, {
+  3.56151780024105*^9, 3.561517843456641*^9}},
+ CellID->1534169418],
+
+Cell[CellGroupData[{
+
+Cell["Netlist Format", "Section",
+ CellChangeTimes->{{3.561518945936667*^9, 3.561518949291732*^9}},
+ CellID->1162538291],
+
+Cell["\<\
+SCAPack's netlist format is SPICE-like but not entirely compatible. Each line \
+in the netlist is a list beginning with the case-insensitive model or command \
+identifier, followed by an optional set of arguments. \
+\>", "Text",
+ CellChangeTimes->{{3.561518957213236*^9, 3.561518982587709*^9}, {
+   3.5615190484836206`*^9, 3.561519128920815*^9}, {3.561519174599681*^9, 
+   3.561519176722557*^9}, 3.5615746546546993`*^9, {3.561574849327963*^9, 
+   3.5615748517595587`*^9}},
+ CellID->974836431],
+
+Cell[CellGroupData[{
+
+Cell["Element Lines", "Subsection",
+ CellChangeTimes->{{3.5615191388308764`*^9, 3.561519148814225*^9}},
+ CellID->923152854],
+
+Cell["\<\
+Element lines have four elements. The first is the model name, followed by a \
+list of node connections, an element identifier and a list of rules for \
+element parameters.\
+\>", "Text",
+ CellChangeTimes->{{3.5615191537390633`*^9, 3.5615191698814898`*^9}, {
+  3.561519243678668*^9, 3.5615192675449333`*^9}, {3.561519440400585*^9, 
+  3.5615194409321947`*^9}},
+ CellID->2008151250],
+
+Cell[CellGroupData[{
+
+Cell["A simple resistor", "MathCaption",
+ CellChangeTimes->{{3.561519279383585*^9, 3.561519281429701*^9}},
+ CellID->1145062498],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\"\<res\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"in", ",", "out"}], "}"}], ",", "\"\<r1\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"Gvalue", "\[Rule]", 
+     RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.5615192861251593`*^9, 3.561519299958694*^9}, {
+  3.561945174178981*^9, 3.56194517546728*^9}},
+ CellID->1464443119]
+}, Open  ]],
+
+Cell["\<\
+The fourth parameter is entirely optional for all elements except for \
+current-controller dependent sources.\
+\>", "Text",
+ CellChangeTimes->{{3.5615193113191013`*^9, 3.5615193539705276`*^9}},
+ CellID->1577841255],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A resistor with the default conductance\
+\>", "MathCaption",
+ CellChangeTimes->{{3.561519373934388*^9, 3.5615193928083267`*^9}},
+ CellID->1649899629],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\"\<res\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"in", ",", "out"}], "}"}], ",", "\"\<r1\>\"", ",", 
+   RowBox[{"{", "}"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.5615193942465343`*^9, 3.561519400948489*^9}},
+ CellID->1554214539]
+}, Open  ]],
+
+Cell[TextData[{
+ "The number of element parameters as well as node connections depend on the \
+particular element being used. For more details on the various elements \
+available and their associated parameters, refer to the ",
+ ButtonBox["Device Models",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/guide/DeviceModels"],
+ " guide. "
+}], "Text",
+ CellChangeTimes->{{3.561519431300902*^9, 3.561519514688298*^9}, {
+  3.561519568253911*^9, 3.561519578447832*^9}},
+ CellID->1632110737]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Control Lines", "Subsection",
+ CellChangeTimes->{{3.561520197584297*^9, 3.561520199776836*^9}},
+ CellID->1076533628],
+
+Cell["\<\
+Control lines differ from element lines in that they alter the final form of \
+the equations representing the circuit but do not add any additional \
+equations that need to be solved. \
+\>", "Text",
+ CellChangeTimes->{{3.561520204235607*^9, 3.561520206364921*^9}, {
+  3.561520237332075*^9, 3.561520289668972*^9}, {3.5615203501132174`*^9, 
+  3.561520378332456*^9}, {3.561520476572482*^9, 3.561520479515596*^9}, {
+  3.5615209660914288`*^9, 3.561520978701038*^9}},
+ CellID->750959821],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+The only control line currently supported is a nodeset\
+\>", "MathCaption",
+ CellChangeTimes->{{3.561520988211914*^9, 3.561521002287394*^9}},
+ CellID->620318128],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\"\<nodeset\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"in", "\[Rule]", "3"}], "}"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.5615210044734163`*^9, 3.561521033382949*^9}},
+ CellID->1801154758]
+}, Open  ]],
+
+Cell[TextData[{
+ "For more details on available control lines, refer to the ",
+ ButtonBox["Control Statements",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/guide/ControlStatements"],
+ " guide."
+}], "Text",
+ CellChangeTimes->{{3.561521051942582*^9, 3.561521139613237*^9}, {
+  3.561521176267281*^9, 3.5615212176052628`*^9}},
+ CellID->2084905678]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Node Voltages", "Section",
+ CellChangeTimes->{{3.5615179066736193`*^9, 3.5615179099382477`*^9}},
+ CellID->65562262],
+
+Cell[TextData[{
+ "Unlike in other circuit simulators, nodes are always symbolic in SCAPack. \
+That is to say, that all node connections listed need to be valid ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " symbols. The only exception is the datum (ground) node, which is annotated \
+as 0. SCAPack has methods for handling situations with explicit voltages for \
+nodes which is addressed in ",
+ ButtonBox["Using SCAPack",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/tutorial/UsingSCAPack"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.5615179113909883`*^9, 3.561517928367113*^9}, {
+  3.561517960995263*^9, 3.561518004800268*^9}, {3.561518054849443*^9, 
+  3.561518062143466*^9}, {3.561518328475679*^9, 3.561518358635562*^9}, {
+  3.561518458500003*^9, 3.5615184648081923`*^9}, {3.561518511227846*^9, 
+  3.561518565931115*^9}, {3.5615186100489893`*^9, 3.561518660921916*^9}, {
+  3.561519602789486*^9, 3.561519618782023*^9}},
+ CellID->245826523],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Here's a simple netlist of an R-2R ladder network\
+\>", "MathCaption",
+ CellChangeTimes->{{3.561518081578815*^9, 3.561518094532228*^9}},
+ CellID->1995318880],
+
+Cell[BoxData[
+ RowBox[{"{", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\"\<volt\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vin", ",", "0"}], "}"}], ",", "\"\<v1\>\"", ",", 
+     RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\"\<res\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vin", ",", "vout"}], "}"}], ",", "\"\<r1\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Gvalue", "\[Rule]", 
+       RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"{", 
+    RowBox[{"\"\<res\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<r2\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Gvalue", "\[Rule]", 
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"2", "R"}], ")"}]}]}], "}"}]}], "}"}], ","}], 
+  "\[IndentingNewLine]", "}"}]], "Input",
+ CellChangeTimes->{{3.561518096734531*^9, 3.5615181646069613`*^9}, {
+  3.561945181582274*^9, 3.561945185573251*^9}},
+ CellID->219784608]
+}, Open  ]],
+
+Cell["\<\
+SCAPack requires that all nodes have at least two connections. In cases such \
+as the above, one needs to include either a stimulus, such as the voltage \
+source above, or a probe.\
+\>", "Text",
+ CellChangeTimes->{{3.5615181735796556`*^9, 3.561518225999895*^9}, {
+  3.561518320964506*^9, 3.561518324853836*^9}, {3.5615187304782677`*^9, 
+  3.5615187603694677`*^9}, {3.561518868018457*^9, 3.561518898239752*^9}},
+ CellID->438586685]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Branch Currents", "Section",
+ CellChangeTimes->{{3.5615695612310743`*^9, 3.5615695628523417`*^9}},
+ CellID->621833770],
+
+Cell[TextData[{
+ "SCAPack does not save branch or element currents for the entire netlist. \
+The only currents that are solved for are the currents through voltage \
+sources, either independent or dependent as well as current probes. In order \
+to save currents through an arbitrary element, one needs to use a current \
+probe. While the user specifies the name for a node explicitly, the same is \
+not possible for currents. The symbolic name for currents is determined by \
+prefixing ",
+ Cell[BoxData["I$"], "InlineFormula",
+  FormatType->"StandardForm"],
+ " to the element name."
+}], "Text",
+ CellChangeTimes->{{3.561569566558013*^9, 3.561569573568554*^9}, {
+  3.5615698809671917`*^9, 3.5615698983950443`*^9}, {3.5615700446239653`*^9, 
+  3.561570114520496*^9}, {3.5615747432974453`*^9, 3.561574785078394*^9}, {
+  3.56157481842103*^9, 3.561574819794003*^9}},
+ CellID->1504746088],
+
+Cell[CellGroupData[{
+
+Cell["Save the current through C1", "MathCaption",
+ CellChangeTimes->{{3.561570118048542*^9, 3.561570121936182*^9}, {
+  3.561574462249309*^9, 3.56157446861946*^9}},
+ CellID->1500073944],
+
+Cell[BoxData[{
+ RowBox[{"{", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\"\<volt\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vin", ",", "0"}], "}"}], ",", "\"\<v1\>\"", ",", 
+     RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\"\<res\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vin", ",", "vx"}], "}"}], ",", "\"\<r1\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Gvalue", "\[Rule]", 
+       RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"{", 
+    RowBox[{"\"\<res\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vx", ",", "vout"}], "}"}], ",", "\"\<r2\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Gvalue", "\[Rule]", 
+       RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"{", 
+    RowBox[{"\"\<cap\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vx", ",", "vprb"}], "}"}], ",", "\"\<c1\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\"\<cap\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<c2\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\"\<iprobe\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vprb", ",", "0"}], "}"}], ",", "\"\<ip1\>\"", ",", 
+     RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+  "}"}], "\[IndentingNewLine]", 
+ RowBox[{"GetTransferFunction", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"I$ip1", ",", "vin"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.561570125948803*^9, 3.561570166317933*^9}, {
+   3.5615702496573772`*^9, 3.561570276046999*^9}, 3.561573190329404*^9, {
+   3.5615742485814533`*^9, 3.561574292378305*^9}, {3.561574353197281*^9, 
+   3.561574396739234*^9}, {3.561574663670371*^9, 3.56157467636381*^9}, {
+   3.561945188830183*^9, 3.5619451995332747`*^9}},
+ CellID->284761028]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "TutorialMoreAboutSection",
+ CellID->23220180],
+
+Cell[TextData[ButtonBox["Elements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/DeviceModels"]], "TutorialMoreAbout",
+ CellChangeTimes->{{3.56152128338312*^9, 3.561521285245459*^9}, {
+  3.56152160404461*^9, 3.561521604207354*^9}, {3.5616779883606863`*^9, 
+  3.561677989080093*^9}},
+ CellID->1567025153],
+
+Cell[TextData[ButtonBox["Control Statements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/ControlStatements"]], "TutorialMoreAbout",
+ CellChangeTimes->{{3.561521328781456*^9, 3.561521331376087*^9}, {
+  3.5615216074112988`*^9, 3.561521607594474*^9}},
+ CellID->519062047],
+
+Cell[TextData[ButtonBox["Simple Circuit Analysis Package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/guide/Simple Circuit Analysis Package"]], \
+"TutorialMoreAbout",
+ CellChangeTimes->{{3.561945458238894*^9, 3.561945502218547*^9}},
+ CellID->444253241]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Tutorials", "RelatedTutorialsSection",
+ CellID->415694126],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/SolvingCircuits"]], "RelatedTutorials",
+ CellChangeTimes->{{3.561521345459524*^9, 3.561521347457528*^9}, {
+  3.561521613121229*^9, 3.561521613330217*^9}},
+ CellID->806871991]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{Automatic, 373}, {Automatic, 65}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "TutorialPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 325, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 81, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1062, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1145, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1225, 53, 70, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1332, 59, 56, 1, 17, "KeywordsSection",
+ CellID->1427428552],
+Cell[1391, 62, 45, 1, 70, "Keywords",
+ CellID->1251852827]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1473, 68, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1529, 71, 63, 2, 70, "Details",
+ CellID->218895918],
+Cell[1595, 75, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[1667, 79, 66, 2, 70, "Details",
+ CellID->795871300],
+Cell[1736, 83, 71, 2, 70, "Details",
+ CellID->199739161],
+Cell[1810, 87, 60, 2, 70, "Details",
+ CellID->40625308],
+Cell[1873, 91, 61, 2, 70, "Details",
+ CellID->357121918],
+Cell[1937, 95, 62, 2, 70, "Details",
+ CellID->35949532],
+Cell[2002, 99, 78, 2, 70, "Details",
+ CellID->929432370],
+Cell[2083, 103, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2187, 110, 45, 1, 104, "Title",
+ CellID->509267359],
+Cell[2235, 113, 301, 6, 36, "Text",
+ CellID->1534169418],
+Cell[CellGroupData[{
+Cell[2561, 123, 120, 2, 41, "Section",
+ CellID->1162538291],
+Cell[2684, 127, 502, 9, 51, "Text",
+ CellID->974836431],
+Cell[CellGroupData[{
+Cell[3211, 140, 123, 2, 38, "Subsection",
+ CellID->923152854],
+Cell[3337, 144, 389, 8, 36, "Text",
+ CellID->2008151250],
+Cell[CellGroupData[{
+Cell[3751, 156, 127, 2, 37, "MathCaption",
+ CellID->1145062498],
+Cell[3881, 160, 386, 10, 23, "Input",
+ CellID->1464443119]
+}, Open  ]],
+Cell[4282, 173, 224, 5, 21, "Text",
+ CellID->1577841255],
+Cell[CellGroupData[{
+Cell[4531, 182, 159, 4, 37, "MathCaption",
+ CellID->1649899629],
+Cell[4693, 188, 271, 7, 23, "Input",
+ CellID->1554214539]
+}, Open  ]],
+Cell[4979, 198, 488, 11, 51, "Text",
+ CellID->1632110737]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5504, 214, 122, 2, 38, "Subsection",
+ CellID->1076533628],
+Cell[5629, 218, 491, 9, 36, "Text",
+ CellID->750959821],
+Cell[CellGroupData[{
+Cell[6145, 231, 171, 4, 37, "MathCaption",
+ CellID->620318128],
+Cell[6319, 237, 231, 6, 23, "Input",
+ CellID->1801154758]
+}, Open  ]],
+Cell[6565, 246, 350, 9, 21, "Text",
+ CellID->2084905678]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6964, 261, 121, 2, 41, "Section",
+ CellID->65562262],
+Cell[7088, 265, 951, 19, 66, "Text",
+ CellID->245826523],
+Cell[CellGroupData[{
+Cell[8064, 288, 167, 4, 37, "MathCaption",
+ CellID->1995318880],
+Cell[8234, 294, 1016, 28, 84, "Input",
+ CellID->219784608]
+}, Open  ]],
+Cell[9265, 325, 440, 8, 36, "Text",
+ CellID->438586685]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9742, 338, 124, 2, 41, "Section",
+ CellID->621833770],
+Cell[9869, 342, 881, 16, 82, "Text",
+ CellID->1504746088],
+Cell[CellGroupData[{
+Cell[10775, 362, 185, 3, 37, "MathCaption",
+ CellID->1500073944],
+Cell[10963, 367, 2028, 53, 144, "Input",
+ CellID->284761028]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13040, 426, 65, 1, 71, "TutorialMoreAboutSection",
+ CellID->23220180],
+Cell[13108, 429, 313, 6, 20, "TutorialMoreAbout",
+ CellID->1567025153],
+Cell[13424, 437, 280, 5, 20, "TutorialMoreAbout",
+ CellID->519062047],
+Cell[13707, 444, 261, 6, 21, "TutorialMoreAbout",
+ CellID->444253241]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14005, 455, 72, 1, 71, "RelatedTutorialsSection",
+ CellID->415694126],
+Cell[14080, 458, 276, 5, 20, "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

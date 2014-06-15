@@ -1,0 +1,6 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>temp = {
+   {&quot;res&quot;, {ve, 0}, &quot;r1&quot;, {Rvalue -&gt; rpi}},
+   {&quot;vccs&quot;, {ve, 0, ve, vo}, &quot;vccs1&quot;, {A -&gt; gm}},
+   {&quot;res&quot;, {vo, ve}, &quot;r2&quot;, {Rvalue -&gt; ro}}
+   };
+ComputeHNetwork[temp, {{ve, 0}, {vo, 0}}] // Normal // Simplify</pre><div class='IFU'><a name='1670736316'></a>http://wolfram.com/xid/0bham3gwa1wepgeploncln2y-1wzyoe</div>

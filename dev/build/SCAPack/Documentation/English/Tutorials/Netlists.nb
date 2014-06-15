@@ -1,0 +1,517 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     16378,        508]
+NotebookOptionsPosition[     11593,        365]
+NotebookOutlinePosition[     14167,        428]
+CellTagsIndexPosition[     14124,        425]
+WindowTitle->Netlists - Wolfram Mathematica
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["S C A PACK TUTORIAL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Related Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Solving Circuits\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/tutorial/SolvingCircuits"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Elements\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/guide/DeviceModels"], "\<\"Control Statements\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/guide/ControlStatements"], "\<\"Simple Circuit \
+Analysis Package\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/guide/Simple Circuit Analysis Package"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"SCAPack/tutorial/Netlists\"\>":>
+       None, "\<\"Copy Mathematica url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["SCAPack/tutorial/Netlists"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/mathematica/SCAPack/tutorial/\
+Netlists.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
+            Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+            "http://reference.wolfram.com/mathematica/", 
+             "SCAPack/tutorial/Netlists", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Netlists", "Title",
+ CellID->509267359],
+
+Cell["\<\
+The netlist format in SCAPack is loosely based on a SPICE type netlist. \
+Unlike typical SPICE netlists, there are a few noteable differences.\
+\>", "Text",
+ CellID->1534169418],
+
+Cell[CellGroupData[{
+
+Cell["Netlist Format", "Section",
+ CellID->1162538291],
+
+Cell["\<\
+SCAPack's netlist format is SPICE-like but not entirely compatible. Each line \
+in the netlist is a list beginning with the case-insensitive model or command \
+identifier, followed by an optional set of arguments. \
+\>", "Text",
+ CellID->974836431],
+
+Cell[CellGroupData[{
+
+Cell["Element Lines", "Subsection",
+ CellID->923152854],
+
+Cell["\<\
+Element lines have four elements. The first is the model name, followed by a \
+list of node connections, an element identifier and a list of rules for \
+element parameters.\
+\>", "Text",
+ CellID->2008151250],
+
+Cell["A simple resistor", "MathCaption",
+ CellID->1145062498],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\"\<res\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"in", ",", "out"}], "}"}], ",", "\"\<r1\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"Gvalue", "\[Rule]", 
+     RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}]], "Input",
+ CellID->1464443119],
+
+Cell["\<\
+The fourth parameter is entirely optional for all elements except for \
+current-controller dependent sources.\
+\>", "Text",
+ CellID->1577841255],
+
+Cell["A resistor with the default conductance", "MathCaption",
+ CellID->1649899629],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\"\<res\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"in", ",", "out"}], "}"}], ",", "\"\<r1\>\"", ",", 
+   RowBox[{"{", "}"}]}], "}"}]], "Input",
+ CellID->1554214539],
+
+Cell[TextData[{
+ "The number of element parameters as well as node connections depend on the \
+particular element being used. For more details on the various elements \
+available and their associated parameters, refer to the ",
+ ButtonBox["Device Models",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/guide/DeviceModels"],
+ " guide. "
+}], "Text",
+ CellID->1632110737]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Control Lines", "Subsection",
+ CellID->1076533628],
+
+Cell["\<\
+Control lines differ from element lines in that they alter the final form of \
+the equations representing the circuit but do not add any additional \
+equations that need to be solved. \
+\>", "Text",
+ CellID->750959821],
+
+Cell["The only control line currently supported is a nodeset", "MathCaption",
+ CellID->620318128],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\"\<nodeset\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"in", "\[Rule]", "3"}], "}"}]}], "}"}]], "Input",
+ CellID->1801154758],
+
+Cell[TextData[{
+ "For more details on available control lines, refer to the ",
+ ButtonBox["Control Statements",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/guide/ControlStatements"],
+ " guide."
+}], "Text",
+ CellID->2084905678]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Node Voltages", "Section",
+ CellID->65562262],
+
+Cell[TextData[{
+ "Unlike in other circuit simulators, nodes are always symbolic in SCAPack. \
+That is to say, that all node connections listed need to be valid ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " symbols. The only exception is the datum (ground) node, which is annotated \
+as 0. SCAPack has methods for handling situations with explicit voltages for \
+nodes which is addressed in ",
+ ButtonBox["Using SCAPack",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/tutorial/UsingSCAPack"],
+ "."
+}], "Text",
+ CellID->245826523],
+
+Cell["Here's a simple netlist of an R-2R ladder network", "MathCaption",
+ CellID->1995318880],
+
+Cell[BoxData[
+ RowBox[{"{", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\"\<volt\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vin", ",", "0"}], "}"}], ",", "\"\<v1\>\"", ",", 
+     RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\"\<res\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vin", ",", "vout"}], "}"}], ",", "\"\<r1\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Gvalue", "\[Rule]", 
+       RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"{", 
+    RowBox[{"\"\<res\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<r2\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Gvalue", "\[Rule]", 
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"2", "R"}], ")"}]}]}], "}"}]}], "}"}], ","}], 
+  "\[IndentingNewLine]", "}"}]], "Input",
+ CellID->219784608],
+
+Cell["\<\
+SCAPack requires that all nodes have at least two connections. In cases such \
+as the above, one needs to include either a stimulus, such as the voltage \
+source above, or a probe.\
+\>", "Text",
+ CellID->438586685]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Branch Currents", "Section",
+ CellID->621833770],
+
+Cell[TextData[{
+ "SCAPack does not save branch or element currents for the entire netlist. \
+The only currents that are solved for are the currents through voltage \
+sources, either independent or dependent as well as current probes. In order \
+to save currents through an arbitrary element, one needs to use a current \
+probe. While the user specifies the name for a node explicitly, the same is \
+not possible for currents. The symbolic name for currents is determined by \
+prefixing ",
+ Cell[BoxData["I$"], "InlineFormula"],
+ " to the element name."
+}], "Text",
+ CellID->1504746088],
+
+Cell["Save the current through C1", "MathCaption",
+ CellID->1500073944],
+
+Cell[BoxData[{
+ RowBox[{"{", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\"\<volt\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vin", ",", "0"}], "}"}], ",", "\"\<v1\>\"", ",", 
+     RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\"\<res\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vin", ",", "vx"}], "}"}], ",", "\"\<r1\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Gvalue", "\[Rule]", 
+       RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"{", 
+    RowBox[{"\"\<res\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vx", ",", "vout"}], "}"}], ",", "\"\<r2\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Gvalue", "\[Rule]", 
+       RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"{", 
+    RowBox[{"\"\<cap\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vx", ",", "vprb"}], "}"}], ",", "\"\<c1\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\"\<cap\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<c2\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"\"\<iprobe\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"vprb", ",", "0"}], "}"}], ",", "\"\<ip1\>\"", ",", 
+     RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+  "}"}], "\[IndentingNewLine]", 
+ RowBox[{"GetTransferFunction", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"I$ip1", ",", "vin"}], "}"}]}], "]"}]}], "Input",
+ CellID->284761028]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["MORE ABOUT", "TutorialMoreAboutSection",
+ CellID->23220180],
+
+Cell[TextData[ButtonBox["Elements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/DeviceModels"]], "TutorialMoreAbout",
+ CellID->1567025153],
+
+Cell[TextData[ButtonBox["Control Statements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/ControlStatements"]], "TutorialMoreAbout",
+ CellID->519062047],
+
+Cell[TextData[ButtonBox["Simple Circuit Analysis Package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/guide/Simple Circuit Analysis Package"]], \
+"TutorialMoreAbout",
+ CellID->444253241]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["RELATED TUTORIALS", "RelatedTutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->415694126],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/SolvingCircuits"]], "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Netlists - Wolfram Mathematica",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "TutorialColor", 
+  "LinkTrails" -> GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:SCAPack/guide/SCAPack", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}], 
+        Cell[">", "DockedLinkTrailSeparator"]}]}}, ColumnAlignments -> Left], 
+  "Metadata" -> {
+   "built" -> "{2012, 12, 9, 18, 21, 30.678707}", 
+    "history" -> {"0.1", "", "", ""}, "context" -> "SCAPack`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "S C A Pack Tutorial", "language" -> "en", "paclet" -> "SCAPack", 
+    "status" -> "None", "summary" -> 
+    "The netlist format in SCAPack is loosely based on a SPICE type netlist. \
+Unlike typical SPICE netlists, there are a few noteable differences. \
+SCAPack's netlist format is SPICE-like but not entirely compatible. Each line \
+in the netlist is a list beginning with the case-insensitive model or command \
+identifier, followed by an optional set of arguments. Element lines have four \
+elements. The first is the model name, followed by a list of node \
+connections, an element identifier and a list of rules for element \
+parameters.", "synonyms" -> {}, "title" -> "Netlists", "titlemodifier" -> "", 
+    "windowtitle" -> "Netlists", "type" -> "Tutorial", "uri" -> 
+    "SCAPack/tutorial/Netlists"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> Notebook], 
+   Cell[
+    StyleData["Output"], CellContext -> Notebook], 
+   Cell[
+    StyleData["TutorialMoreAboutSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["RelatedTutorialsSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}], 
+   Cell[
+    StyleData["TutorialRelatedLinksSection"], 
+    CellGroupingRules -> {"SectionGrouping", 30}]}, Visible -> False, 
+  FrontEndVersion -> 
+  "8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, 2011)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[601, 21, 2815, 63, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3441, 88, 45, 1, 70, "Title",
+ CellID->509267359],
+Cell[3489, 91, 187, 4, 70, "Text",
+ CellID->1534169418],
+Cell[CellGroupData[{
+Cell[3701, 99, 54, 1, 70, "Section",
+ CellID->1162538291],
+Cell[3758, 102, 258, 5, 70, "Text",
+ CellID->974836431],
+Cell[CellGroupData[{
+Cell[4041, 111, 55, 1, 70, "Subsection",
+ CellID->923152854],
+Cell[4099, 114, 217, 5, 70, "Text",
+ CellID->2008151250],
+Cell[4319, 121, 61, 1, 70, "MathCaption",
+ CellID->1145062498],
+Cell[4383, 124, 270, 8, 70, "Input",
+ CellID->1464443119],
+Cell[4656, 134, 154, 4, 70, "Text",
+ CellID->1577841255],
+Cell[4813, 140, 83, 1, 70, "MathCaption",
+ CellID->1649899629],
+Cell[4899, 143, 203, 6, 70, "Input",
+ CellID->1554214539],
+Cell[5105, 151, 373, 9, 70, "Text",
+ CellID->1632110737]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5515, 165, 56, 1, 70, "Subsection",
+ CellID->1076533628],
+Cell[5574, 168, 228, 5, 70, "Text",
+ CellID->750959821],
+Cell[5805, 175, 97, 1, 70, "MathCaption",
+ CellID->620318128],
+Cell[5905, 178, 163, 5, 70, "Input",
+ CellID->1801154758],
+Cell[6071, 185, 233, 7, 70, "Text",
+ CellID->2084905678]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6353, 198, 51, 1, 70, "Section",
+ CellID->65562262],
+Cell[6407, 201, 542, 13, 70, "Text",
+ CellID->245826523],
+Cell[6952, 216, 93, 1, 70, "MathCaption",
+ CellID->1995318880],
+Cell[7048, 219, 899, 26, 70, "Input",
+ CellID->219784608],
+Cell[7950, 247, 224, 5, 70, "Text",
+ CellID->438586685]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8211, 257, 54, 1, 70, "Section",
+ CellID->621833770],
+Cell[8268, 260, 585, 11, 70, "Text",
+ CellID->1504746088],
+Cell[8856, 273, 71, 1, 70, "MathCaption",
+ CellID->1500073944],
+Cell[8930, 276, 1689, 48, 70, "Input",
+ CellID->284761028]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10656, 329, 65, 1, 70, "TutorialMoreAboutSection",
+ CellID->23220180],
+Cell[10724, 332, 149, 3, 70, "TutorialMoreAbout",
+ CellID->1567025153],
+Cell[10876, 337, 163, 3, 70, "TutorialMoreAbout",
+ CellID->519062047],
+Cell[11042, 342, 195, 5, 70, "TutorialMoreAbout",
+ CellID->444253241]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11274, 352, 101, 2, 70, "RelatedTutorialsSection",
+ CellID->415694126],
+Cell[11378, 356, 161, 3, 70, "RelatedTutorials",
+ CellID->806871991]
+}, Open  ]]
+}, Open  ]],
+Cell[11566, 363, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

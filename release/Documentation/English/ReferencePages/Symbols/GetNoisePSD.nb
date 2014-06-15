@@ -1,0 +1,469 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     14390,        460]
+NotebookOptionsPosition[     10737,        346]
+NotebookOutlinePosition[     12835,        403]
+CellTagsIndexPosition[     12750,        398]
+WindowTitle->GetNoisePSD - Wolfram Mathematica
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["S C A PACK SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Netlists\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Netlists"], "\<\"Solving Circuits\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/tutorial/SolvingCircuits"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"GetTotalNoisePSD\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/ref/GetTotalNoisePSD"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Simple Circuit Analysis Package\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/guide/Simple Circuit Analysis Package"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"SCAPack/ref/GetNoisePSD\"\>":>
+       None, "\<\"Copy Mathematica url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["SCAPack/ref/GetNoisePSD"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/mathematica/SCAPack/ref/\
+GetNoisePSD.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+            "http://reference.wolfram.com/mathematica/", 
+             "SCAPack/ref/GetNoisePSD", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["GetNoisePSD", "ObjectName",
+ CellID->1224892054],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"GetNoisePSD", "[", 
+       RowBox[{
+        StyleBox["netlist", "TI"], ",", 
+        StyleBox["nodes", "TI"], ",", 
+        StyleBox["srcname", "TI"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns the noise power spectral density between the \
+specified ",
+     StyleBox["nodes", "TI"],
+     " for the noise source ",
+     StyleBox["srcname", "TI"],
+     " in the ",
+     StyleBox["netlist", "TI"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->737324873],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{"GetNoisePSD", "[", 
+   RowBox[{
+    StyleBox["netlist", "TI"], ",", 
+    StyleBox["nodes", "TI"], ",", 
+    StyleBox["srcname", "TI"]}], "]"}]], "InlineFormula"],
+ " determines the output noise due to the noise source specified."
+}], "Notes",
+ CellID->1067943069],
+
+Cell[TextData[{
+ StyleBox["nodes", "TI"],
+ " is a list of two nodes, between which the output noise spectrum is \
+calculated."
+}], "Notes",
+ CellID->1555040001],
+
+Cell["\<\
+All independent sources are disabled prior to determining the output noise \
+spectrum.\
+\>", "Notes",
+ CellID->1447634752]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1238497321],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->2012967323],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<volt\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vin", ",", "0"}], "}"}], ",", "\"\<v1\>\"", ",", 
+      RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<resnoisy\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vin", ",", "vout"}], "}"}], ",", "\"\<r1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Gvalue", "\[Rule]", 
+        RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<cap\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<c1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}]}], 
+   "\[IndentingNewLine]", "}"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GetNoisePSD", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<r1\>\""}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->681312817],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"tf$r1", "\[Rule]", 
+    FractionBox[
+     RowBox[{"4", " ", "k", " ", "R", " ", "T"}], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{"C", " ", "R", " ", "s"}]}], ")"}], "2"]]}], ",", 
+   RowBox[{"zn$r1", "\[Rule]", "Null"}]}], "}"}]], "Output",
+ ImageSize->{236, 35},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->2106126256]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[StyleBox[ButtonBox["GetTotalNoisePSD",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/GetTotalNoisePSD"],
+ FontFamily->"Verdana"]], "SeeAlso",
+ CellID->263527532],
+
+Cell[TextData[StyleBox[ButtonBox["GetInputImpedance",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/GetInputImpedance"],
+ FontFamily->"Verdana"]], "SeeAlso",
+ CellID->929782353],
+
+Cell[TextData[StyleBox[ButtonBox["GetZVTimeConstants",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/GetZVTimeConstants"],
+ FontFamily->"Verdana"]], "SeeAlso",
+ CellID->1163390381],
+
+Cell[TextData[StyleBox[ButtonBox["GetTransferFunction",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/GetTransferFunction"],
+ FontFamily->"Verdana"]], "SeeAlso",
+ CellID->995950210]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->250839057],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "Tutorials",
+ CellID->387491638],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/SolvingCircuits"]], "Tutorials",
+ CellID->1401542162]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ WholeCellGroupOpener->True],
+
+Cell[TextData[ButtonBox["Simple Circuit Analysis Package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/guide/Simple Circuit Analysis Package"]], "MoreAbout",
+ CellID->484422823]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"GetNoisePSD - Wolfram Mathematica",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:SCAPack/guide/SCAPack", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}], 
+        Cell[">", "DockedLinkTrailSeparator"]}]}}, ColumnAlignments -> Left], 
+  "Metadata" -> {
+   "built" -> "{2012, 12, 9, 18, 19, 55.609858}", 
+    "history" -> {"0.1", "", "", ""}, "context" -> "SCAPack`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "S C A Pack Symbol", "language" -> "en", "paclet" -> "SCAPack", "status" -> 
+    "None", "summary" -> 
+    "GetNoisePSD[netlist, nodes, srcname] returns the noise power spectral \
+density between the specified nodes for the noise source srcname in the \
+netlist.", "synonyms" -> {}, "title" -> "GetNoisePSD", "titlemodifier" -> "", 
+    "windowtitle" -> "GetNoisePSD", "type" -> "Symbol", "uri" -> 
+    "SCAPack/ref/GetNoisePSD"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, 2011)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5755, 173, 491, 14, 70, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1238497321]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 12606, 391}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[604, 21, 3097, 71, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3726, 96, 54, 1, 70, "ObjectName",
+ CellID->1224892054],
+Cell[3783, 99, 683, 22, 70, "Usage",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4503, 126, 609, 18, 70, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->737324873],
+Cell[5115, 146, 305, 9, 70, "Notes",
+ CellID->1067943069],
+Cell[5423, 157, 160, 5, 70, "Notes",
+ CellID->1555040001],
+Cell[5586, 164, 132, 4, 70, "Notes",
+ CellID->1447634752]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5755, 173, 491, 14, 70, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1238497321],
+Cell[CellGroupData[{
+Cell[6271, 191, 196, 6, 70, "ExampleSection",
+ CellID->2012967323],
+Cell[CellGroupData[{
+Cell[6492, 201, 1035, 28, 70, "Input",
+ CellID->681312817],
+Cell[7530, 231, 466, 15, 70, "Output",
+ CellID->2106126256]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8057, 253, 446, 13, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[8506, 268, 182, 4, 70, "SeeAlso",
+ CellID->263527532],
+Cell[8691, 274, 184, 4, 70, "SeeAlso",
+ CellID->929782353],
+Cell[8878, 280, 187, 4, 70, "SeeAlso",
+ CellID->1163390381],
+Cell[9068, 286, 188, 4, 70, "SeeAlso",
+ CellID->995950210]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9293, 295, 448, 13, 70, "TutorialsSection",
+ CellID->250839057],
+Cell[9744, 310, 139, 3, 70, "Tutorials",
+ CellID->387491638],
+Cell[9886, 315, 155, 3, 70, "Tutorials",
+ CellID->1401542162]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10078, 323, 429, 12, 70, "MoreAboutSection"],
+Cell[10510, 337, 185, 4, 70, "MoreAbout",
+ CellID->484422823]
+}, Open  ]],
+Cell[10710, 344, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

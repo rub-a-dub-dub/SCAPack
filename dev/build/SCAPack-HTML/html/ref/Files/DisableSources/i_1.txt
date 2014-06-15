@@ -1,0 +1,7 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{{&quot;volt&quot;, {vin, 0}, &quot;v1&quot;, {}}, {&quot;res&quot;, {vin, vx}, 
+   &quot;r1&quot;, {Gvalue -&gt; 1/R}}, {&quot;res&quot;, {vx, 0}, 
+   &quot;r2&quot;, {Gvalue -&gt; 1/R}}, {&quot;res&quot;, {vx, vy}, 
+   &quot;r3&quot;, {Gvalue -&gt; 1/R}}, {&quot;res&quot;, {vy, 0}, 
+   &quot;r4&quot;, {Gvalue -&gt; 1/R}}, {&quot;cur&quot;, {vy, 0}, &quot;i1&quot;, {}}};
+DisableSources[%, {&quot;v1&quot; -&gt; &quot;Open&quot;, &quot;i1&quot; -&gt; &quot;Open&quot;}];
+GetInputImpedance[%, {vin, 0}]</pre><div class='IFU'><a name='1588194189'></a>http://wolfram.com/xid/0da5j7nm9y6np7csvwgyi8-0jusrj</div>

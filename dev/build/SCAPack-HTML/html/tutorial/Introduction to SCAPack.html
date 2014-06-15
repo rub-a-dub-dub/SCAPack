@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+<title>Introduction to SCAPack</title>
+<meta name='keywords' content='' />
+<meta name='description' content='Simple Circuit Analysis Package (SCAPack) is a collection of functions to be able to handle the analysis of electronic circuits symbolically. The goal behind SCAPack is to be able to nimbly solve circuits symbolically with the power of Mathematica. SCAPack is not a numerical simulator such as SPICE, but rather is meant for designers to gain intuition on the operation of their circuit. SCAPack represents all circuit elements in the complex Laplace variable s. While this may suggest that it is only suitable for linear time-invariant systems, or for frequency domain analyses only, this is not strictly the case. Mathematica built-ins such as InverseLaplaceTransform may be used by a user to convert the frequency domain results into the time domain. Linearity may be relaxed by the astute user, after circuit analysis, by the replacement of simple small-signal parameters by a bias dependent equivalent. Using SCAPack begins with the netlist. SCAPack&apos;s netlist format was designed to be kept as simple as possible with great similarity to numerical simulation tools such as SPICE or SPECTRE. The netlist format is structured as a list of element and control lists all of which is detailed in the Netlists tutorial.' />
+<link rel='stylesheet' type='text/css' href='../css/functions.css' />
+<script src='../javascript/menu.js' type='text/javascript'></script>
+<script src='../javascript/common.js' type='text/javascript'></script>
+<script src='../javascript/prototype-1.4.0.js' type='text/javascript'></script>
+<script src='../javascript/search.js' type='text/javascript'></script>
+<script src='../javascript/jquery.js' type='text/javascript'></script>
+<script src='../javascript/jquery-query.js' type='text/javascript'></script>
+<script src='../javascript/jquery.dimensions.min.js' type='text/javascript'></script>
+<script src='../javascript/jquery.mousewheel.min.js' type='text/javascript'></script>
+<script src='../javascript/jScrollPane.js' type='text/javascript'></script>
+<script src='../javascript/FunctionBrowser.js' type='text/javascript'></script>
+<script src='../javascript/VirtualBook.js' type='text/javascript'></script>
+<script src='../javascript/Navigator.js' type='text/javascript'></script>
+<script language='JavaScript' type='text/javascript'>baselang='Introduction to SCAPack';</script>
+</head>
+<body style='margin:35px 0px 0px 0px; background:#ffffff'>
+<!-- saved from url=(0014)about:internet -->
+
+
+
+
+<div class="MainRoot" width = "727">
+
+    <div class="FltShdwBar">
+    <div class="Flt"><img src="../images/images/body_shdwspcr.gif" width="8" height="15" alt=""/></div>
+    <div id="TutorialContentTable">
+ <div class="infoHeader">
+  <a name="1"></a>
+  <table class="infoHeaderTable">
+   <tr><td align="left" style="width:90% important!;width:77%;"><span class="contextName"><i>S C A Pack</i> Tutorial</span></td><td align="right" nowrap="true" style="padding:4px;"><span class=""><span name="parent_Tutorials" id="parent_Tutorials"><div class="TutorialsMenu"
+           id="Layer_Tutorials"
+           onmouseover="javascript:showMenu('Layer_Tutorials')"
+           onmouseout="javascript:hideMenu('Layer_Tutorials')">
+        <div class="TutorialsRaw">
+         <a href="/mathematica/SCAPack/tutorial/Netlists.html">Netlists</a>
+         <a href="/mathematica/SCAPack/tutorial/Solving Circuits.html">Solving Circuits</a>
+         <a href="/mathematica/SCAPack/tutorial/Noise Analysis.html">Noise Analysis</a>
+         <a href="/mathematica/SCAPack/tutorial/NetworkParameters.html">Network Parameters</a>
+         <a href="/mathematica/SCAPack/tutorial/Statistical Analysis.html">Statistical Analysis</a>
+         <a href="/mathematica/SCAPack/tutorial/Approximating Transfer Functions.html">Approximating Transfer Functions</a>
+         <a href="/mathematica/SCAPack/tutorial/Sample Netlists.html">Sample Netlists</a>
+        </div>
+       </div></span><a onmouseover="javascript:showMenu('Layer_Tutorials');return(true);" onmouseout="javascript:hideMenu('Layer_Tutorials');return(true);" id="head_Tutorials" href="#TutorialsSection" class="anchorLink"><span class="AnchorBarText">Tutorials &#187;</span></a><span class='vertBar'>|</span><span name="parent_MoreAbout" id="parent_MoreAbout"><div class="MoreAboutMenu"
+           id="Layer_MoreAbout"
+           onmouseover="javascript:showMenu('Layer_MoreAbout')"
+           onmouseout="javascript:hideMenu('Layer_MoreAbout')">
+        <div class="MoreAboutRaw">
+         <a href="/mathematica/SCAPack/guide/Simple Circuit Analysis Package.html">Simple Circuit Analysis Package</a>
+         <a href="/mathematica/SCAPack/tutorial/Elements.html">Elements</a>
+         <a href="/mathematica/SCAPack/tutorial/Control Statements.html">Control Statements</a>
+        </div>
+       </div></span><a onmouseover="javascript:showMenu('Layer_MoreAbout');return(true);" onmouseout="javascript:hideMenu('Layer_MoreAbout');return(true);" id="head_MoreAbout" href="#MoreAboutSection" class="anchorLink"><span class="AnchorBarText">More About &#187;</span></a></span></td></tr>
+  </table>
+ </div>
+ <h1 class="Title"><a name="509267359"></a>Introduction to SCAPack</h1>
+ <div class="Text"><a name="1534169418"></a>Simple Circuit Analysis Package (SCAPack) is a collection of functions to be able to handle the analysis of electronic circuits symbolically. The goal behind SCAPack is to be able to nimbly solve circuits symbolically with the power of <i>Mathematica</i>. SCAPack is not a numerical simulator such as SPICE, but rather is meant for designers to gain intuition on the operation of their circuit.</div>
+ <h2 class="Section"><a name="157341856"></a>SCAPack Fundamentals</h2>
+ <div class="Text"><a name="892204335"></a>SCAPack represents all circuit elements in the complex Laplace variable <span class="TI">s</span>. While this may suggest that it is only suitable for linear time-invariant systems, or for frequency domain analyses only, this is not strictly the case. <i>Mathematica</i> built-ins such as <span class="IF"><a href="http://reference.wolfram.com/mathematica/ref/InverseLaplaceTransform.html">InverseLaplaceTransform</a></span> may be used by a user to convert the frequency domain results into the time domain. Linearity may be relaxed by the astute user, after circuit analysis, by the replacement of simple small-signal parameters by a bias dependent equivalent.</div>
+ <div class="Text"><a name="1712928567"></a>Using SCAPack begins with the netlist. SCAPack's netlist format was designed to be kept as simple as possible with great similarity to numerical simulation tools such as SPICE or SPECTRE. The netlist format is structured as a list of element and control lists all of which is detailed in the <a href="../tutorial/Netlists.html">Netlists</a> tutorial.</div>
+ <h2 class="Section"><a name="24653887"></a>Analyses</h2>
+ <div class="Text"><a name="2041018585"></a>SCAPack's automated analyses are meant to provide a solution to a class of problems that circuit designers often wrestle with. SCAPack provides a versatile function, <span class="IF"><a href="../ref/GetTransferFunction.html">GetTransferFunction</a></span>, which provides the ability to determine the relationship between two arbitrary circuit variables. Users can use this function to determine various circuit performance metrics such as gain and bandwidth. Other methods allow for determining the noise performance (<span class="IF"><a href="../ref/GetNoisePSD.html">GetNoisePSD</a></span>), various circuit impedances (<span class="IF"><a href="../ref/GetInputImpedance.html">GetInputImpedance</a></span>) or even approximate transfer functions (<span class="IF"><a href="../ref/GetZVTimeConstants.html">GetZVTimeConstants</a></span>). </div>
+ <h2 class="Section"><a name="1169158671"></a>Network Parameters</h2>
+ <div class="Text"><a name="574413447"></a>SCAPack can automatically extract Z-, Y-, H-, G-, S-, T- and ABCD parameters from a netlist. Functions such as <span class="IF"><a href="../ref/ComputeZNetwork.html">ComputeZNetwork</a></span> perform the necessary terminations and automatically calculate the entire parameter matrix for all the ports. Auxilliary functions such as <span class="IF"><a href="../ref/CheckPassive.html">CheckPassive</a></span> and <span class="IF"><a href="../ref/CheckLossless.html">CheckLossless</a></span> allow for users to query properties of a network.</div>
+ <h2 class="Section"><a name="77798872"></a>Approximations</h2>
+ <h2 class="Section"><a name="1643064564"></a>Statistical Methods</h2>
+ <div class="TMAS_Ex"
+     id="TMAS">
+  <a name="TutorialMoreAboutSection"><div class="TMASH">
+    <a name="23220180"></a>
+    <a href="javascript:toggle('TMAS')"><img src="../images/mathematicaImages/openSectionGroup.gif" id="TMAS_" border="0" width="8" height="8" alt="" /> <span class="TMASSpan">MORE ABOUT</span></a>
+   </div></a>
+  <div class="TMAS"
+      name="TMASG"
+      id="TMASG">
+   <ul class="IndentedNote"><li><a name="1567025153"></a><a href="../guide/Simple Circuit Analysis Package.html">Simple Circuit Analysis Package</a></li></ul>
+   <ul class="IndentedNote"><li><a name="574221982"></a><a href="../tutorial/Elements.html">Elements</a></li></ul>
+   <ul class="IndentedNote"><li><a name="227470406"></a><a href="../tutorial/Control Statements.html">Control Statements</a></li></ul>
+  </div>
+ </div>
+ <div class="RTS_Ex"
+     id="RTS">
+  <a name="RelatedTutorialsSection"><div class="RTSH">
+    <a name="415694126"></a>
+    <a href="javascript:toggle('RTS')"><img src="../images/mathematicaImages/openSectionGroup.gif" id="RTS_" border="0" width="8" height="8" alt="" /> <span class="RTSSpan">RELATED TUTORIALS</span></a>
+   </div></a>
+  <div class="RTS"
+      name="RTSG"
+      id="RTSG">
+   <ul class="IndentedNote"><li><a name="806871991"></a><a href="../tutorial/Netlists.html">Netlists</a></li></ul>
+   <ul class="IndentedNote"><li><a name="107177409"></a><a href="../tutorial/Solving Circuits.html">Solving Circuits</a></li></ul>
+   <ul class="IndentedNote"><li><a name="1739416877"></a><a href="../tutorial/Noise Analysis.html">Noise Analysis</a></li></ul>
+   <ul class="IndentedNote"><li><a name="1227810464"></a><a href="../tutorial/NetworkParameters.html">Network Parameters</a></li></ul>
+   <ul class="IndentedNote"><li><a name="80197099"></a><a href="../tutorial/Statistical Analysis.html">Statistical Analysis</a></li></ul>
+   <ul class="IndentedNote"><li><a name="684565128"></a><a href="../tutorial/Approximating Transfer Functions.html">Approximating Transfer Functions</a></li></ul>
+   <ul class="IndentedNote"><li><a name="1416209317"></a><a href="../tutorial/Sample Netlists.html">Sample Netlists</a></li></ul>
+  </div>
+ </div>
+</div>
+  </div>
+
+ <img class="corner" src="../images/images/body_shadow_corner.gif" width="25" height="9" alt=" "/>
+ 
+<div class="BtmShdw"><img  class="cornerbottomright" src="../images/images/body_shadow_bottomright.gif" width="23" height="9" alt=""/></div>
+
+</div>
+
+
+    
+<div class="dashboard" />
+

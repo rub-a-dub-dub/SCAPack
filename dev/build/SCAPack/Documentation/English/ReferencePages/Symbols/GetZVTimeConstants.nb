@@ -1,0 +1,481 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     14963,        472]
+NotebookOptionsPosition[     11222,        356]
+NotebookOutlinePosition[     13346,        413]
+CellTagsIndexPosition[     13261,        408]
+WindowTitle->GetZVTimeConstants - Wolfram Mathematica
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["S C A PACK SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Netlists\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Netlists"], "\<\"Solving Circuits\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/tutorial/SolvingCircuits"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"GetNoisePSD\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/ref/GetNoisePSD"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Simple Circuit Analysis Package\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/guide/Simple Circuit Analysis Package"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"SCAPack/ref/GetZVTimeConstants\"\>":>
+       None, "\<\"Copy Mathematica url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["SCAPack/ref/GetZVTimeConstants"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/mathematica/SCAPack/ref/\
+GetZVTimeConstants.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+            "http://reference.wolfram.com/mathematica/", 
+             "SCAPack/ref/GetZVTimeConstants", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["GetZVTimeConstants", "ObjectName",
+ CellID->1224892054],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"GetZVTimeConstants", "[", 
+       StyleBox["netlist", "TI"], "]"}]], "InlineFormula"],
+     " \[LineSeparator]returns all of the zero-value (open-circuit) time \
+constants based on the method of the ZV/OCTCA method for the ",
+     StyleBox["netlist", "TI"],
+     "."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1672726950],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{"GetZVTimeConstants", "[", 
+   StyleBox["netlist", "TI"], "]"}]], "InlineFormula"],
+ " uses the method of ZV/OCTCA to determine the approximate pole locations \
+for the ",
+ StyleBox["netlist", "TI"],
+ "."
+}], "Notes",
+ CellID->1067943069],
+
+Cell["\<\
+For details on the details of this method, please refer to Microelectronic \
+Circuits by A. Sedra and K. C. Smith.\
+\>", "Notes",
+ CellID->2068742150],
+
+Cell[TextData[{
+ Cell[BoxData["GetZVTimeConstants"], "InlineFormula"],
+ " cannot be used on a netlist with any independent sources. Use ",
+ Cell[BoxData[
+  ButtonBox["DisableSources",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/DisableSources"]], "InlineFormula"],
+ " first if needed."
+}], "Notes",
+ CellID->1453604602]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->813425773],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->366070009],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<volt\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Vi", ",", "0"}], "}"}], ",", "\"\<v1\>\"", ",", 
+      RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<res\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Vi", ",", "V1"}], "}"}], ",", "\"\<r1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Gvalue", "\[Rule]", 
+        RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<cap\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"V1", ",", "0"}], "}"}], ",", "\"\<c1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<res\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"V1", ",", "V2"}], "}"}], ",", "\"\<r2\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Gvalue", "\[Rule]", 
+        RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<cap\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"V2", ",", "0"}], "}"}], ",", "\"\<c2\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}]}], 
+   "\[IndentingNewLine]", "}"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GetZVTimeConstants", "[", "%", "]"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1800702582],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"C", " ", "R"}], ",", 
+   RowBox[{"2", " ", "C", " ", "R"}]}], "}"}]], "Output",
+ ImageSize->{73, 12},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->682872555]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[StyleBox[ButtonBox["GetNoisePSD",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/GetNoisePSD"],
+ FontFamily->"Verdana"]], "SeeAlso",
+ CellID->929782353],
+
+Cell[TextData[StyleBox[ButtonBox["GetTotalNoisePSD",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/GetTotalNoisePSD"],
+ FontFamily->"Verdana"]], "SeeAlso",
+ CellID->1298992911],
+
+Cell[TextData[StyleBox[ButtonBox["GetInputImpedance",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/GetInputImpedance"],
+ FontFamily->"Verdana"]], "SeeAlso",
+ CellID->855099775],
+
+Cell[TextData[StyleBox[ButtonBox["GetTransferFunction",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/GetTransferFunction"],
+ FontFamily->"Verdana"]], "SeeAlso",
+ CellID->701352701],
+
+Cell[TextData[Cell[BoxData[
+ StyleBox[
+  ButtonBox["DisableSources",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/DisableSources"],
+  FontFamily->"Verdana"]], "InlineFormula"]], "SeeAlso",
+ CellID->1370938615]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->250839057],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "Tutorials",
+ CellID->387491638],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/SolvingCircuits"]], "Tutorials",
+ CellID->1401542162]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ WholeCellGroupOpener->True],
+
+Cell[TextData[ButtonBox["Simple Circuit Analysis Package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/guide/Simple Circuit Analysis Package"]], "MoreAbout",
+ CellID->2145476255]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"GetZVTimeConstants - Wolfram Mathematica",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:SCAPack/guide/SCAPack", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}], 
+        Cell[">", "DockedLinkTrailSeparator"]}]}}, ColumnAlignments -> Left], 
+  "Metadata" -> {
+   "built" -> "{2012, 12, 9, 18, 20, 7.507525}", 
+    "history" -> {"0.1", "", "", ""}, "context" -> "SCAPack`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "S C A Pack Symbol", "language" -> "en", "paclet" -> "SCAPack", "status" -> 
+    "None", "summary" -> 
+    "GetZVTimeConstants[netlist] returns all of the zero-value (open-circuit) \
+time constants based on the method of the ZV/OCTCA method for the netlist.", 
+    "synonyms" -> {}, "title" -> "GetZVTimeConstants", "titlemodifier" -> "", 
+    "windowtitle" -> "GetZVTimeConstants", "type" -> "Symbol", "uri" -> 
+    "SCAPack/ref/GetZVTimeConstants"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, 2011)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5808, 170, 490, 14, 70, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->813425773]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 13118, 401}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[611, 21, 3115, 71, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[3751, 96, 61, 1, 70, "ObjectName",
+ CellID->1224892054],
+Cell[3815, 99, 529, 15, 70, "Usage",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4381, 119, 610, 18, 70, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1672726950],
+Cell[4994, 139, 279, 9, 70, "Notes",
+ CellID->1067943069],
+Cell[5276, 150, 160, 4, 70, "Notes",
+ CellID->2068742150],
+Cell[5439, 156, 332, 9, 70, "Notes",
+ CellID->1453604602]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[5808, 170, 490, 14, 70, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->813425773],
+Cell[CellGroupData[{
+Cell[6323, 188, 195, 6, 70, "ExampleSection",
+ CellID->366070009],
+Cell[CellGroupData[{
+Cell[6543, 198, 1463, 39, 70, "Input",
+ CellID->1800702582],
+Cell[8009, 239, 261, 9, 70, "Output",
+ CellID->682872555]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8331, 255, 446, 13, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[8780, 270, 172, 4, 70, "SeeAlso",
+ CellID->929782353],
+Cell[8955, 276, 183, 4, 70, "SeeAlso",
+ CellID->1298992911],
+Cell[9141, 282, 184, 4, 70, "SeeAlso",
+ CellID->855099775],
+Cell[9328, 288, 188, 4, 70, "SeeAlso",
+ CellID->701352701],
+Cell[9519, 294, 221, 6, 70, "SeeAlso",
+ CellID->1370938615]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9777, 305, 448, 13, 70, "TutorialsSection",
+ CellID->250839057],
+Cell[10228, 320, 139, 3, 70, "Tutorials",
+ CellID->387491638],
+Cell[10370, 325, 155, 3, 70, "Tutorials",
+ CellID->1401542162]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10562, 333, 429, 12, 70, "MoreAboutSection"],
+Cell[10994, 347, 186, 4, 70, "MoreAbout",
+ CellID->2145476255]
+}, Open  ]],
+Cell[11195, 354, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,12 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>testNetlist20 = {
+   {&quot;Res&quot;, {Vi, Vx}, &quot;R1&quot;, {Gvalue -&gt; 1/R}},
+   {&quot;Cap&quot;, {Vx, 0}, &quot;C1&quot;, {Cvalue -&gt; C}},
+   {&quot;Res&quot;, {Vx, Vo}, &quot;R2&quot;, {Gvalue -&gt; 1/R}},
+   {&quot;Cap&quot;, {Vo, 0}, &quot;C2&quot;, {Cvalue -&gt; C}}
+   };
+testNetlist21 = {
+   {&quot;SubCkt&quot;, {Vo, Vi}, &quot;X1&quot;, {testNetlist20}},
+   {&quot;Volt&quot;, {Vi, 0}, &quot;V1&quot;, {}},
+   {&quot;Vprobe&quot;, {Vo, 0}, &quot;Vp1&quot;, {}}
+   };
+GetTransferFunction[testNetlist21, {Vo, Vi}]</pre><div class='IFU'><a name='1986601443'></a>http://wolfram.com/xid/0mdrdzrp81vr1uc85mjfli-6411rp</div>

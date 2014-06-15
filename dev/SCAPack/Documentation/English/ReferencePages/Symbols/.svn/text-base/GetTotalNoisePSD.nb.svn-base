@@ -1,0 +1,421 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10735,        412]
+NotebookOptionsPosition[      7969,        310]
+NotebookOutlinePosition[      8426,        328]
+CellTagsIndexPosition[      8383,        325]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.1", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/ref/GetTotalNoisePSD", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["GetTotalNoisePSD", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{"GetTotalNoisePSD", "[", 
+   RowBox[{
+    StyleBox["netlist", "TI"], ",", 
+    StyleBox["nodes", "TI"]}], "]"}]], "InlineFormula"],
+ " \[LineSeparator]returns the noise power spectral density between the \
+specified ",
+ StyleBox["nodes", "TI"],
+ " for the ",
+ StyleBox["netlist", "TI"],
+ "."
+}], "Usage",
+ CellChangeTimes->{{3.5614302549122057`*^9, 3.5614302772965393`*^9}, {
+  3.561430310643362*^9, 3.561430329691663*^9}, {3.5614303614611673`*^9, 
+  3.5614303878862753`*^9}},
+ CellID->982511436],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{"GetTotalNoisePSD", "[", 
+   RowBox[{
+    StyleBox["netlist", "TI"], ",", 
+    StyleBox["nodes", "TI"]}], "]"}]], "InlineFormula",
+  FormatType->"StandardForm"],
+ " operates similarly to ",
+ Cell[BoxData[
+  RowBox[{"GetNoisePSD", "[", 
+   RowBox[{
+    StyleBox["netlist", "TI"], ",", 
+    StyleBox["nodes", "TI"], ",", 
+    StyleBox["srcname", "TI"]}], 
+   StyleBox["]", "TI"]}]], "InlineFormula",
+  FormatType->"StandardForm"],
+ " iterated over all noise sources in the ",
+ StyleBox["netlist", "TI"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.56143040188547*^9, 3.5614304778686867`*^9}, {
+  3.561430564047469*^9, 3.5614305800399942`*^9}},
+ CellID->1067943069],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{"GetTotalNoisePSD", "[", 
+   RowBox[{
+    StyleBox["netlist", "TI"], ",", 
+    StyleBox["nodes", "TI"]}], "]"}]], "InlineFormula",
+  FormatType->"StandardForm"],
+ " returns a list of noise contributions at the ",
+ StyleBox["nodes", "TI"],
+ " specified."
+}], "Notes",
+ CellChangeTimes->{{3.5614306015750093`*^9, 3.561430641449463*^9}, {
+  3.561430697005857*^9, 3.561430768567841*^9}},
+ CellID->441709515]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "Tutorials",
+ CellChangeTimes->{{3.5615801386372967`*^9, 3.561580159024205*^9}},
+ CellID->387491638],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/SolvingCircuits"]], "Tutorials",
+ CellChangeTimes->{{3.5615801423150177`*^9, 3.561580163109158*^9}},
+ CellID->1401542162]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell[TextData[ButtonBox["GetNoisePSD",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/GetNoisePSD"]], "SeeAlso",
+ CellChangeTimes->{{3.5614299224162683`*^9, 3.561429929210073*^9}},
+ CellID->929782353]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<volt\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vin", ",", "0"}], "}"}], ",", "\"\<v1\>\"", ",", 
+      RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<resnoisy\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vin", ",", "vout"}], "}"}], ",", "\"\<r1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Gvalue", "\[Rule]", 
+        RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<resnoisy\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<r2\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Gvalue", "\[Rule]", 
+        RowBox[{"1", "/", "Rleak"}]}], "}"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<cap\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<c1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}]}], 
+   "\[IndentingNewLine]", "}"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GetTotalNoisePSD", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"vout", ",", "0"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.5614312876346493`*^9, 3.561431415424675*^9}, {
+  3.56184468537379*^9, 3.561844692937333*^9}},
+ CellLabel->"In[2]:=",
+ CellID->2108334573],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"tf$r1", "\[Rule]", 
+    FractionBox[
+     RowBox[{"4", " ", "k", " ", "R", " ", 
+      SuperscriptBox["Rleak", "2"], " ", "T"}], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"R", "+", "Rleak", "+", 
+        RowBox[{"C", " ", "R", " ", "Rleak", " ", "s"}]}], ")"}], "2"]]}], 
+   ",", 
+   RowBox[{"zn$r1", "\[Rule]", "Null"}], ",", 
+   RowBox[{"tf$r2", "\[Rule]", 
+    FractionBox[
+     RowBox[{"4", " ", "k", " ", 
+      SuperscriptBox["R", "2"], " ", "Rleak", " ", "T"}], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"R", "+", "Rleak", "+", 
+        RowBox[{"C", " ", "R", " ", "Rleak", " ", "s"}]}], ")"}], "2"]]}], 
+   ",", 
+   RowBox[{"zn$r2", "\[Rule]", "Null"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.5618446937764053`*^9},
+ CellLabel->"Out[3]=",
+ CellID->567983461]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{353, Automatic}, {Automatic, 111}},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 325, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1060, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1143, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1223, 53, 73, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1333, 59, 55, 1, 17, "KeywordsSection",
+ CellID->477174294],
+Cell[1391, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1473, 68, 65, 1, 17, "TemplatesSection",
+ CellID->1872225408],
+Cell[1541, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1638, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1723, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1807, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1926, 90, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1982, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2048, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2120, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2187, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2259, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2323, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2387, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2453, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2534, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2638, 132, 59, 1, 62, "ObjectName",
+ CellID->1224892054],
+Cell[2700, 135, 562, 17, 71, "Usage",
+ CellID->982511436],
+Cell[3265, 154, 699, 22, 39, "Notes",
+ CellID->1067943069],
+Cell[3967, 178, 444, 13, 24, "Notes",
+ CellID->441709515]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4448, 196, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[4508, 199, 207, 4, 16, "Tutorials",
+ CellID->387491638],
+Cell[4718, 205, 223, 4, 16, "Tutorials",
+ CellID->1401542162]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4978, 214, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[5036, 217, 206, 4, 16, "SeeAlso",
+ CellID->929782353]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5279, 226, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[5660, 241, 1428, 38, 114, "Input",
+ CellID->2108334573],
+Cell[7091, 281, 850, 25, 93, "Output",
+ CellID->567983461]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

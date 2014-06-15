@@ -1,0 +1,510 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     13395,        500]
+NotebookOptionsPosition[     10219,        384]
+NotebookOutlinePosition[     10676,        402]
+CellTagsIndexPosition[     10633,        399]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.24", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/ref/ComputeABCDNetwork", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["ComputeABCDNetwork", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{"ComputeABCDNetwork", "[", 
+   RowBox[{
+    StyleBox["netlist", "TI"], ",", 
+    StyleBox["portlist", "TI"]}], "]"}]], "InlineFormula"],
+ " \[LineSeparator]computes the ABCD parameters for a netlist."
+}], "Usage",
+ CellChangeTimes->{{3.563252537758687*^9, 3.563252567324333*^9}},
+ CellID->982511436],
+
+Cell[TextData[{
+ StyleBox["netlist", "TI"],
+ " cannot have any independent sources. Use ",
+ Cell[BoxData[
+  ButtonBox["DisableSources",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/DisableSources"]], "InlineFormula"],
+ " if necessary."
+}], "Notes",
+ CellChangeTimes->{{3.562909714844468*^9, 3.562909787819932*^9}},
+ CellID->1520023007],
+
+Cell[TextData[{
+ StyleBox["portlist", "TI"],
+ " is a list of node pairs representing ports such as ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["v", "1"], ",", 
+      SubscriptBox["v", "ref1"]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["v", "2"], ",", 
+      SubscriptBox["v", "ref2"]}], "}"}], ",", "..."}], "}"}]], 
+  "InlineFormula"]
+}], "Notes",
+ CellChangeTimes->{{3.5629102392170057`*^9, 3.5629102637693787`*^9}, {
+  3.562910347487653*^9, 3.562910391047099*^9}},
+ CellID->135313232],
+
+Cell["This analysis only works with two-port networks.", "Notes",
+ CellChangeTimes->{{3.562910144983385*^9, 3.562910194198409*^9}},
+ CellID->349084348],
+
+Cell["\<\
+The ABCD parameters are defined as follows\
+\>", "Notes",
+ CellChangeTimes->{{3.562913985217223*^9, 3.56291399748164*^9}, {
+  3.562992429442852*^9, 3.56299243038308*^9}, {3.563252591219047*^9, 
+  3.563252591556754*^9}},
+ CellID->382561579],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "ModInfo"], "A", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      FractionBox[
+       SubscriptBox["V", "2"], 
+       SubscriptBox["V", "1"]], ",", 
+      RowBox[{
+       SubscriptBox["I", "1"], "\[Equal]", "0"}]}]], "InlineFormula",
+     FormatType->"StandardForm"]], "TableText"]},
+   {Cell["      ", "ModInfo"], "B", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      FractionBox[
+       SubscriptBox["V", "2"], 
+       SubscriptBox["I", "1"]], ",", 
+      RowBox[{
+       SubscriptBox["V", "1"], "\[Equal]", "0"}]}]], "InlineFormula",
+     FormatType->"StandardForm"]], "TableText"]},
+   {Cell["      ", "ModInfo"], "C", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        SubscriptBox["I", "2"], 
+        SubscriptBox["V", "1"]]}], ",", 
+      RowBox[{
+       SubscriptBox["I", "1"], "\[Equal]", "0"}]}]], "InlineFormula",
+     FormatType->"StandardForm"]], "TableText"]},
+   {Cell["      ", "ModInfo"], "D", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      FractionBox[
+       RowBox[{"-", 
+        SubscriptBox["I", "2"]}], 
+       SubscriptBox["I", "1"]], ",", 
+      RowBox[{
+       SubscriptBox["V", "1"], "\[Equal]", "0"}]}]], "InlineFormula",
+     FormatType->"StandardForm"]], "TableText"]}
+  }]], "2ColumnTableMod",
+ CellChangeTimes->{{3.5632525966044207`*^9, 3.563252698516822*^9}},
+ CellID->561213937],
+
+Cell["\<\
+The network parameters are defined with currents entering the positive \
+terminal.\
+\>", "Notes",
+ CellChangeTimes->{{3.562914217317542*^9, 3.562914260160678*^9}},
+ CellID->1997626130]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "Tutorials",
+ CellChangeTimes->{{3.562909942854594*^9, 3.562909943438897*^9}, {
+  3.562909978881757*^9, 3.562909979095992*^9}},
+ CellID->1489483152],
+
+Cell[TextData[ButtonBox["Network Parameters",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Network Parameters"]], "Tutorials",
+ CellChangeTimes->{{3.5629099459325733`*^9, 3.562909948934901*^9}, {
+  3.5629099823756733`*^9, 3.5629099867787027`*^9}},
+ CellID->526462585]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["ComputeHNetwork",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/ComputeHNetwork"]], "InlineFormula"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["ComputeZNetwork",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/ComputeZNetwork"]], "InlineFormula"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["ComputeYNetwork",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/ComputeYNetwork"]], "InlineFormula"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["ComputeGNetwork",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/ComputeGNetwork"]], "InlineFormula"],
+ " \[EmptyVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["NetworkData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/NetworkData"]], "InlineFormula"]
+}], "SeeAlso",
+ CellChangeTimes->{{3.562910022787743*^9, 3.562910071363345*^9}, {
+  3.563083750858617*^9, 3.563083763758374*^9}, {3.56308407355087*^9, 
+  3.563084073765045*^9}, {3.563084291781609*^9, 3.5630842947132*^9}, {
+  3.563252801534047*^9, 3.5632528142342777`*^9}},
+ CellID->2085278884]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->38303248],
+
+Cell[TextData[ButtonBox["Simple Circuit Analysis Package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/guide/Simple Circuit Analysis Package"]], "MoreAbout",
+ CellChangeTimes->{{3.562909994049096*^9, 3.562910011314782*^9}},
+ CellID->624040455]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"temp", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<res\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"v1", ",", "0"}], "}"}], ",", "\"\<r1\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Rvalue", "\[Rule]", "rpi"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<vccs\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"v1", ",", "0", ",", "v2", ",", "0"}], "}"}], ",", 
+       "\"\<vccs1\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"A", "\[Rule]", "gm"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<res\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"v2", ",", "0"}], "}"}], ",", "\"\<r2\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Rvalue", "\[Rule]", "ro"}], "}"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"ComputeABCDNetwork", "[", 
+   RowBox[{"temp", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"v1", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"v2", ",", "0"}], "}"}]}], "}"}]}], "]"}], "//", 
+  "Normal"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->574461535],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "gm"}], " ", "ro"}], ",", 
+     RowBox[{
+      RowBox[{"-", "gm"}], " ", "ro", " ", "rpi"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "gm"}], ",", 
+     RowBox[{
+      RowBox[{"-", "gm"}], " ", "rpi"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.563252835307328*^9},
+ CellLabel->"Out[2]=",
+ CellID->2036025480]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{453, Automatic}, {130, Automatic}},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 326, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[908, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[979, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1061, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1144, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1224, 53, 75, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1336, 59, 55, 1, 17, "KeywordsSection",
+ CellID->477174294],
+Cell[1394, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1476, 68, 65, 1, 17, "TemplatesSection",
+ CellID->1872225408],
+Cell[1544, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1641, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1726, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1810, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1929, 90, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1985, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2051, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2123, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2190, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2262, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2326, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2390, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2456, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2537, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2641, 132, 61, 1, 62, "ObjectName",
+ CellID->1224892054],
+Cell[2705, 135, 365, 10, 71, "Usage",
+ CellID->982511436],
+Cell[3073, 147, 347, 10, 24, "Notes",
+ CellID->1520023007],
+Cell[3423, 159, 564, 18, 24, "Notes",
+ CellID->135313232],
+Cell[3990, 179, 151, 2, 23, "Notes",
+ CellID->349084348],
+Cell[4144, 183, 249, 6, 24, "Notes",
+ CellID->382561579],
+Cell[4396, 191, 1392, 37, 129, "2ColumnTableMod",
+ CellID->561213937],
+Cell[5791, 230, 194, 5, 23, "Notes",
+ CellID->1997626130]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6022, 240, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[6082, 243, 255, 5, 16, "Tutorials",
+ CellID->1489483152],
+Cell[6340, 250, 280, 5, 16, "Tutorials",
+ CellID->526462585]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6657, 260, 55, 1, 30, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[6715, 263, 1125, 30, 16, "SeeAlso",
+ CellID->2085278884]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7877, 298, 57, 1, 30, "MoreAboutSection",
+ CellID->38303248],
+Cell[7937, 301, 251, 5, 16, "MoreAbout",
+ CellID->624040455]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8225, 311, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[8606, 326, 1140, 36, 69, "Input",
+ CellID->574461535],
+Cell[9749, 364, 442, 16, 22, "Output",
+ CellID->2036025480]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

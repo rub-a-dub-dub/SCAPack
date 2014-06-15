@@ -1,0 +1,402 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10224,        393]
+NotebookOptionsPosition[      7296,        285]
+NotebookOutlinePosition[      7752,        303]
+CellTagsIndexPosition[      7709,        300]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.1", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/ref/Noisy Current Source", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Noisy Current Source", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{"\"\<curnoisy\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      StyleBox["pos", "TI"], ",", 
+      StyleBox["neg", "TI"]}], "}"}], ",", "\"\<\!\(\*
+StyleBox[\"name\", \"TI\"]\)\>\"", ",", 
+    RowBox[{"{", "}"}]}], "}"}]], "InlineFormula"],
+ " \[LineSeparator]is a noisy current source between the nodes ",
+ StyleBox["pos", "TI"],
+ " and ",
+ StyleBox["neg", "TI"],
+ "."
+}], "Usage",
+ CellChangeTimes->{{3.561585670763425*^9, 3.561585713231431*^9}},
+ CellID->982511436],
+
+Cell["\<\
+Only noise analysis enables the noise feature of this source. In all other \
+situations, this source is short circuited.\
+\>", "Notes",
+ CellChangeTimes->{{3.561585738988803*^9, 3.561585767051896*^9}, {
+  3.5621964688282757`*^9, 3.562196471268812*^9}},
+ CellID->1067943069]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->961893820],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "Tutorials",
+ CellChangeTimes->{{3.5615825373640833`*^9, 3.561582538063612*^9}, {
+  3.5615825690341177`*^9, 3.561582569257779*^9}},
+ CellID->292538124],
+
+Cell[TextData[ButtonBox["Solving Circuits",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/SolvingCircuits"]], "Tutorials",
+ CellChangeTimes->{{3.561582538883998*^9, 3.561582541319312*^9}, {
+  3.561582574033669*^9, 3.561582574223962*^9}},
+ CellID->802221093]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1098182085],
+
+Cell[TextData[ButtonBox["Current Source",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/NoisyCurrentSource"]], "SeeAlso",
+ CellChangeTimes->{{3.561582550142618*^9, 3.5615825789575977`*^9}, {
+  3.561585788261018*^9, 3.561585791171871*^9}},
+ CellID->1671840277],
+
+Cell[TextData[ButtonBox["Current Probe",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/ref/CurrentProbe"]], "SeeAlso",
+ CellChangeTimes->{{3.56158255426795*^9, 3.5615825836237*^9}},
+ CellID->1027574185]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "MoreAboutSection",
+ CellID->943498191],
+
+Cell[TextData[ButtonBox["Simple Circuit Analysis Package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/guide/SimpleCircuitAnalysisPackage"]], "MoreAbout",
+ CellChangeTimes->{{3.5615825595239677`*^9, 3.561582590489954*^9}},
+ CellID->354846689]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<curnoise\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vi", ",", "0"}], "}"}], ",", "\"\<I1\>\"", ",", 
+      RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<res\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vi", ",", "0"}], "}"}], ",", "\"\<R1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Gvalue", "\[Rule]", 
+        RowBox[{"1", "/", "R"}]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<cap\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vi", ",", "vout"}], "}"}], ",", "\"\<C1\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<vprobe\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<Vp1\>\"", ",", 
+      RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", "}"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GetNoisePSD", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"{", 
+    RowBox[{"vout", ",", "0"}], "}"}], ",", "\"\<I1\>\""}], "]"}]}], "Input",
+ CellChangeTimes->{{3.561585825834635*^9, 3.561585858490274*^9}, {
+  3.561585902706793*^9, 3.561585991803657*^9}, {3.5618448377779703`*^9, 
+  3.56184486312366*^9}, {3.5618486972685843`*^9, 3.561848697386837*^9}},
+ CellLabel->"In[2]:=",
+ CellID->346214304],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"tf$I1", "\[Rule]", 
+    SuperscriptBox["R", "2"]}], ",", 
+   RowBox[{"zn$I1", "\[Rule]", "R"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.56184484832684*^9, 3.561844867952982*^9}, 
+   3.5618487023403177`*^9},
+ CellLabel->"Out[3]=",
+ CellID->1274898619]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{Automatic, 233}, {28, Automatic}},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 325, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1060, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1143, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1223, 53, 77, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1337, 59, 55, 1, 17, "KeywordsSection",
+ CellID->477174294],
+Cell[1395, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1477, 68, 65, 1, 17, "TemplatesSection",
+ CellID->1872225408],
+Cell[1545, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1642, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1727, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1811, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1930, 90, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1986, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2052, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2124, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2191, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2263, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2327, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2391, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2457, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2538, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2642, 132, 63, 1, 62, "ObjectName",
+ CellID->1224892054],
+Cell[2708, 135, 551, 18, 71, "Usage",
+ CellID->982511436],
+Cell[3262, 155, 283, 6, 38, "Notes",
+ CellID->1067943069]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3582, 166, 57, 1, 43, "TutorialsSection",
+ CellID->961893820],
+Cell[3642, 169, 258, 5, 16, "Tutorials",
+ CellID->292538124],
+Cell[3903, 176, 269, 5, 16, "Tutorials",
+ CellID->802221093]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4209, 186, 55, 1, 30, "SeeAlsoSection",
+ CellID->1098182085],
+Cell[4267, 189, 266, 5, 16, "SeeAlso",
+ CellID->1671840277],
+Cell[4536, 196, 205, 4, 16, "SeeAlso",
+ CellID->1027574185]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4778, 205, 58, 1, 30, "MoreAboutSection",
+ CellID->943498191],
+Cell[4839, 208, 250, 5, 16, "MoreAbout",
+ CellID->354846689]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5126, 218, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[5507, 233, 1454, 37, 114, "Input",
+ CellID->346214304],
+Cell[6964, 272, 304, 9, 28, "Output",
+ CellID->1274898619]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

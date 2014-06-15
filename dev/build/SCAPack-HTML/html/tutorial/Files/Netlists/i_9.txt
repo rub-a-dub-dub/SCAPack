@@ -1,0 +1,14 @@
+<pre name='i_9_in' id='i_9_in' class='IFT'>{
+ {&quot;volt&quot;, {vin, 0}, &quot;v1&quot;, {}},
+ {&quot;res&quot;, {vin, vout}, &quot;r1&quot;, {Gvalue -&gt; 1/R}},
+ {&quot;res&quot;, {vout, 0}, &quot;r2&quot;, {Gvalue -&gt; 1/(2 R)}},
+ };
+{
+ {&quot;volt&quot;, {vin, 0}, &quot;v1&quot;, {}},
+ {&quot;res&quot;, {vin, vx}, &quot;r1&quot;, {Gvalue -&gt; 1/R}},
+ {&quot;res&quot;, {vx, vout}, &quot;r2&quot;, {Gvalue -&gt; 1/R}},
+ {&quot;cap&quot;, {vx, vprb}, &quot;c1&quot;, {Cvalue -&gt; C}},
+ {&quot;cap&quot;, {vout, 0}, &quot;c2&quot;, {Cvalue -&gt; C}},
+ {&quot;iprobe&quot;, {vprb, 0}, &quot;ip1&quot;, {}}
+ }
+GetTransferFunction[%, {I$ip1, vin}]</pre><div class='IFU'><a name='284761028'></a>http://wolfram.com/xid/0gb0t40z9n21pl5y6qom82-eztpau</div>

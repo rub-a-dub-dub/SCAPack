@@ -1,0 +1,6 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{
+  {&quot;xfmr&quot;, {vp, 0, vs, 0}, &quot;xfmr1&quot;, {TurnsP -&gt; 1}},
+  {&quot;res&quot;, {vs, 0}, &quot;r1&quot;, {Gvalue -&gt; 1/R}},
+  {&quot;vprobe&quot;, {vp, 0}, &quot;vp1&quot;, {}}
+  };
+GetInputImpedance[%, {vp, 0}]</pre><div class='IFU'><a name='949083670'></a>http://wolfram.com/xid/0bhvrkzkwj4exhl07r-pzcfxk</div>

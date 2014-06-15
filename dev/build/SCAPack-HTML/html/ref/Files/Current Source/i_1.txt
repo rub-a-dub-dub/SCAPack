@@ -1,0 +1,6 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{
+  {&quot;cur&quot;, {vin, 0}, &quot;v1&quot;, {}},
+  {&quot;res&quot;, {vin, 0}, &quot;r1&quot;, {Gvalue -&gt; 1/R1}},
+  {&quot;res&quot;, {vin, 0}, &quot;r2&quot;, {Gvalue -&gt; 1/R2}}
+  };
+NetlistCircuit[%]</pre><div class='IFU'><a name='375838121'></a>http://wolfram.com/xid/0dorgybtefspeocasvny6-gh1st3</div>

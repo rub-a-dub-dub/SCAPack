@@ -1,0 +1,7 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{
+  {&quot;volt&quot;, {vin, 0}, &quot;v1&quot;, {}},
+  {&quot;gyrator&quot;, {vin, 0, v1, 0}, &quot;g1&quot;, {A -&gt; n1}},
+  {&quot;gyrator&quot;, {v1, 0, vout, 0}, &quot;g2&quot;, {A -&gt; n2}},
+  {&quot;res&quot;, {vout, 0}, &quot;r1&quot;, {Gvalue -&gt; 1/R}}
+  };
+SolveFullSystem[%]</pre><div class='IFU'><a name='1286189781'></a>http://wolfram.com/xid/0d32mab0aghiaq9ftcri-vj1sn7</div>

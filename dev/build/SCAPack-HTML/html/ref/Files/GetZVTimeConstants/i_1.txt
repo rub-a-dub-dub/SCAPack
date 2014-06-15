@@ -1,0 +1,8 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{
+  {&quot;volt&quot;, {Vi, 0}, &quot;v1&quot;, {}},
+  {&quot;res&quot;, {Vi, V1}, &quot;r1&quot;, {Gvalue -&gt; 1/R}},
+  {&quot;cap&quot;, {V1, 0}, &quot;c1&quot;, {Cvalue -&gt; C}},
+  {&quot;res&quot;, {V1, V2}, &quot;r2&quot;, {Gvalue -&gt; 1/R}},
+  {&quot;cap&quot;, {V2, 0}, &quot;c2&quot;, {Cvalue -&gt; C}}
+  };
+GetZVTimeConstants[%]</pre><div class='IFU'><a name='1800702582'></a>http://wolfram.com/xid/04hqt6twekhmyz5rau4e9jrehi-32dlag</div>

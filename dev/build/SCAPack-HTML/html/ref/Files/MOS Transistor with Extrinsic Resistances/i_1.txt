@@ -1,0 +1,13 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>testNetlist7 = {
+   {&quot;MOSR&quot;, {Vop, Vin, Vs, 0}, &quot;Q1&quot;, {}},
+   {&quot;MOSR&quot;, {Von, Vip, Vs, 0}, &quot;Q2&quot;, {}},
+   {&quot;MOS&quot;, {Vs, 0, 0, 0}, 
+    &quot;Qt&quot;, {Cds -&gt; Cdst, Cgd -&gt; Cgdt, Cgs -&gt; Cgst, Gds -&gt; Gdst, 
+     Gm -&gt; Gmt}},
+   {&quot;Volt&quot;, {Vip, 0}, &quot;V1&quot;, {}},
+   {&quot;Volt&quot;, {Vin, 0}, &quot;V2&quot;, {}},
+   {&quot;Vprobe&quot;, {Vop, Von}, &quot;Vp1&quot;, {}}
+   };
+SolveFullSystem[%];
+% /. {Rg -&gt; 0, Rs -&gt; 0, Rd -&gt; 0, Rb -&gt; 0};
+Simplify[(Vop - Von)/(Vip - Vin) /. %[[1]]]</pre><div class='IFU'><a name='1867667764'></a>http://wolfram.com/xid/0oscrjk7t8whzhbc01tmzrg5u8vl6v3mi8ahxwdv5sa9-458vye</div>

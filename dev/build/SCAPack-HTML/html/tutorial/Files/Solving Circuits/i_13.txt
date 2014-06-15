@@ -1,0 +1,1 @@
+<pre name='i_13_in' id='i_13_in' class='IFT'>GetTransferFunction[ladderNetlist, {vout, vin }]</pre><div class='IFU'><a name='1393384539'></a>http://wolfram.com/xid/0cy123x5t0e2g3d55s930es-xbvcod</div>

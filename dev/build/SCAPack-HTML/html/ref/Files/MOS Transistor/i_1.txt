@@ -1,0 +1,6 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{
+  {&quot;MOS&quot;, {Vo, Vi, 0, 0}, &quot;Q1&quot;, {}},
+  {&quot;Volt&quot;, {Vi, 0}, &quot;Vin&quot;, {}},
+  {&quot;Vprobe&quot;, {Vo, 0}, &quot;Vout&quot;, {}}
+  };
+GetTransferFunction[%, {Vo, Vi}]</pre><div class='IFU'><a name='1943587394'></a>http://wolfram.com/xid/0fntvxl1dqjt6jr0bkoxkn0-6ff3w0</div>

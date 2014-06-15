@@ -1,0 +1,20 @@
+TODOS
+-----
+
+1. Add links for DisableSources[] to other symbols
+2. Review all Solve::svars generated (LowLevelDisableSource-2)
+3. Rebuild the help system omitting spaces
+
+FEATURE REQUESTS
+----------------
+
+. Network Conversion Functions
+. Frequency dependent network parameters
+3. Generalised OCTCA
+4. Switched noise analysis
+1. Statistical analysis
+2. Add coupling coefficient to transformer
+6. Look into merging voltage/current noise into "normal" voltage/current sources.
+8. Automated transfer function approximations
+7. Add probes to floating nodes as an option
+5. Merge resnoisy and res

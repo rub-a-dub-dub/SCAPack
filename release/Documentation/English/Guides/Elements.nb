@@ -1,0 +1,434 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     13358,        425]
+NotebookOptionsPosition[      9886,        322]
+NotebookOutlinePosition[     11369,        361]
+CellTagsIndexPosition[     11326,        358]
+WindowTitle->Elements - Wolfram Mathematica
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["S C A PACK GUIDE", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Functions \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Capacitor\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/ref/Capacitor"], "\<\"Gyrator\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/Gyrator"], "\<\"Inductor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/Inductor"], "\<\"Nullor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/Nullor"], "\<\"Resistor\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/Resistor"], "\<\"Source\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/NoisyCurrentSource"], "\<\"Subcircuit\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/Subcircuit"], "\<\"Transformer\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/ref/Transformer"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Control Statements\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/guide/ControlStatements"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Netlists\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Netlists"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"SCAPack/guide/Elements\"\>":>
+       None, "\<\"Copy Mathematica url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["SCAPack/guide/Elements"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/mathematica/SCAPack/guide/\
+Elements.html"], StandardForm]], "Input", TextClipboardType -> "PlainText"]}, 
+            Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+            "http://reference.wolfram.com/mathematica/", 
+             "SCAPack/guide/Elements", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["Elements", "GuideTitle",
+ CellID->942062912],
+
+Cell["\<\
+SCAPack implements several stimulus, probe and device elements. \
+\>", "GuideAbstract",
+ CellID->2001916300],
+
+Cell[CellGroupData[{
+
+Cell["Stimulus", "GuideFunctionsSubsection",
+ CellID->126394523],
+
+Cell[TextData[{
+ ButtonBox["Voltage Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Voltage Source"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Current Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Current Source"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Noisy Voltage Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Noisy Voltage Source"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Noisy Current ",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Noisy Current Source"],
+ ButtonBox["Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/NoisyCurrentSource"]
+}], "InlineGuideFunctionListing",
+ CellID->1786771420],
+
+Cell["\t", "GuideDelimiterSubsection",
+ CellID->311258892]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dependent Sources", "GuideFunctionsSubsection",
+ CellID->1392324126],
+
+Cell[TextData[{
+ ButtonBox["Current Controlled Voltage Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Current Controlled Voltage Source"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Voltage Controlled Voltage Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Voltage Controlled Voltage Source"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Current Controlled Current Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Current Controlled Current Source"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Voltage Controlled Current Source",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Voltage Controlled Current Source"]
+}], "InlineGuideFunctionListing",
+ CellID->410884514],
+
+Cell["\t", "GuideDelimiterSubsection",
+ CellID->1576101693]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Probes", "GuideFunctionsSubsection",
+ CellID->330368506],
+
+Cell[TextData[{
+ ButtonBox["Voltage Probe",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Voltage Probe"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Current Probe",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Current Probe"]
+}], "InlineGuideFunctionListing",
+ CellID->715418518],
+
+Cell["\t", "GuideDelimiterSubsection",
+ CellID->900271891]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Passive Elements", "GuideFunctionsSubsection",
+ CellID->1847378922],
+
+Cell[TextData[{
+ ButtonBox["Resistor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Resistor"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Capacitor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Capacitor"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Inductor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Inductor"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Noisy Resistor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Noisy Resistor"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Transformer",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Transformer"]
+}], "InlineGuideFunctionListing",
+ CellID->563041939],
+
+Cell["\t", "GuideDelimiterSubsection",
+ CellID->1066485224]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Active Elements", "GuideFunctionsSubsection",
+ CellID->1518641906],
+
+Cell[TextData[{
+ ButtonBox["MOS Transistor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/MOS Transistor"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["MOS Transistor with Extrinsic Resistances",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/MOS Transistor With Extrinsic Resistances"]
+}], "InlineGuideFunctionListing",
+ CellID->971369547],
+
+Cell["\t", "GuideDelimiterSubsection",
+ CellID->1232920091]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Modelling Elements", "GuideFunctionsSubsection",
+ CellID->618259534],
+
+Cell[TextData[{
+ ButtonBox["Nullor",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Nullor"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Gyrator",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Gyrator"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[FilledVerySmallSquare]", "InlineSeparator"],
+ " ",
+ ButtonBox["Subcircuit",
+  BaseStyle->"Link",
+  ButtonData->"paclet:SCAPack/ref/Subcircuit"]
+}], "InlineGuideFunctionListing",
+ CellID->1562103752]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["TUTORIALS", "GuideTutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->415694126],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "GuideTutorial",
+ CellID->806871991]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["MORE ABOUT", "GuideMoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->23220180],
+
+Cell[TextData[ButtonBox["Control Statements",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/guide/ControlStatements"]], "GuideMoreAbout",
+ CellID->1567025153]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"Elements - Wolfram Mathematica",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "GuideColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:SCAPack/guide/SCAPack", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}], 
+        Cell[">", "DockedLinkTrailSeparator"]}]}}, ColumnAlignments -> Left], 
+  "Metadata" -> {
+   "built" -> "{2012, 12, 9, 18, 19, 7.314063}", 
+    "history" -> {"0.1", "", "", ""}, "context" -> "SCAPack`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "S C A Pack Guide", "language" -> "en", "paclet" -> "SCAPack", "status" -> 
+    "None", "summary" -> 
+    "SCAPack implements several stimulus, probe and device elements. ", 
+    "synonyms" -> {}, "title" -> "Elements", "titlemodifier" -> "", 
+    "windowtitle" -> "Elements", "type" -> "Guide", "uri" -> 
+    "SCAPack/guide/Elements"}, "SearchTextTranslated" -> ""},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[601, 21, 3592, 82, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4218, 107, 50, 1, 70, "GuideTitle",
+ CellID->942062912],
+Cell[4271, 110, 118, 3, 70, "GuideAbstract",
+ CellID->2001916300],
+Cell[CellGroupData[{
+Cell[4414, 117, 64, 1, 70, "GuideFunctionsSubsection",
+ CellID->126394523],
+Cell[4481, 120, 857, 26, 70, "InlineGuideFunctionListing",
+ CellID->1786771420],
+Cell[5341, 148, 58, 1, 70, "GuideDelimiterSubsection",
+ CellID->311258892]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5436, 154, 74, 1, 70, "GuideFunctionsSubsection",
+ CellID->1392324126],
+Cell[5513, 157, 892, 23, 70, "InlineGuideFunctionListing",
+ CellID->410884514],
+Cell[6408, 182, 59, 1, 70, "GuideDelimiterSubsection",
+ CellID->1576101693]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6504, 188, 62, 1, 70, "GuideFunctionsSubsection",
+ CellID->330368506],
+Cell[6569, 191, 356, 11, 70, "InlineGuideFunctionListing",
+ CellID->715418518],
+Cell[6928, 204, 58, 1, 70, "GuideDelimiterSubsection",
+ CellID->900271891]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7023, 210, 73, 1, 70, "GuideFunctionsSubsection",
+ CellID->1847378922],
+Cell[7099, 213, 890, 29, 70, "InlineGuideFunctionListing",
+ CellID->563041939],
+Cell[7992, 244, 59, 1, 70, "GuideDelimiterSubsection",
+ CellID->1066485224]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8088, 250, 72, 1, 70, "GuideFunctionsSubsection",
+ CellID->1518641906],
+Cell[8163, 253, 414, 11, 70, "InlineGuideFunctionListing",
+ CellID->971369547],
+Cell[8580, 266, 59, 1, 70, "GuideDelimiterSubsection",
+ CellID->1232920091]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8676, 272, 74, 1, 70, "GuideFunctionsSubsection",
+ CellID->618259534],
+Cell[8753, 275, 513, 17, 70, "InlineGuideFunctionListing",
+ CellID->1562103752]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9315, 298, 91, 2, 70, "GuideTutorialsSection",
+ CellID->415694126],
+Cell[9409, 302, 143, 3, 70, "GuideTutorial",
+ CellID->806871991]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9589, 310, 91, 2, 70, "GuideMoreAboutSection",
+ CellID->23220180],
+Cell[9683, 314, 161, 3, 70, "GuideMoreAbout",
+ CellID->1567025153]
+}, Open  ]],
+Cell[9859, 320, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)

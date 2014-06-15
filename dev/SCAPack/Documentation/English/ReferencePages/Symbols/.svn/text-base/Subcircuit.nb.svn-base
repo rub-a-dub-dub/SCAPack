@@ -1,0 +1,391 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10361,        382]
+NotebookOptionsPosition[      7820,        288]
+NotebookOutlinePosition[      8277,        306]
+CellTagsIndexPosition[      8234,        303]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["0.1", "HistoryData",
+  CellTags->"New"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised"]
+}], "History",
+ CellID->1247902091],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1122911449],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->686433507],
+
+Cell["SCAPack", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->605800465],
+
+Cell["SCAPack`", "Categorization",
+ CellLabel->"Context",
+ CellID->468444828],
+
+Cell["SCAPack/ref/Subcircuit", "Categorization",
+ CellLabel->"URI"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->477174294],
+
+Cell["XXXX", "Keywords",
+ CellID->1164421360]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1872225408],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562036412],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->158391909],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1360575930],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->793782254]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Details", "DetailsSection",
+ CellID->307771771],
+
+Cell["XXXX", "Details",
+ CellLabel->"Lead",
+ CellID->670882175],
+
+Cell["XXXX", "Details",
+ CellLabel->"Developers",
+ CellID->350963985],
+
+Cell["XXXX", "Details",
+ CellLabel->"Authors",
+ CellID->8391405],
+
+Cell["XXXX", "Details",
+ CellLabel->"Feature Name",
+ CellID->3610269],
+
+Cell["XXXX", "Details",
+ CellLabel->"QA",
+ CellID->401364205],
+
+Cell["XXXX", "Details",
+ CellLabel->"DA",
+ CellID->350204745],
+
+Cell["XXXX", "Details",
+ CellLabel->"Docs",
+ CellID->732958810],
+
+Cell["XXXX", "Details",
+ CellLabel->"Features Page Notes",
+ CellID->222905350],
+
+Cell["XXXX", "Details",
+ CellLabel->"Comments",
+ CellID->240026365]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Subcircuit", "ObjectName",
+ CellID->1224892054],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo"],
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{"\"\<subckt\>\"", ",", 
+    StyleBox["nodelist", "TI"], ",", "\"\<\!\(\*
+StyleBox[\"name\", \"TI\"]\)\>\"", ",", 
+    RowBox[{"{", 
+     StyleBox["netlist", "TI"], "}"}]}], "}"}]], "InlineFormula"],
+ " \[LineSeparator]includes the ",
+ StyleBox["netlist", "TI"],
+ " as a subcircuit."
+}], "Usage",
+ CellChangeTimes->{{3.561681088628138*^9, 3.5616811698101263`*^9}, {
+  3.561681247242796*^9, 3.5616812695808496`*^9}},
+ CellID->982511436],
+
+Cell[TextData[{
+ "All nodes within the subcircuit are renamed with the subcircuit's ",
+ StyleBox["name", "TI"],
+ " prepended ahead of it separated by $."
+}], "Notes",
+ CellChangeTimes->{{3.5616813047518272`*^9, 3.561681357438983*^9}, {
+  3.5616813932135878`*^9, 3.561681409695348*^9}},
+ CellID->1067943069],
+
+Cell[TextData[{
+ StyleBox["netlist", "TI"],
+ " may not contain a Subcircuit element."
+}], "Notes",
+ CellChangeTimes->{{3.5616814207644453`*^9, 3.561681425945405*^9}, {
+  3.561681477969833*^9, 3.5616815169180107`*^9}},
+ CellID->421258565]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tutorials", "TutorialsSection",
+ CellID->250839057],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "Tutorials",
+ CellChangeTimes->{{3.5616815527100887`*^9, 3.561681553378269*^9}, {
+  3.561681703411346*^9, 3.561681703569721*^9}},
+ CellID->341631938]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->880084151],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"testNetlist20", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<Res\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Vi", ",", "Vx"}], "}"}], ",", "\"\<R1\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Gvalue", "\[Rule]", 
+         FractionBox["1", "R"]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     
+     RowBox[{"{", 
+      RowBox[{"\"\<Cap\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Vx", ",", "0"}], "}"}], ",", "\"\<C1\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Res\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Vx", ",", "Vo"}], "}"}], ",", "\"\<R2\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Gvalue", "\[Rule]", 
+         FractionBox["1", "R"]}], "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     
+     RowBox[{"{", 
+      RowBox[{"\"\<Cap\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Vo", ",", "0"}], "}"}], ",", "\"\<C2\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Cvalue", "\[Rule]", "C"}], "}"}]}], "}"}]}], 
+    "\[IndentingNewLine]", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"testNetlist21", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<SubCkt\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Vo", ",", "Vi"}], "}"}], ",", "\"\<X1\>\"", ",", 
+       RowBox[{"{", "testNetlist20", "}"}]}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Volt\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Vi", ",", "0"}], "}"}], ",", "\"\<V1\>\"", ",", 
+       RowBox[{"{", "}"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Vprobe\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Vo", ",", "0"}], "}"}], ",", "\"\<Vp1\>\"", ",", 
+       RowBox[{"{", "}"}]}], "}"}]}], "\[IndentingNewLine]", "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GetTransferFunction", "[", 
+  RowBox[{"testNetlist21", ",", 
+   RowBox[{"{", 
+    RowBox[{"Vo", ",", "Vi"}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.5606536624765663`*^9, 3.560653809550455*^9}, {
+  3.560654157658358*^9, 3.560654245066928*^9}, {3.5606545703673973`*^9, 
+  3.56065462777431*^9}, {3.560654999484975*^9, 3.560655013212957*^9}, {
+  3.560655351999803*^9, 3.560655391184847*^9}, {3.5606554468036222`*^9, 
+  3.560655447002962*^9}, {3.560655681930006*^9, 3.56065569722609*^9}, {
+  3.560655743280401*^9, 3.560655773670464*^9}, {3.560656020183764*^9, 
+  3.560656020477302*^9}, {3.5606565340850763`*^9, 3.560656536730019*^9}, {
+  3.5606565827361937`*^9, 3.5606566205046883`*^9}, {3.5606566510196457`*^9, 
+  3.560656658141007*^9}, {3.5606567817248287`*^9, 3.560656790398241*^9}, {
+  3.5618449928041677`*^9, 3.561845000183646*^9}},
+ CellLabel->"In[2]:=",
+ CellID->1986601443],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  FractionBox["1", 
+   RowBox[{"1", "+", 
+    RowBox[{"3", " ", "C", " ", "R", " ", "s"}], "+", 
+    RowBox[{
+     SuperscriptBox["C", "2"], " ", 
+     SuperscriptBox["R", "2"], " ", 
+     SuperscriptBox["s", "2"]}]}]], "}"}]], "Output",
+ CellChangeTimes->{3.561845003273982*^9},
+ CellLabel->"Out[4]=",
+ CellID->873545737]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{330, Automatic}, {Automatic, 108}},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStyles.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 325, 14, 23, "History",
+ CellID->1247902091],
+Cell[CellGroupData[{
+Cell[907, 38, 68, 1, 27, "CategorizationSection",
+ CellID->1122911449],
+Cell[978, 41, 79, 2, 70, "Categorization",
+ CellID->686433507],
+Cell[1060, 45, 80, 2, 70, "Categorization",
+ CellID->605800465],
+Cell[1143, 49, 77, 2, 70, "Categorization",
+ CellID->468444828],
+Cell[1223, 53, 67, 1, 70, "Categorization"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1327, 59, 55, 1, 17, "KeywordsSection",
+ CellID->477174294],
+Cell[1385, 62, 45, 1, 70, "Keywords",
+ CellID->1164421360]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1467, 68, 65, 1, 17, "TemplatesSection",
+ CellID->1872225408],
+Cell[1535, 71, 94, 2, 70, "Template",
+ CellID->1562036412],
+Cell[1632, 75, 82, 2, 70, "Template",
+ CellID->158391909],
+Cell[1717, 79, 81, 2, 70, "Template",
+ CellID->1360575930],
+Cell[1801, 83, 82, 2, 70, "Template",
+ CellID->793782254]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1920, 90, 53, 1, 17, "DetailsSection",
+ CellID->307771771],
+Cell[1976, 93, 63, 2, 70, "Details",
+ CellID->670882175],
+Cell[2042, 97, 69, 2, 70, "Details",
+ CellID->350963985],
+Cell[2114, 101, 64, 2, 70, "Details",
+ CellID->8391405],
+Cell[2181, 105, 69, 2, 70, "Details",
+ CellID->3610269],
+Cell[2253, 109, 61, 2, 70, "Details",
+ CellID->401364205],
+Cell[2317, 113, 61, 2, 70, "Details",
+ CellID->350204745],
+Cell[2381, 117, 63, 2, 70, "Details",
+ CellID->732958810],
+Cell[2447, 121, 78, 2, 70, "Details",
+ CellID->222905350],
+Cell[2528, 125, 67, 2, 70, "Details",
+ CellID->240026365]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[2632, 132, 53, 1, 62, "ObjectName",
+ CellID->1224892054],
+Cell[2688, 135, 517, 15, 71, "Usage",
+ CellID->982511436],
+Cell[3208, 152, 306, 7, 38, "Notes",
+ CellID->1067943069],
+Cell[3517, 161, 237, 6, 24, "Notes",
+ CellID->421258565]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3791, 172, 57, 1, 43, "TutorialsSection",
+ CellID->250839057],
+Cell[3851, 175, 256, 5, 16, "Tutorials",
+ CellID->341631938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4144, 185, 356, 11, 69, "PrimaryExamplesSection",
+ CellID->880084151],
+Cell[CellGroupData[{
+Cell[4525, 200, 2913, 71, 254, "Input",
+ CellID->1986601443],
+Cell[7441, 273, 351, 11, 43, "Output",
+ CellID->873545737]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

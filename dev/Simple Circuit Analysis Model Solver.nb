@@ -1,0 +1,2116 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     85468,       2107]
+NotebookOptionsPosition[     84404,       2066]
+NotebookOutlinePosition[     84760,       2082]
+CellTagsIndexPosition[     84717,       2079]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["MOSModelBasic[]", "Subsection",
+ CellChangeTimes->{{3.561344640851635*^9, 3.561344643711885*^9}}],
+
+Cell["\<\
+The code below was used to determine model equations for MOSModelBasic[].\
+\>", "Text",
+ CellChangeTimes->{{3.561263414184663*^9, 3.5612634252886972`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ig", "+", 
+    RowBox[{"s", " ", "Cgd", " ", 
+     RowBox[{"(", 
+      RowBox[{"Vd", "-", "Vg"}], ")"}]}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"s", " ", "Cgs", 
+     RowBox[{"(", 
+      RowBox[{"Vg", "-", "Vs"}], ")"}]}], "+", 
+    RowBox[{"s", " ", "Cgb", 
+     RowBox[{"(", 
+      RowBox[{"Vg", "-", "Vb"}], ")"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Id", "\[Equal]", 
+   RowBox[{
+    RowBox[{"s", " ", "Cgd", " ", 
+     RowBox[{"(", 
+      RowBox[{"Vd", "-", "Vg"}], ")"}]}], "+", 
+    RowBox[{"Gmb", 
+     RowBox[{"(", 
+      RowBox[{"Vb", "-", "Vs"}], ")"}]}], "+", 
+    RowBox[{"s", " ", "Cdb", 
+     RowBox[{"(", 
+      RowBox[{"Vd", "-", "Vb"}], ")"}]}], "+", 
+    RowBox[{"Gm", 
+     RowBox[{"(", 
+      RowBox[{"Vg", "-", "Vs"}], ")"}]}], "+", 
+    RowBox[{"Gds", 
+     RowBox[{"(", 
+      RowBox[{"Vd", "-", "Vs"}], ")"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Is", "+", 
+    RowBox[{"s", " ", "Cgs", 
+     RowBox[{"(", 
+      RowBox[{"Vg", "-", "Vs"}], ")"}]}], "+", 
+    RowBox[{"Gm", 
+     RowBox[{"(", 
+      RowBox[{"Vg", "-", "Vs"}], ")"}]}], "+", 
+    RowBox[{"Gds", 
+     RowBox[{"(", 
+      RowBox[{"Vd", "-", "Vs"}], ")"}]}], "+", 
+    RowBox[{"Gmb", 
+     RowBox[{"(", 
+      RowBox[{"Vb", "-", "Vs"}], ")"}]}]}], "\[Equal]", 
+   RowBox[{"s", " ", "Csb", 
+    RowBox[{"(", 
+     RowBox[{"Vs", "-", "Vb"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ib", "+", 
+    RowBox[{"s", " ", "Cgb", " ", 
+     RowBox[{"(", 
+      RowBox[{"Vg", "-", "Vb"}], ")"}]}], "+", 
+    RowBox[{"s", " ", "Csb", 
+     RowBox[{"(", 
+      RowBox[{"Vs", "-", "Vb"}], ")"}]}], "+", 
+    RowBox[{"s", " ", "Cdb", 
+     RowBox[{"(", 
+      RowBox[{"Vd", "-", "Vb"}], ")"}]}]}], "\[Equal]", "0"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eqns", "=", 
+   RowBox[{"{", 
+    RowBox[{"%", ",", "%%", ",", "%%%", ",", "%%%%"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{"eqns", ",", 
+    RowBox[{"{", 
+     RowBox[{"Id", ",", "Ig", ",", "Ib", ",", "Is"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Id", ",", "Ig", ",", "Ib", ",", 
+     RowBox[{"-", "Is"}]}], "}"}], "/.", 
+   RowBox[{"%", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Gm", "\[Rule]", "myGm"}], ",", 
+    RowBox[{"Gmb", "\[Rule]", "myGmb"}], ",", 
+    RowBox[{"Gds", "\[Rule]", "myGds"}], ",", 
+    RowBox[{"Cdb", "\[Rule]", "myCdb"}], ",", 
+    RowBox[{"s", "\[Rule]", "myS"}], ",", 
+    RowBox[{"Cgd", "\[Rule]", "myCgd"}], ",", 
+    RowBox[{"Cgb", "\[Rule]", "myCgb"}], ",", 
+    RowBox[{"Cgs", "\[Rule]", "myCgs"}], ",", 
+    RowBox[{"Csb", "\[Rule]", "myCsb"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"%", "[", 
+  RowBox[{"[", "1", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%%", "[", 
+  RowBox[{"[", "2", "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"%%%", "[", 
+  RowBox[{"[", "3", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.5612634356965427`*^9, 3.561263448453332*^9}, {
+  3.561344654142651*^9, 3.561344655585343*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"myGmb", " ", "Vb"}], "-", 
+    RowBox[{"myCdb", " ", "myS", " ", "Vb"}], "+", 
+    RowBox[{"myGds", " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myS", " ", "Vd"}], "+", 
+    RowBox[{"myCgd", " ", "myS", " ", "Vd"}], "+", 
+    RowBox[{"myGm", " ", "Vg"}], "-", 
+    RowBox[{"myCgd", " ", "myS", " ", "Vg"}], "-", 
+    RowBox[{"myGds", " ", "Vs"}], "-", 
+    RowBox[{"myGm", " ", "Vs"}], "-", 
+    RowBox[{"myGmb", " ", "Vs"}]}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "myCgb"}], " ", "myS", " ", "Vb"}], "-", 
+    RowBox[{"myCgd", " ", "myS", " ", "Vd"}], "+", 
+    RowBox[{"myCgb", " ", "myS", " ", "Vg"}], "+", 
+    RowBox[{"myCgd", " ", "myS", " ", "Vg"}], "+", 
+    RowBox[{"myCgs", " ", "myS", " ", "Vg"}], "-", 
+    RowBox[{"myCgs", " ", "myS", " ", "Vs"}]}], ",", 
+   RowBox[{
+    RowBox[{"myCdb", " ", "myS", " ", "Vb"}], "+", 
+    RowBox[{"myCgb", " ", "myS", " ", "Vb"}], "+", 
+    RowBox[{"myCsb", " ", "myS", " ", "Vb"}], "-", 
+    RowBox[{"myCdb", " ", "myS", " ", "Vd"}], "-", 
+    RowBox[{"myCgb", " ", "myS", " ", "Vg"}], "-", 
+    RowBox[{"myCsb", " ", "myS", " ", "Vs"}]}], ",", 
+   RowBox[{
+    RowBox[{"myGmb", " ", "Vb"}], "+", 
+    RowBox[{"myCsb", " ", "myS", " ", "Vb"}], "+", 
+    RowBox[{"myGds", " ", "Vd"}], "+", 
+    RowBox[{"myGm", " ", "Vg"}], "+", 
+    RowBox[{"myCgs", " ", "myS", " ", "Vg"}], "-", 
+    RowBox[{"myGds", " ", "Vs"}], "-", 
+    RowBox[{"myGm", " ", "Vs"}], "-", 
+    RowBox[{"myGmb", " ", "Vs"}], "-", 
+    RowBox[{"myCgs", " ", "myS", " ", "Vs"}], "-", 
+    RowBox[{"myCsb", " ", "myS", " ", "Vs"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.562867834692944*^9, {3.562874492080612*^9, 3.56287450444013*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"myGmb", " ", "Vb"}], "-", 
+  RowBox[{"myCdb", " ", "myS", " ", "Vb"}], "+", 
+  RowBox[{"myGds", " ", "Vd"}], "+", 
+  RowBox[{"myCdb", " ", "myS", " ", "Vd"}], "+", 
+  RowBox[{"myCgd", " ", "myS", " ", "Vd"}], "+", 
+  RowBox[{"myGm", " ", "Vg"}], "-", 
+  RowBox[{"myCgd", " ", "myS", " ", "Vg"}], "-", 
+  RowBox[{"myGds", " ", "Vs"}], "-", 
+  RowBox[{"myGm", " ", "Vs"}], "-", 
+  RowBox[{"myGmb", " ", "Vs"}]}]], "Output",
+ CellChangeTimes->{
+  3.562867834692944*^9, {3.562874492080612*^9, 3.56287450444374*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", "myCgb"}], " ", "myS", " ", "Vb"}], "-", 
+  RowBox[{"myCgd", " ", "myS", " ", "Vd"}], "+", 
+  RowBox[{"myCgb", " ", "myS", " ", "Vg"}], "+", 
+  RowBox[{"myCgd", " ", "myS", " ", "Vg"}], "+", 
+  RowBox[{"myCgs", " ", "myS", " ", "Vg"}], "-", 
+  RowBox[{"myCgs", " ", "myS", " ", "Vs"}]}]], "Output",
+ CellChangeTimes->{
+  3.562867834692944*^9, {3.562874492080612*^9, 3.562874504445915*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"myCdb", " ", "myS", " ", "Vb"}], "+", 
+  RowBox[{"myCgb", " ", "myS", " ", "Vb"}], "+", 
+  RowBox[{"myCsb", " ", "myS", " ", "Vb"}], "-", 
+  RowBox[{"myCdb", " ", "myS", " ", "Vd"}], "-", 
+  RowBox[{"myCgb", " ", "myS", " ", "Vg"}], "-", 
+  RowBox[{"myCsb", " ", "myS", " ", "Vs"}]}]], "Output",
+ CellChangeTimes->{
+  3.562867834692944*^9, {3.562874492080612*^9, 3.5628745044481773`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["MOSModelResistances[]", "Subsection",
+ CellChangeTimes->{{3.561344648430401*^9, 3.561344651151026*^9}}],
+
+Cell["\<\
+The code below, augmented with the model above, was used to determine the \
+model equations for MOSModelResistances[].\
+\>", "Text",
+ CellChangeTimes->{{3.5612660839201*^9, 3.561266089685546*^9}, {
+  3.561266170367908*^9, 3.561266190628441*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"eqns", "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Vd", "\[Rule]", "Vdp"}], ",", 
+     RowBox[{"Vg", "\[Rule]", "Vgp"}], ",", 
+     RowBox[{"Vs", "\[Rule]", "Vsp"}], ",", 
+     RowBox[{"Vb", "\[Rule]", "Vbp"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Ig", "==", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"(", 
+        RowBox[{"Vg", "-", "Vgp"}], ")"}], "Rg"], "+", "Sirg"}]}], ",", 
+    RowBox[{"Id", "\[Equal]", 
+     FractionBox[
+      RowBox[{"(", 
+       RowBox[{"Vd", "-", "Vdp"}], ")"}], "Rd"]}], ",", 
+    RowBox[{"Is", "==", 
+     FractionBox[
+      RowBox[{"(", 
+       RowBox[{"Vs", "-", "Vsp"}], ")"}], "Rs"]}], ",", 
+    RowBox[{"Ib", "==", 
+     FractionBox[
+      RowBox[{"(", 
+       RowBox[{"Vb", "-", "Vbp"}], ")"}], "Rb"]}]}], "}"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Flatten", "[", 
+   RowBox[{"{", 
+    RowBox[{"%", ",", "%%"}], "}"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Eliminate", "[", 
+   RowBox[{"%", ",", 
+    RowBox[{"{", 
+     RowBox[{"Vgp", ",", "Vsp", ",", "Vdp", ",", "Vbp"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Simplify", "[", 
+   RowBox[{"%", ",", 
+    RowBox[{"Assumptions", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Rb", ">", "0"}], ",", 
+       RowBox[{"Rg", ">", "0"}], ",", 
+       RowBox[{"Rd", ">", "0"}], ",", 
+       RowBox[{"Rs", ">", "0"}]}], "}"}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ans", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{"%", ",", 
+     RowBox[{"{", 
+      RowBox[{"Id", ",", "Ig", ",", "Ib", ",", "Is"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"Id", ",", "Ig", ",", "Ib"}], "}"}], "/.", "ans"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Gm", "\[Rule]", "myGm"}], ",", 
+    RowBox[{"Gmb", "\[Rule]", "myGmb"}], ",", 
+    RowBox[{"Gds", "\[Rule]", "myGds"}], ",", 
+    RowBox[{"Cdb", "\[Rule]", "myCdb"}], ",", 
+    RowBox[{"s", "\[Rule]", "myS"}], ",", 
+    RowBox[{"Cgd", "\[Rule]", "myCgd"}], ",", 
+    RowBox[{"Cgb", "\[Rule]", "myCgb"}], ",", 
+    RowBox[{"Cgs", "\[Rule]", "myCgs"}], ",", 
+    RowBox[{"Csb", "\[Rule]", "myCsb"}], ",", 
+    RowBox[{"Rg", "\[Rule]", "myRg"}], ",", 
+    RowBox[{"Rd", "\[Rule]", "myRd"}], ",", 
+    RowBox[{"Rs", "\[Rule]", "myRs"}], ",", 
+    RowBox[{"Rb", "\[Rule]", "myRb"}]}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.561266198521412*^9, 3.561266202412498*^9}, {
+  3.5612662635191383`*^9, 3.561266264142749*^9}, {3.561266426266665*^9, 
+  3.561266439860321*^9}, {3.561344657675111*^9, 3.5613446614343224`*^9}, {
+  3.562830558935149*^9, 3.562830559694735*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+MOSModelResistances[] with Noises\
+\>", "Subsection",
+ CellChangeTimes->{{3.5628678515952873`*^9, 3.562867859709249*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"eqns2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Id", "\[Equal]", 
+      RowBox[{"Sird", "+", 
+       FractionBox[
+        RowBox[{"Vd", "-", "Vdp"}], "Rd"]}]}], ",", 
+     RowBox[{"Is", "\[Equal]", 
+      RowBox[{"Sirs", "-", 
+       FractionBox[
+        RowBox[{"Vsp", "-", "Vs"}], "Rs"]}]}], ",", 
+     RowBox[{"Ig", "\[Equal]", 
+      RowBox[{"Sirg", "+", 
+       FractionBox[
+        RowBox[{"Vg", "-", "Vgp"}], "Rg"]}]}], ",", 
+     RowBox[{"Ib", "\[Equal]", 
+      RowBox[{"Sirb", "+", 
+       FractionBox[
+        RowBox[{"Vb", "-", "Vbp"}], "Rb"]}]}], ",", 
+     RowBox[{
+      RowBox[{"Sirg", "+", 
+       FractionBox[
+        RowBox[{"Vg", "-", "Vgp"}], "Rg"]}], "\[Equal]", "Igp"}], ",", 
+     RowBox[{
+      RowBox[{
+       FractionBox[
+        RowBox[{"Vd", "-", "Vdp"}], "Rd"], "+", "Sird"}], "\[Equal]", 
+      RowBox[{"Idp", "+", "Sid"}]}], ",", 
+     RowBox[{
+      RowBox[{"Sirb", "+", 
+       FractionBox[
+        RowBox[{"Vb", "-", "Vbp"}], "Rb"]}], "\[Equal]", "Ibp"}], ",", 
+     RowBox[{
+      RowBox[{"Sirs", "+", "Sid"}], "\[Equal]", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"Vsp", "-", "Vs"}], "Rs"], "+", "Isp"}]}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eqns3", "=", 
+   RowBox[{"eqns", "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Vd", "\[Rule]", "Vdp"}], ",", 
+      RowBox[{"Vg", "\[Rule]", "Vgp"}], ",", 
+      RowBox[{"Vs", "\[Rule]", "Vsp"}], ",", 
+      RowBox[{"Vb", "\[Rule]", "Vbp"}], ",", 
+      RowBox[{"Id", "\[Rule]", "Idp"}], ",", 
+      RowBox[{"Ig", "\[Rule]", "Igp"}], ",", 
+      RowBox[{"Is", "\[Rule]", "Isp"}], ",", 
+      RowBox[{"Ib", "\[Rule]", "Ibp"}]}], "}"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Join", "[", 
+   RowBox[{"eqns3", ",", "eqns2"}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Eliminate", "[", 
+   RowBox[{"%", ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "Vgp", ",", "Vsp", ",", "Vdp", ",", "Vbp", ",", "Isp", ",", "Idp", ",", 
+      "Igp", ",", "Ibp"}], "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Simplify", "[", 
+   RowBox[{"%", ",", 
+    RowBox[{"Assumptions", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Rb", ">", "0"}], ",", 
+       RowBox[{"Rg", ">", "0"}], ",", 
+       RowBox[{"Rd", ">", "0"}], ",", 
+       RowBox[{"Rs", ">", "0"}], ",", 
+       RowBox[{"Sirg", ">", "0"}], ",", 
+       RowBox[{"Sird", ">", "0"}], ",", 
+       RowBox[{"Sirb", ">", "0"}], ",", 
+       RowBox[{"Sirs", ">", "0"}], ",", 
+       RowBox[{"Sid", ">", "0"}]}], "}"}]}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{"%", ",", 
+    RowBox[{"{", 
+     RowBox[{"Id", ",", "Ig", ",", "Ib", ",", "Is"}], "}"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"Id", ",", "Ig", ",", "Ib", ",", "Is"}], "}"}], "/.", 
+    RowBox[{"%", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Gm", "\[Rule]", "myGm"}], ",", 
+     RowBox[{"Gmb", "\[Rule]", "myGmb"}], ",", 
+     RowBox[{"Gds", "\[Rule]", "myGds"}], ",", 
+     RowBox[{"Cdb", "\[Rule]", "myCdb"}], ",", 
+     RowBox[{"s", "\[Rule]", "myS"}], ",", 
+     RowBox[{"Cgd", "\[Rule]", "myCgd"}], ",", 
+     RowBox[{"Cgb", "\[Rule]", "myCgb"}], ",", 
+     RowBox[{"Cgs", "\[Rule]", "myCgs"}], ",", 
+     RowBox[{"Csb", "\[Rule]", "myCsb"}], ",", 
+     RowBox[{"Rg", "\[Rule]", "myRg"}], ",", 
+     RowBox[{"Rd", "\[Rule]", "myRd"}], ",", 
+     RowBox[{"Rs", "\[Rule]", "myRs"}], ",", 
+     RowBox[{"Rb", "\[Rule]", "myRb"}], ",", 
+     RowBox[{"Sird", "\[Rule]", "mySird"}], ",", 
+     RowBox[{"Sirb", "\[Rule]", "mySirb"}], ",", 
+     RowBox[{"Sirs", "\[Rule]", "mySirs"}], ",", 
+     RowBox[{"Sirg", "\[Rule]", "mySirg"}], ",", 
+     RowBox[{"Sid", "\[Rule]", "mySid"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ans2", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{"%", ",", 
+     RowBox[{"Assumptions", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Rb", ">", "0"}], ",", 
+        RowBox[{"Rg", ">", "0"}], ",", 
+        RowBox[{"Rd", ">", "0"}], ",", 
+        RowBox[{"Rs", ">", "0"}], ",", 
+        RowBox[{"mySirg", ">", "0"}], ",", 
+        RowBox[{"mySird", ">", "0"}], ",", 
+        RowBox[{"mySirb", ">", "0"}], ",", 
+        RowBox[{"mySirs", ">", "0"}], ",", 
+        RowBox[{"mySid", ">", "0"}]}], "}"}]}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.5628678640069027`*^9, 3.5628680358604107`*^9}, {
+   3.562868069721719*^9, 3.5628681043982487`*^9}, {3.562868137673169*^9, 
+   3.562868269341694*^9}, {3.562868541570092*^9, 3.562868644182919*^9}, {
+   3.562868707626882*^9, 3.562868731745673*^9}, {3.5628688047808237`*^9, 
+   3.562868814954358*^9}, {3.562869169556377*^9, 3.562869285177785*^9}, {
+   3.56286961220508*^9, 3.562869707627449*^9}, {3.562869839642758*^9, 
+   3.562869845763348*^9}, {3.562869912931185*^9, 3.5628699268797607`*^9}, {
+   3.562870145074068*^9, 3.5628701988106613`*^9}, {3.562870252549995*^9, 
+   3.562870253081287*^9}, 3.562870284124909*^9, {3.562870326396596*^9, 
+   3.562870353187478*^9}, {3.5628707803145247`*^9, 3.562870784603814*^9}, {
+   3.56287084086891*^9, 3.562870841902557*^9}, {3.562871112311326*^9, 
+   3.5628711804542217`*^9}, {3.562871519343074*^9, 3.562871519818771*^9}, {
+   3.562874378325659*^9, 3.562874410987459*^9}, {3.562874472138208*^9, 
+   3.5628744830243607`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"Total", "[", 
+    RowBox[{"ans2", "[", 
+     RowBox[{"[", 
+      RowBox[{"1", ";;", "3"}], "]"}], "]"}], "]"}], "+", 
+   RowBox[{"ans2", "[", 
+    RowBox[{"[", "4", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"FullSimplify", "[", "%", "]"}]}], "Input",
+ CellChangeTimes->{{3.562870832215437*^9, 3.562870836296636*^9}, {
+  3.5628709184347343`*^9, 3.5628709209115*^9}, {3.56287217658609*^9, 
+  3.562872195678399*^9}, {3.562872343068905*^9, 3.5628723434694*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{
+  3.56287083673118*^9, {3.562870914158455*^9, 3.562870921662499*^9}, 
+   3.562871437743051*^9, 3.562872276649899*^9, 3.562872344245697*^9, 
+   3.562875174232361*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ans2", "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.562872371468685*^9, 3.5628723729762697`*^9}, {
+  3.562872514394959*^9, 3.562872514473431*^9}, {3.562872563465172*^9, 
+  3.562872563562779*^9}, {3.5628755767224817`*^9, 3.562875577209813*^9}, {
+  3.562875659266294*^9, 3.562875659635367*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"myS", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"myCgd", "+", "myCgs"}], ")"}], " ", "myRg"}], "+", 
+          RowBox[{"myCgs", " ", "myRs"}], "+", 
+          RowBox[{"myCsb", " ", 
+           RowBox[{"(", 
+            RowBox[{"myRb", "+", "myRs", "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"myCgd", "+", "myCgs"}], ")"}], " ", "myRg", " ", 
+              "myRs", " ", "myS"}], "+", 
+             RowBox[{"myRb", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myCgd", "+", "myCgs"}], ")"}], " ", "myRg"}], "+", 
+                
+                RowBox[{"myCgs", " ", "myRs"}]}], ")"}], " ", "myS"}]}], 
+            ")"}]}], "+", 
+          RowBox[{"myCdb", " ", "myRb", " ", 
+           RowBox[{"(", 
+            RowBox[{"1", "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}], " ", 
+                 "myRg"}], "+", 
+                RowBox[{"myCgs", " ", "myRs"}]}], ")"}], " ", "myS"}]}], 
+            ")"}]}], "+", 
+          RowBox[{"myCgb", " ", 
+           RowBox[{"(", 
+            RowBox[{"myRb", "+", "myRg", "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myCgd", "+", "myCgs", "+", "myCsb"}], ")"}], " ", 
+                 "myRb", " ", "myRg"}], "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myCgs", "+", "myCsb"}], ")"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{"myRb", "+", "myRg"}], ")"}], " ", "myRs"}]}], 
+               ")"}], " ", "myS"}]}], ")"}]}]}], ")"}]}]}], ")"}], " ", 
+     "mySid"}], "-", 
+    RowBox[{"myCdb", " ", "myRb", " ", "myS", " ", "mySirb"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myS", " ", 
+     "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myGds", " ", "myRb", " ", "myRs", " ", "myS", " ", 
+     "mySirb"}], "-", 
+    RowBox[{
+    "myCsb", " ", "myGds", " ", "myRb", " ", "myRs", " ", "myS", " ", 
+     "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myGm", " ", "myRb", " ", "myRs", " ", "myS", " ", 
+     "mySirb"}], "-", 
+    RowBox[{
+    "myCsb", " ", "myGm", " ", "myRb", " ", "myRs", " ", "myS", " ", 
+     "mySirb"}], "-", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{"myCdb", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{"myCdb", " ", "myCgs", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{"myCdb", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirb"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirb"}], "+", 
+    RowBox[{"myGds", " ", "myRd", " ", "mySird"}], "+", 
+    RowBox[{"myCdb", " ", "myRd", " ", "myS", " ", "mySird"}], "+", 
+    RowBox[{"myCgd", " ", "myRd", " ", "myS", " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myGds", " ", "myRb", " ", "myRd", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myGds", " ", "myRb", " ", "myRd", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCsb", " ", "myGds", " ", "myRb", " ", "myRd", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myGds", " ", "myRd", " ", "myRg", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myGds", " ", "myRd", " ", "myRg", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCgs", " ", "myGds", " ", "myRd", " ", "myRg", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myGm", " ", "myRd", " ", "myRg", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myGds", " ", "myRd", " ", "myRs", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myGds", " ", "myRd", " ", "myRs", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCgs", " ", "myGds", " ", "myRd", " ", "myRs", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCsb", " ", "myGds", " ", "myRd", " ", "myRs", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myGm", " ", "myRd", " ", "myRs", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myGm", " ", "myRd", " ", "myRs", " ", "myS", " ", 
+     "mySird"}], "+", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myRb", " ", "myRd", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myRb", " ", "myRd", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myRb", " ", "myRd", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCdb", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myRd", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myRd", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myRd", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCdb", " ", "myCgs", " ", "myRd", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCgd", " ", "myCgs", " ", "myRd", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGm", " ", "myRb", " ", "myRd", " ", "myRg",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRd", " ", "myRg",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRd", " ", "myRg",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGm", " ", "myRb", " ", "myRd", " ", "myRg",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCdb", " ", "myCgs", " ", "myRd", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCgd", " ", "myCgs", " ", "myRd", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCdb", " ", "myCsb", " ", "myRd", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myRd", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGm", " ", "myRb", " ", "myRd", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRd", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRd", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGm", " ", "myRb", " ", "myRd", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGm", " ", "myRd", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGm", " ", "myRd", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGm", " ", "myRd", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGm", " ", "myRd", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRd", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRd", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySird"}], "+", 
+    RowBox[{"myGm", " ", "myRg", " ", "mySirg"}], "-", 
+    RowBox[{"myCgd", " ", "myRg", " ", "myS", " ", "mySirg"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myS", " ", 
+     "mySirg"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myS", " ", 
+     "mySirg"}], "+", 
+    RowBox[{
+    "myCsb", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myS", " ", 
+     "mySirg"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myGds", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+     "mySirg"}], "-", 
+    RowBox[{
+    "myCgs", " ", "myGds", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+     "mySirg"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myGm", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+     "mySirg"}], "+", 
+    RowBox[{
+    "myCsb", " ", "myGm", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+     "mySirg"}], "-", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{"myCgd", " ", "myCgs", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirg"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirg"}], "-", 
+    RowBox[{"myGds", " ", "myRs", " ", "mySirs"}], "-", 
+    RowBox[{"myGm", " ", "myRs", " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myGds", " ", "myRb", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myGds", " ", "myRb", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{
+    "myCsb", " ", "myGds", " ", "myRb", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myGm", " ", "myRb", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myGm", " ", "myRb", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{
+    "myCsb", " ", "myGm", " ", "myRb", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myGds", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myGds", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{
+    "myCgs", " ", "myGds", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myGm", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myGm", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+     "mySirs"}], "-", 
+    RowBox[{"myCdb", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{"myCgd", " ", "myCgs", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGm", " ", "myRb", " ", "myRg", " ", "myRs",
+      " ", 
+     SuperscriptBox["myS", "2"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirs"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "mySirs"}], "-", 
+    RowBox[{"myCdb", " ", "myS", " ", "Vb"}], "+", 
+    RowBox[{"myCgb", " ", "myGm", " ", "myRg", " ", "myS", " ", "Vb"}], "-", 
+    RowBox[{"myCdb", " ", "myGds", " ", "myRs", " ", "myS", " ", "Vb"}], "-", 
+    
+    RowBox[{"myCsb", " ", "myGds", " ", "myRs", " ", "myS", " ", "Vb"}], "-", 
+    
+    RowBox[{"myCdb", " ", "myGm", " ", "myRs", " ", "myS", " ", "Vb"}], "-", 
+    RowBox[{"myCsb", " ", "myGm", " ", "myRs", " ", "myS", " ", "Vb"}], "-", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{"myCdb", " ", "myCgs", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{"myCdb", " ", "myCgs", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{"myCdb", " ", "myCsb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myGm", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myGm", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myGm", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myGm", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vb"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vb"}], "+", 
+    RowBox[{"myGds", " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myS", " ", "Vd"}], "+", 
+    RowBox[{"myCgd", " ", "myS", " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myGds", " ", "myRb", " ", "myS", " ", "Vd"}], "+", 
+    
+    RowBox[{"myCgb", " ", "myGds", " ", "myRb", " ", "myS", " ", "Vd"}], "+", 
+    
+    RowBox[{"myCsb", " ", "myGds", " ", "myRb", " ", "myS", " ", "Vd"}], "+", 
+    
+    RowBox[{"myCgb", " ", "myGds", " ", "myRg", " ", "myS", " ", "Vd"}], "+", 
+    
+    RowBox[{"myCgd", " ", "myGds", " ", "myRg", " ", "myS", " ", "Vd"}], "+", 
+    
+    RowBox[{"myCgs", " ", "myGds", " ", "myRg", " ", "myS", " ", "Vd"}], "+", 
+    
+    RowBox[{"myCgd", " ", "myGm", " ", "myRg", " ", "myS", " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myGds", " ", "myRs", " ", "myS", " ", "Vd"}], "+", 
+    
+    RowBox[{"myCgd", " ", "myGds", " ", "myRs", " ", "myS", " ", "Vd"}], "+", 
+    
+    RowBox[{"myCgs", " ", "myGds", " ", "myRs", " ", "myS", " ", "Vd"}], "+", 
+    
+    RowBox[{"myCsb", " ", "myGds", " ", "myRs", " ", "myS", " ", "Vd"}], "+", 
+    
+    RowBox[{"myCdb", " ", "myGm", " ", "myRs", " ", "myS", " ", "Vd"}], "+", 
+    RowBox[{"myCgd", " ", "myGm", " ", "myRs", " ", "myS", " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myRb", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myRb", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myRb", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCsb", " ", "myRb", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myRb", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgs", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgd", " ", "myCgs", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myGm", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myGm", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgs", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgd", " ", "myCgs", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCsb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myGm", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myGm", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myGm", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myGm", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myGm", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myGm", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRg", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRg", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vd"}], "+", 
+    RowBox[{"myGm", " ", "Vg"}], "-", 
+    RowBox[{"myCgd", " ", "myS", " ", "Vg"}], "+", 
+    RowBox[{"myCdb", " ", "myGm", " ", "myRb", " ", "myS", " ", "Vg"}], "+", 
+    RowBox[{"myCgb", " ", "myGm", " ", "myRb", " ", "myS", " ", "Vg"}], "+", 
+    RowBox[{"myCsb", " ", "myGm", " ", "myRb", " ", "myS", " ", "Vg"}], "-", 
+    RowBox[{"myCgd", " ", "myGds", " ", "myRs", " ", "myS", " ", "Vg"}], "-", 
+    
+    RowBox[{"myCgs", " ", "myGds", " ", "myRs", " ", "myS", " ", "Vg"}], "-", 
+    
+    RowBox[{"myCgd", " ", "myGm", " ", "myRs", " ", "myS", " ", "Vg"}], "+", 
+    RowBox[{"myCsb", " ", "myGm", " ", "myRs", " ", "myS", " ", "Vg"}], "-", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myRb", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myRb", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myRb", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myRb", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{"myCgd", " ", "myCgs", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgs", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCgs", " ", "myCsb", " ", "myGds", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{"myCdb", " ", "myCgb", " ", "myGm", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{"myCdb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{"myCgb", " ", "myCgd", " ", "myGm", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{"myCgd", " ", "myCsb", " ", "myGm", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "2"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCgs", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCgs", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgb", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCgb", " ", "myCgd", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCdb", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vg"}], "-", 
+    RowBox[{
+    "myCgd", " ", "myCgs", " ", "myCsb", " ", "myRb", " ", "myRs", " ", 
+     SuperscriptBox["myS", "3"], " ", "Vg"}], "-", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"myGds", "+", "myGm", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"myCdb", "+", "myCgb", "+", "myCsb"}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{"myGds", "+", "myGm"}], ")"}], " ", "myRb"}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}], " ", 
+              "myGds"}], "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"myCgb", "+", "myCgd"}], ")"}], " ", "myGm"}]}], ")"}],
+            " ", "myRg"}]}], ")"}], " ", "myS"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"myCdb", " ", "myCsb", " ", "myRb"}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"myCgb", " ", "myCgs"}], "+", 
+                   RowBox[{"myCdb", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"myCgb", "+", "myCgs"}], ")"}]}], "+", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"myCgb", "+", "myCgs"}], ")"}], " ", "myCsb"}]}], 
+                  ")"}], " ", "myGds"}], "+", 
+                RowBox[{"myCdb", " ", "myCgb", " ", "myGm"}]}], ")"}], " ", 
+              "myRb"}], "+", 
+             RowBox[{"myCgd", " ", 
+              RowBox[{"(", 
+               RowBox[{"myCgs", "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myCdb", "+", "myCgb", "+", "myCsb"}], ")"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{"myGds", "+", "myGm"}], ")"}], " ", "myRb"}]}], 
+               ")"}]}]}], ")"}], " ", "myRg"}]}], ")"}], " ", 
+        SuperscriptBox["myS", "2"]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"myCdb", " ", 
+           RowBox[{"(", 
+            RowBox[{"myCgb", "+", "myCgd"}], ")"}], " ", "myCgs"}], "+", 
+          RowBox[{"myCgd", " ", "myCgs", " ", "myCsb"}], "+", 
+          RowBox[{"myCdb", " ", 
+           RowBox[{"(", 
+            RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}], " ", 
+           "myCsb"}], "+", 
+          RowBox[{"myCgb", " ", "myCgd", " ", 
+           RowBox[{"(", 
+            RowBox[{"myCgs", "+", "myCsb"}], ")"}]}]}], ")"}], " ", "myRb", 
+        " ", "myRg", " ", 
+        SuperscriptBox["myS", "3"]}]}], ")"}], " ", "Vs"}], "+", 
+    RowBox[{"myGmb", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"myCgd", " ", "myRd", " ", "myRs", " ", "myS", " ", "mySird"}],
+        "+", 
+       RowBox[{
+       "myCgb", " ", "myCgd", " ", "myRd", " ", "myRg", " ", "myRs", " ", 
+        SuperscriptBox["myS", "2"], " ", "mySird"}], "-", 
+       RowBox[{"myCgd", " ", "myRg", " ", "myRs", " ", "myS", " ", "mySirg"}],
+        "-", 
+       RowBox[{"myCgs", " ", "myRg", " ", "myRs", " ", "myS", " ", "mySirg"}],
+        "-", 
+       RowBox[{"myRs", " ", "mySirs"}], "-", 
+       RowBox[{"myCgb", " ", "myRg", " ", "myRs", " ", "myS", " ", "mySirs"}],
+        "-", 
+       RowBox[{"myCgd", " ", "myRg", " ", "myRs", " ", "myS", " ", "mySirs"}],
+        "-", 
+       RowBox[{"myCgs", " ", "myRg", " ", "myRs", " ", "myS", " ", "mySirs"}],
+        "+", "Vb", "+", 
+       RowBox[{"myCgb", " ", "myRg", " ", "myS", " ", "Vb"}], "+", 
+       RowBox[{"myCgd", " ", "myRg", " ", "myS", " ", "Vb"}], "+", 
+       RowBox[{"myCgs", " ", "myRg", " ", "myS", " ", "Vb"}], "+", 
+       RowBox[{"myCgs", " ", "myRs", " ", "myS", " ", "Vb"}], "-", 
+       RowBox[{"myCgb", " ", "myCgd", " ", "myRg", " ", "myRs", " ", 
+        SuperscriptBox["myS", "2"], " ", "Vb"}], "+", 
+       RowBox[{"myCgd", " ", "myRs", " ", "myS", " ", "Vd"}], "+", 
+       RowBox[{"myCgb", " ", "myCgd", " ", "myRg", " ", "myRs", " ", 
+        SuperscriptBox["myS", "2"], " ", "Vd"}], "+", 
+       RowBox[{"myCdb", " ", "myRs", " ", "myS", " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}], " ", "myRg",
+            " ", "myS"}]}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"myRd", " ", "mySird"}], "-", "Vb", "+", "Vd"}], ")"}]}], 
+       "-", 
+       RowBox[{"myCgd", " ", "myRs", " ", "myS", " ", "Vg"}], "-", 
+       RowBox[{"myCgs", " ", "myRs", " ", "myS", " ", "Vg"}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}], " ", "myRg",
+            " ", "myS"}]}], ")"}], " ", "Vs"}], "+", 
+       RowBox[{"myRb", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"1", "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}], " ", 
+                 "myRg"}], "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"-", "myCdb"}], "+", "myCgs"}], ")"}], " ", 
+                 "myRs"}]}], ")"}], " ", "myS"}], "-", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"myCgb", " ", "myCgd"}], "+", 
+                RowBox[{"myCdb", " ", 
+                 RowBox[{"(", 
+                  RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}]}]}], 
+               ")"}], " ", "myRg", " ", "myRs", " ", 
+              SuperscriptBox["myS", "2"]}]}], ")"}], " ", "mySirb"}], "+", 
+          RowBox[{"myS", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"myCgb", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"myRg", " ", "mySirg"}], "-", 
+                RowBox[{"myRs", " ", "mySirs"}], "+", "Vg", "-", "Vs", "+", 
+                RowBox[{"myCgd", " ", "myS", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"myRd", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"myRg", "+", "myRs"}], ")"}], " ", "mySird"}], 
+                   "+", 
+                   RowBox[{"myRs", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"Vd", "-", "Vg"}], ")"}]}], "-", 
+                   RowBox[{"myRg", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"myRs", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"mySirg", "+", "mySirs"}], ")"}]}], "-", "Vd", 
+                    "+", "Vs"}], ")"}]}]}], ")"}]}]}], ")"}]}], "+", 
+             RowBox[{"myCdb", " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"myRd", " ", 
+                 RowBox[{"(", 
+                  RowBox[{"1", "+", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}], " ", 
+                    RowBox[{"(", 
+                    RowBox[{"myRg", "+", "myRs"}], ")"}], " ", "myS"}]}], 
+                  ")"}], " ", "mySird"}], "-", 
+                RowBox[{
+                "myCgd", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+                 "mySirg"}], "-", 
+                RowBox[{
+                "myCgs", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+                 "mySirg"}], "-", 
+                RowBox[{"myRs", " ", "mySirs"}], "-", 
+                RowBox[{
+                "myCgd", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+                 "mySirs"}], "-", 
+                RowBox[{
+                "myCgs", " ", "myRg", " ", "myRs", " ", "myS", " ", 
+                 "mySirs"}], "+", "Vd", "+", 
+                RowBox[{"myCgd", " ", "myRg", " ", "myS", " ", "Vd"}], "+", 
+                RowBox[{"myCgs", " ", "myRg", " ", "myS", " ", "Vd"}], "+", 
+                RowBox[{"myCgd", " ", "myRs", " ", "myS", " ", "Vd"}], "+", 
+                RowBox[{"myCgs", " ", "myRs", " ", "myS", " ", "Vd"}], "-", 
+                RowBox[{"myCgd", " ", "myRs", " ", "myS", " ", "Vg"}], "-", 
+                RowBox[{"myCgs", " ", "myRs", " ", "myS", " ", "Vg"}], "-", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"1", "+", 
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"myCgd", "+", "myCgs"}], ")"}], " ", "myRg", " ", 
+                    "myS"}]}], ")"}], " ", "Vs"}], "-", 
+                RowBox[{"myCgb", " ", "myS", " ", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"myRs", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"-", "Vd"}], "+", "Vg"}], ")"}]}], "+", 
+                   RowBox[{"myRg", " ", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"myRs", " ", 
+                    RowBox[{"(", 
+                    RowBox[{"mySirg", "+", "mySirs"}], ")"}]}], "-", "Vd", 
+                    "+", "Vs"}], ")"}]}]}], ")"}]}]}], ")"}]}]}], ")"}]}]}], 
+         ")"}]}]}], ")"}]}]}], ")"}], "/", 
+  RowBox[{"(", 
+   RowBox[{"1", "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", "myRs"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"myCdb", "+", "myCgb", "+", "myCsb"}], ")"}], " ", "myRb", " ", 
+     "myS"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"myCdb", " ", "myRd"}], "+", 
+       RowBox[{"myCgd", " ", "myRd"}], "+", 
+       RowBox[{"myCdb", " ", "myGmb", " ", "myRb", " ", "myRd"}], "+", 
+       RowBox[{"myCgb", " ", "myRg"}], "+", 
+       RowBox[{"myCgd", " ", "myRg"}], "+", 
+       RowBox[{"myCgs", " ", "myRg"}], "+", 
+       RowBox[{"myCgd", " ", "myGm", " ", "myRd", " ", "myRg"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"myCgs", "+", "myCsb", "+", 
+          RowBox[{"myCsb", " ", "myGm", " ", "myRb"}], "+", 
+          RowBox[{"myCgs", " ", "myGmb", " ", "myRg"}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"myCdb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRb", "+", "myRd"}], ")"}]}], "+", 
+             RowBox[{"myCgb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRb", "+", "myRg"}], ")"}]}], "+", 
+             RowBox[{"myCgd", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRd", "+", "myRg"}], ")"}]}]}], ")"}]}]}], ")"}], 
+        " ", "myRs"}]}], ")"}], " ", "myS"}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"myCgd", " ", "myCsb", " ", "myRb", " ", "myRd"}], "+", 
+       RowBox[{"myCgd", " ", "myCsb", " ", "myRb", " ", "myRg"}], "+", 
+       RowBox[{"myCgs", " ", "myCsb", " ", "myRb", " ", "myRg"}], "+", 
+       RowBox[{"myCgd", " ", "myCgs", " ", "myRd", " ", "myRg"}], "+", 
+       RowBox[{
+       "myCgd", " ", "myCsb", " ", "myGm", " ", "myRb", " ", "myRd", " ", 
+        "myRg"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"myCgs", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"myCsb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRb", "+", "myRg"}], ")"}]}], "+", 
+             RowBox[{"myCgd", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRd", "+", "myRg"}], ")"}]}]}], ")"}]}], "+", 
+          RowBox[{"myCgd", " ", "myCsb", " ", 
+           RowBox[{"(", 
+            RowBox[{"myRg", "+", 
+             RowBox[{"myGm", " ", "myRb", " ", "myRg"}], "+", 
+             RowBox[{"myRd", " ", 
+              RowBox[{"(", 
+               RowBox[{"1", "+", 
+                RowBox[{"myGm", " ", 
+                 RowBox[{"(", 
+                  RowBox[{"myRb", "+", "myRg"}], ")"}]}]}], ")"}]}]}], 
+            ")"}]}]}], ")"}], " ", "myRs"}], "+", 
+       RowBox[{"myCgb", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"myCgs", "+", "myCsb"}], ")"}], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"myRg", " ", "myRs"}], "+", 
+             RowBox[{"myRb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRg", "+", "myRs"}], ")"}]}]}], ")"}]}], "+", 
+          RowBox[{"myCgd", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"myRd", " ", "myRg", " ", 
+              RowBox[{"(", 
+               RowBox[{"1", "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", "myRs"}]}], 
+               ")"}]}], "+", 
+             RowBox[{"myRb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRd", "+", "myRg", "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", "myRd", " ", 
+                 "myRg"}], "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{"myRd", "+", "myRg"}], ")"}], " ", "myRs"}]}], 
+               ")"}]}]}], ")"}]}]}], ")"}]}], "+", 
+       RowBox[{"myCdb", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"myCsb", " ", "myRb", " ", "myRd"}], "+", 
+          RowBox[{"myCgs", " ", "myRb", " ", "myRg"}], "+", 
+          RowBox[{"myCgs", " ", "myRd", " ", "myRg"}], "+", 
+          RowBox[{
+          "myCgs", " ", "myGmb", " ", "myRb", " ", "myRd", " ", "myRg"}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"myCsb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRb", "+", "myRd"}], ")"}]}], "+", 
+             RowBox[{"myCgs", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRb", "+", "myRd", "+", 
+                RowBox[{"myGmb", " ", "myRb", " ", "myRd"}], "+", 
+                RowBox[{"myGmb", " ", 
+                 RowBox[{"(", 
+                  RowBox[{"myRb", "+", "myRd"}], ")"}], " ", "myRg"}]}], 
+               ")"}]}]}], ")"}], " ", "myRs"}], "+", 
+          RowBox[{"myCgb", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"myRd", " ", "myRg", " ", 
+              RowBox[{"(", 
+               RowBox[{"1", "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", "myRs"}]}], 
+               ")"}]}], "+", 
+             RowBox[{"myRb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRd", "+", "myRg", "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", "myRd", " ", 
+                 "myRg"}], "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{"myRd", "+", "myRg"}], ")"}], " ", "myRs"}]}], 
+               ")"}]}]}], ")"}]}], "+", 
+          RowBox[{"myCgd", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"myRd", " ", "myRg", " ", 
+              RowBox[{"(", 
+               RowBox[{"1", "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", "myRs"}]}], 
+               ")"}]}], "+", 
+             RowBox[{"myRb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRd", "+", "myRg", "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", "myRd", " ", 
+                 "myRg"}], "+", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"myGm", "+", "myGmb"}], ")"}], " ", 
+                 RowBox[{"(", 
+                  RowBox[{"myRd", "+", "myRg"}], ")"}], " ", "myRs"}]}], 
+               ")"}]}]}], ")"}]}]}], ")"}]}]}], ")"}], " ", 
+     SuperscriptBox["myS", "2"]}], "+", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"myCdb", " ", 
+        RowBox[{"(", 
+         RowBox[{"myCgb", "+", "myCgd"}], ")"}], " ", "myCgs"}], "+", 
+       RowBox[{"myCgd", " ", "myCgs", " ", "myCsb"}], "+", 
+       RowBox[{"myCdb", " ", 
+        RowBox[{"(", 
+         RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}], " ", "myCsb"}],
+        "+", 
+       RowBox[{"myCgb", " ", "myCgd", " ", 
+        RowBox[{"(", 
+         RowBox[{"myCgs", "+", "myCsb"}], ")"}]}]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"myRb", " ", "myRd", " ", "myRg"}], "+", 
+       RowBox[{"myRd", " ", "myRg", " ", "myRs"}], "+", 
+       RowBox[{"myRb", " ", 
+        RowBox[{"(", 
+         RowBox[{"myRd", "+", "myRg"}], ")"}], " ", "myRs"}]}], ")"}], " ", 
+     SuperscriptBox["myS", "3"]}], "+", 
+    RowBox[{"myGds", " ", 
+     RowBox[{"(", 
+      RowBox[{"myRd", "+", "myRs", "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"myCdb", "+", "myCgb", "+", "myCsb"}], ")"}], " ", "myRb",
+            " ", "myRd"}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}], " ", "myRd",
+            " ", "myRg"}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"myCdb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRb", "+", "myRd"}], ")"}]}], "+", 
+             RowBox[{"myCsb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRb", "+", "myRd"}], ")"}]}], "+", 
+             RowBox[{"myCgb", " ", 
+              RowBox[{"(", 
+               RowBox[{"myRb", "+", "myRg"}], ")"}]}], "+", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"myCgd", "+", "myCgs"}], ")"}], " ", 
+              RowBox[{"(", 
+               RowBox[{"myRd", "+", "myRg"}], ")"}]}]}], ")"}], " ", 
+           "myRs"}]}], ")"}], " ", "myS"}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"myCdb", " ", 
+           RowBox[{"(", 
+            RowBox[{"myCgb", "+", "myCgd", "+", "myCgs"}], ")"}]}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"myCgd", "+", "myCgs"}], ")"}], " ", "myCsb"}], "+", 
+          RowBox[{"myCgb", " ", 
+           RowBox[{"(", 
+            RowBox[{"myCgd", "+", "myCgs", "+", "myCsb"}], ")"}]}]}], ")"}], 
+        " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"myRb", " ", "myRd", " ", "myRg"}], "+", 
+          RowBox[{"myRd", " ", "myRg", " ", "myRs"}], "+", 
+          RowBox[{"myRb", " ", 
+           RowBox[{"(", 
+            RowBox[{"myRd", "+", "myRg"}], ")"}], " ", "myRs"}]}], ")"}], " ", 
+        SuperscriptBox["myS", "2"]}]}], ")"}]}]}], ")"}]}]], "Output",
+ CellChangeTimes->{3.562872373469534*^9, 3.562872516650117*^9, 
+  3.5628725679045057`*^9, 3.562875531482525*^9, 3.562875579539083*^9, 
+  3.5628756618317337`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 867},
+WindowMargins->{{Automatic, 313}, {Automatic, 57}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 103, 1, 34, "Subsection"],
+Cell[685, 25, 165, 3, 26, "Text"],
+Cell[CellGroupData[{
+Cell[875, 32, 3202, 99, 193, "Input"],
+Cell[4080, 133, 1736, 41, 103, "Output"],
+Cell[5819, 176, 546, 13, 43, "Output"],
+Cell[6368, 191, 440, 10, 27, "Output"],
+Cell[6811, 203, 423, 9, 27, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7283, 218, 109, 1, 34, "Subsection"],
+Cell[7395, 221, 255, 5, 26, "Text"],
+Cell[7653, 228, 2765, 81, 173, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10455, 314, 131, 3, 34, "Subsection"],
+Cell[10589, 319, 5497, 143, 353, "Input"],
+Cell[CellGroupData[{
+Cell[16111, 466, 519, 12, 43, "Input"],
+Cell[16633, 480, 214, 4, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16884, 489, 343, 6, 27, "Input"],
+Cell[17230, 497, 67146, 1565, 4883, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

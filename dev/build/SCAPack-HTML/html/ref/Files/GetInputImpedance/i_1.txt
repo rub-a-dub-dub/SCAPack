@@ -1,0 +1,6 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>{
+  {&quot;volt&quot;, {vin, 0}, &quot;v1&quot;, {}},
+  {&quot;res&quot;, {vin, vout}, &quot;r1&quot;, {Gvalue -&gt; 1/R1}},
+  {&quot;res&quot;, {vout, 0}, &quot;r2&quot;, {Gvalue -&gt; 1/R2}}
+  };
+GetInputImpedance[%, {vout, 0}]</pre><div class='IFU'><a name='1679903070'></a>http://wolfram.com/xid/0nplm4qz36tjw9r9bzcc7h88s5q-12gfsg</div>

@@ -1,0 +1,8 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>temp = {
+   {&quot;volt&quot;, {vin, 0}, &quot;v1&quot;, {}}, {&quot;res&quot;, {vin, vx}, 
+    &quot;r1&quot;, {Gvalue -&gt; 1/R}}, {&quot;res&quot;, {vx, 0}, 
+    &quot;r2&quot;, {Gvalue -&gt; 1/R}}, {&quot;res&quot;, {vx, vy}, 
+    &quot;r3&quot;, {Gvalue -&gt; 1/R}}, {&quot;res&quot;, {vy, 0}, &quot;r4&quot;, {Gvalue -&gt; 1/R}},
+   {&quot;nodeset&quot;, {}, &quot;ns1&quot;, {vin -&gt; 1}}
+   };
+SolveFullSystem[temp]</pre><div class='IFU'><a name='1919874590'></a>http://wolfram.com/xid/0bzivma1uc1huhwol0jv6-51buz0</div>

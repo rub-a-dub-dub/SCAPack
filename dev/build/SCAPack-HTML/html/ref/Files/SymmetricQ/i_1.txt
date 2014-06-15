@@ -1,0 +1,6 @@
+<pre name='i_1_in' id='i_1_in' class='IFT'>shuntR = {
+   {&quot;res&quot;, {v1, 0}, &quot;r1&quot;, {Rvalue -&gt; R}},
+   {&quot;vprobe&quot;, {v1, 0}, &quot;vp1&quot;, {}}
+   };
+ComputeABCDNetwork[shuntR, {{v1, 0}, {v1, 0}}];
+SymmetricQ[%]</pre><div class='IFU'><a name='1387781982'></a>http://wolfram.com/xid/0v20xmxle7clvr0jn-w8i9ps</div>

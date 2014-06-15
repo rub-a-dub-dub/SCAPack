@@ -1,0 +1,567 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     17361,        558]
+NotebookOptionsPosition[     13717,        444]
+NotebookOutlinePosition[     15773,        500]
+CellTagsIndexPosition[     15688,        495]
+WindowTitle->ComputeABCDNetwork - Wolfram Mathematica
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["S C A PACK SYMBOL", "PacletNameCell"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Netlists\"\>":>Documentation`HelpLookup[
+       "paclet:SCAPack/tutorial/Netlists"], "\<\"Network Parameters\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/tutorial/Network Parameters"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"ComputeHNetwork\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeHNetwork"], "\<\"ComputeZNetwork\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeZNetwork"], "\<\"ComputeYNetwork\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeYNetwork"], "\<\"ComputeGNetwork\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/ref/ComputeGNetwork"], "\<\"NetworkData\"\>":>
+       Documentation`HelpLookup["paclet:SCAPack/ref/NetworkData"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Simple Circuit Analysis Package\"\>":>
+       Documentation`HelpLookup[
+       "paclet:SCAPack/guide/Simple Circuit Analysis Package"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"SCAPack/ref/ComputeABCDNetwork\"\>":>
+       None, "\<\"Copy Mathematica url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell["SCAPack/ref/ComputeABCDNetwork"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; Null], 
+       Delimiter, "\<\"Copy web url\"\>":>
+       Module[{DocumentationSearch`Private`nb$}, 
+        DocumentationSearch`Private`nb$ = NotebookPut[
+           Notebook[{
+             Cell[
+              BoxData[
+               MakeBoxes[
+                Hyperlink[
+                "http://reference.wolfram.com/mathematica/SCAPack/ref/\
+ComputeABCDNetwork.html"], StandardForm]], "Input", TextClipboardType -> 
+              "PlainText"]}, Visible -> False]]; 
+        SelectionMove[DocumentationSearch`Private`nb$, All, Notebook]; 
+        FrontEndTokenExecute[DocumentationSearch`Private`nb$, "Copy"]; 
+        NotebookClose[DocumentationSearch`Private`nb$]; 
+        Null], "\<\"Go to web url\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+            StringJoin[
+            "http://reference.wolfram.com/mathematica/", 
+             "SCAPack/ref/ComputeABCDNetwork", ".html"]], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0}]
+    }], "AnchorBar"]}
+  }]], "AnchorBarGrid",
+ CellID->1],
+
+Cell[CellGroupData[{
+
+Cell["ComputeABCDNetwork", "ObjectName",
+ CellID->1224892054],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{"ComputeABCDNetwork", "[", 
+       RowBox[{
+        StyleBox["netlist", "TI"], ",", 
+        StyleBox["portlist", "TI"]}], "]"}]], "InlineFormula"],
+     " \[LineSeparator]computes the ABCD parameters for a netlist."
+    }]]}
+  }]], "Usage",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, "Rows" -> {{None}}, 
+   "RowsIndexed" -> {}}},
+ CellID->982511436]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->"Preemptive"]]]], "NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1322934809],
+
+Cell[TextData[{
+ StyleBox["netlist", "TI"],
+ " cannot have any independent sources. Use ",
+ Cell[BoxData[
+  ButtonBox["DisableSources",
+   BaseStyle->"Link",
+   ButtonData->"paclet:SCAPack/ref/DisableSources"]], "InlineFormula"],
+ " if necessary."
+}], "Notes",
+ CellID->1520023007],
+
+Cell[TextData[{
+ StyleBox["portlist", "TI"],
+ " is a list of node pairs representing ports such as ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["v", "1"], ",", 
+      SubscriptBox["v", "ref1"]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["v", "2"], ",", 
+      SubscriptBox["v", "ref2"]}], "}"}], ",", "..."}], "}"}]], 
+  "InlineFormula"]
+}], "Notes",
+ CellID->135313232],
+
+Cell["This analysis only works with two-port networks.", "Notes",
+ CellID->349084348],
+
+Cell["The ABCD parameters are defined as follows", "Notes",
+ CellID->382561579],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "TableRowIcon"], "A", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      FractionBox[
+       SubscriptBox["V", "2"], 
+       SubscriptBox["V", "1"]], ",", 
+      RowBox[{
+       SubscriptBox["I", "1"], "\[Equal]", "0"}]}]], "InlineFormula"]], 
+     "TableText"]},
+   {Cell["      ", "TableRowIcon"], "B", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      FractionBox[
+       SubscriptBox["V", "2"], 
+       SubscriptBox["I", "1"]], ",", 
+      RowBox[{
+       SubscriptBox["V", "1"], "\[Equal]", "0"}]}]], "InlineFormula"]], 
+     "TableText"]},
+   {Cell["      ", "TableRowIcon"], "C", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        SubscriptBox["I", "2"], 
+        SubscriptBox["V", "1"]]}], ",", 
+      RowBox[{
+       SubscriptBox["I", "1"], "\[Equal]", "0"}]}]], "InlineFormula"]], 
+     "TableText"]},
+   {Cell["      ", "TableRowIcon"], "D", Cell[TextData[Cell[BoxData[
+     RowBox[{
+      FractionBox[
+       RowBox[{"-", 
+        SubscriptBox["I", "2"]}], 
+       SubscriptBox["I", "1"]], ",", 
+      RowBox[{
+       SubscriptBox["V", "1"], "\[Equal]", "0"}]}]], "InlineFormula"]], 
+     "TableText"]}
+  }]], "2ColumnTableMod",
+ GridBoxOptions->{
+ GridBoxBackground->{
+  "Columns" -> {{None}}, "ColumnsIndexed" -> {}, 
+   "Rows" -> {None, None, None, {None}}, "RowsIndexed" -> {}},
+ GridBoxDividers->{"Rows" -> {{True, True, True, True, True}}}},
+ CellID->561213937],
+
+Cell["\<\
+The network parameters are defined with currents entering the positive \
+terminal.\
+\>", "Notes",
+ CellID->1997626130]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->"PrimaryExamplesSection",
+ CellID->1667137472],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(1)", "ExampleCount"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->True,
+ CellID->1360349495],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"temp", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<res\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"v1", ",", "0"}], "}"}], ",", "\"\<r1\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Rvalue", "\[Rule]", "rpi"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<vccs\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"v1", ",", "0", ",", "v2", ",", "0"}], "}"}], ",", 
+       "\"\<vccs1\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"A", "\[Rule]", "gm"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<res\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"v2", ",", "0"}], "}"}], ",", "\"\<r2\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"Rvalue", "\[Rule]", "ro"}], "}"}]}], "}"}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"ComputeABCDNetwork", "[", 
+   RowBox[{"temp", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"v1", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"v2", ",", "0"}], "}"}]}], "}"}]}], "]"}], "//", 
+  "Normal"}]}], "Input",
+ CellLabel->"In[1]:=",
+ CellID->574461535],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "gm"}], " ", "ro"}], ",", 
+     RowBox[{
+      RowBox[{"-", "gm"}], " ", "ro", " ", "rpi"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "gm"}], ",", 
+     RowBox[{
+      RowBox[{"-", "gm"}], " ", "rpi"}]}], "}"}]}], "}"}]], "Output",
+ ImageSize->{255, 12},
+ ImageMargins->{{0, 0}, {0, 0}},
+ ImageRegion->{{0, 1}, {0, 1}},
+ CellLabel->"Out[1]=",
+ CellID->2036025480]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ WholeCellGroupOpener->True,
+ CellID->1255426704],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["ComputeHNetwork",
+    BaseStyle->"Link",
+    ButtonData->"paclet:SCAPack/ref/ComputeHNetwork"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["ComputeZNetwork",
+    BaseStyle->"Link",
+    ButtonData->"paclet:SCAPack/ref/ComputeZNetwork"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["ComputeYNetwork",
+    BaseStyle->"Link",
+    ButtonData->"paclet:SCAPack/ref/ComputeYNetwork"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["ComputeGNetwork",
+    BaseStyle->"Link",
+    ButtonData->"paclet:SCAPack/ref/ComputeGNetwork"],
+   FontFamily->"Verdana"]], "InlineFormula"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["NetworkData",
+    BaseStyle->"Link",
+    ButtonData->"paclet:SCAPack/ref/NetworkData"],
+   FontFamily->"Verdana"]], "InlineFormula"]
+}], "SeeAlso",
+ CellID->2085278884]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ WholeCellGroupOpener->True,
+ CellID->250839057],
+
+Cell[TextData[ButtonBox["Netlists",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Netlists"]], "Tutorials",
+ CellID->1489483152],
+
+Cell[TextData[ButtonBox["Network Parameters",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SCAPack/tutorial/Network Parameters"]], "Tutorials",
+ CellID->526462585]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ WholeCellGroupOpener->True,
+ CellID->38303248],
+
+Cell[TextData[ButtonBox["Simple Circuit Analysis Package",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:SCAPack/guide/Simple Circuit Analysis Package"]], "MoreAbout",
+ CellID->624040455]
+}, Open  ]],
+
+Cell[" ", "FooterCell"]
+},
+Saveable->False,
+ScreenStyleEnvironment->"Working",
+WindowSize->{725, 750},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowTitle->"ComputeABCDNetwork - Wolfram Mathematica",
+TaggingRules->{
+ "ModificationHighlight" -> False, "ColorType" -> "SymbolColor", "LinkTrails" -> 
+  GridBox[{{
+      RowBox[{
+        ButtonBox[
+        "Mathematica", ButtonData -> "paclet:SCAPack/guide/SCAPack", 
+         BaseStyle -> {"Link", "DockedLinkTrail"}], 
+        Cell[">", "DockedLinkTrailSeparator"]}]}}, ColumnAlignments -> Left], 
+  "Metadata" -> {
+   "built" -> "{2012, 12, 9, 18, 19, 19.706330}", 
+    "history" -> {"0.24", "", "", ""}, "context" -> "SCAPack`", 
+    "keywords" -> {}, "specialkeywords" -> {}, 
+    "tutorialcollectionlinks" -> {}, "index" -> True, "label" -> 
+    "S C A Pack Symbol", "language" -> "en", "paclet" -> "SCAPack", "status" -> 
+    "None", "summary" -> 
+    "ComputeABCDNetwork[netlist, portlist] computes the ABCD parameters for a \
+netlist.", "synonyms" -> {}, "title" -> "ComputeABCDNetwork", "titlemodifier" -> 
+    "", "windowtitle" -> "ComputeABCDNetwork", "type" -> "Symbol", "uri" -> 
+    "SCAPack/ref/ComputeABCDNetwork"}, "SearchTextTranslated" -> ""},
+CellContext->"Global`",
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, \
+2011)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> FrontEnd`FileName[{"Wolfram"}, "Reference.nb"]]], 
+   Cell[
+    StyleData["Input"], CellContext -> "Global`"], 
+   Cell[
+    StyleData["Output"], CellContext -> "Global`"]}, Visible -> False, 
+  FrontEndVersion -> 
+  "8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (October 5, 2011)", 
+  StyleDefinitions -> "Default.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[7901, 233, 491, 14, 70, "PrimaryExamplesSection",
+   CellTags->"PrimaryExamplesSection",
+   CellID->1667137472]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 15544, 488}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[611, 21, 3548, 79, 70, "AnchorBarGrid",
+ CellID->1],
+Cell[CellGroupData[{
+Cell[4184, 104, 61, 1, 70, "ObjectName",
+ CellID->1224892054],
+Cell[4248, 107, 478, 14, 70, "Usage",
+ CellID->982511436]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4763, 126, 610, 18, 70, "NotesSection",
+ CellGroupingRules->{"SectionGrouping", 50},
+ CellID->1322934809],
+Cell[5376, 146, 281, 9, 70, "Notes",
+ CellID->1520023007],
+Cell[5660, 157, 445, 16, 70, "Notes",
+ CellID->135313232],
+Cell[6108, 175, 85, 1, 70, "Notes",
+ CellID->349084348],
+Cell[6196, 178, 79, 1, 70, "Notes",
+ CellID->382561579],
+Cell[6278, 181, 1455, 41, 70, "2ColumnTableMod",
+ CellID->561213937],
+Cell[7736, 224, 128, 4, 70, "Notes",
+ CellID->1997626130]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[7901, 233, 491, 14, 70, "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->1667137472],
+Cell[CellGroupData[{
+Cell[8417, 251, 196, 6, 70, "ExampleSection",
+ CellID->1360349495],
+Cell[CellGroupData[{
+Cell[8638, 261, 1140, 36, 70, "Input",
+ CellID->574461535],
+Cell[9781, 299, 488, 18, 70, "Output",
+ CellID->2036025480]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10330, 324, 446, 13, 70, "SeeAlsoSection",
+ CellID->1255426704],
+Cell[10779, 339, 1433, 48, 70, "SeeAlso",
+ CellID->2085278884]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12249, 392, 448, 13, 70, "TutorialsSection",
+ CellID->250839057],
+Cell[12700, 407, 140, 3, 70, "Tutorials",
+ CellID->1489483152],
+Cell[12843, 412, 159, 3, 70, "Tutorials",
+ CellID->526462585]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13039, 420, 448, 13, 70, "MoreAboutSection",
+ CellID->38303248],
+Cell[13490, 435, 185, 4, 70, "MoreAbout",
+ CellID->624040455]
+}, Open  ]],
+Cell[13690, 442, 23, 0, 70, "FooterCell"]
+}
+]
+*)
+
+(* End of internal cache information *)
